@@ -32,20 +32,22 @@ Légende : ✅ confirmé (annonce, specs ou visuel vendeur) · ⚠️ à vérifi
 |---|---|---|
 | Températures de couleur | 3 modes : 3000 K (chaud), 4500 K (neutre), 6000 K (froid) | ✅ (visuel 02, 03) |
 | Variation d'intensité | En continu, de 5 % à 100 %, par appui long tactile | ✅ (visuel 03) |
-| Commande | Tactile, plus télécommande selon variante | ✅ |
+| Commande | Zone tactile sur le dessus (pictogramme soleil), plus télécommande selon variante | ✅ (visuel 08) |
 | Télécommande | Boutons on/off, couleurs, +/–, minuterie 15, 30 et 60 min | ✅ (visuel 01) |
 | Batterie | Rechargeable, annoncée 6000 mAh | ⚠️ chiffre très optimiste pour ce gabarit |
 | Autonomie | 10,8 h à pleine puissance · 720 h à intensité minimale | ⚠️ à mesurer |
 | Slogan autonomie vendeur | « 45 jours avec une charge » | ❌ incohérent avec 720 h (≈ 30 j) ; ne pas reprendre |
 | Alimentation | 5 V DC | ✅ |
-| Câble / port de charge | ? (USB-C ?) | ⚠️ |
+| Port de charge | USB-C | ✅ (visuel 08) |
+| « Charge rapide » | Annoncée par le vendeur | ⚠️ non chiffrée, ne pas mettre en avant |
 | Temps de charge | ? | ⚠️ |
 | Puissance | 0 à 5 W | ✅ |
 | Flux lumineux | Tranche 60–249 lm (catégorie, pas une mesure) | ✅ tranche · ❌ ne pas afficher de chiffre précis |
 | Source lumineuse | LED intégrées (ampoules incluses) | ✅ |
-| Diffuseur | Couche diffusante anti-éblouissement | ✅ (visuel 06) |
+| Diffuseur | Abat-jour translucide, couche diffusante anti-éblouissement | ✅ (visuels 06, 08) |
 | Matériau | ABS | ✅ |
-| Forme | Rectangulaire, poignée de transport | ✅ |
+| Forme | Rectangulaire, poignée de transport | ✅ (poignée présente sur le produit final, confirmé par le propriétaire) |
+| Horloge | Écran LED numérique en façade, 2 boutons latéraux | ✅ (visuel 08) |
 | Dimensions / poids | ? | ⚠️ |
 | Contenu de la boîte | ? | ⚠️ |
 | Certification | CE | ✅ |
@@ -89,13 +91,14 @@ Usages à mettre en scène : chambre de bébé (tétée, change), chambre d'enfa
 | 02-teintes-3000-4500-6000k.png | Les 3 teintes côte à côte | Section « 3 ambiances » | Texte en anglais incrusté |
 | 03-teintes-et-variateur-5-100.png | 3 teintes et variateur 20 à 100 % | Section variateur | Texte en anglais incrusté |
 | 04-poignee-portable-main.png | Lampe tenue par la poignée, ambiance nocturne | Section « nomade » | Très bonne ambiance |
-| 05-batterie-6000mah-enfant.png | Enfant endormi, chiffres batterie | Section autonomie | Le modèle montré semble sans poignée |
+| 05-batterie-6000mah-enfant.png | Enfant endormi, chiffres batterie | Section autonomie | Poignée non visible sur ce visuel |
 | 06-diffuseur-anti-eblouissement.png | Vue éclatée : LED et diffuseur | Section « lumière douce » | Allégations santé à reformuler |
-| 07-lumiere-douce-bebe-chevet.png | Enfant endormi, lampe sur la table de nuit | Hero ou section bébé | Modèle sans poignée, avec un pictogramme soleil |
+| 07-lumiere-douce-bebe-chevet.png | Enfant endormi, lampe sur la table de nuit | Hero ou section bébé | Poignée non visible ; le soleil est la zone tactile |
+| 08-details-tactile-horloge-usbc.png | Gros plans : abat-jour, zone tactile, horloge, port USB-C | Section détails / FAQ | Texte en anglais incrusté |
 
 Points d'attention visuels :
 - Tous les visuels vendeur ont du **texte anglais incrusté**. Il faudra des versions recadrées ou refaites, ou tes propres photos.
-- Les visuels 05 et 07 semblent montrer un **modèle légèrement différent** (pas de poignée visible). Vérifier que le produit reçu correspond, sinon ne pas les utiliser.
+- Le produit final **a bien une poignée** (confirmé). Sur les visuels 05 et 07, elle n'est pas visible : à préférer en recadrage ou remplacer par des photos où la poignée apparaît, pour ne pas montrer un produit différent de celui livré.
 - Les droits d'utilisation des images vendeur sont à confirmer. Les photos maison sont recommandées.
 
 ---
