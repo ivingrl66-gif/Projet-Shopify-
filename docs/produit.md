@@ -10,6 +10,7 @@ Légende : ✅ confirmé (annonce, specs ou visuel vendeur) · ⚠️ à vérifi
 | Élément | Valeur | Statut |
 |---|---|---|
 | Type | Veilleuse / lampe de chevet LED portable | ✅ |
+| Nom fournisseur | « Portable soft light handheld light » | ✅ (visuel 09) |
 | Marque fournisseur | GGBEE | ✅ |
 | Prix d'achat constaté | 11,19 € TTC (hors frais d'import) | ✅ |
 | Note sur l'annonce | 4,7/5 (24 avis, 168 ventes) | ✅ |
@@ -41,15 +42,17 @@ Légende : ✅ confirmé (annonce, specs ou visuel vendeur) · ⚠️ à vérifi
 | Port de charge | USB-C | ✅ (visuel 08) |
 | « Charge rapide » | Annoncée par le vendeur | ⚠️ non chiffrée, ne pas mettre en avant |
 | Temps de charge | ? | ⚠️ |
-| Puissance | 0 à 5 W | ✅ |
+| Puissance nominale | 4 W (tranche annonce : 0 à 5 W) | ✅ (visuel 09) |
+| Courant nominal | 1 A | ✅ (visuel 09) |
 | Flux lumineux | Tranche 60–249 lm (catégorie, pas une mesure) | ✅ tranche · ❌ ne pas afficher de chiffre précis |
 | Source lumineuse | LED intégrées (ampoules incluses) | ✅ |
 | Diffuseur | Abat-jour translucide, couche diffusante anti-éblouissement | ✅ (visuels 06, 08) |
 | Matériau | ABS | ✅ |
 | Forme | Rectangulaire, poignée de transport | ✅ (poignée présente sur le produit final, confirmé par le propriétaire) |
 | Horloge | Écran LED numérique en façade, 2 boutons latéraux | ✅ (visuel 08) |
-| Dimensions / poids | ? | ⚠️ |
-| Contenu de la boîte | ? | ⚠️ |
+| Dimensions | 9 × 9 cm de base, 11,5 cm de haut | ✅ (visuel 09) · ⚠️ hauteur poignée relevée ou non ? |
+| Poids | ? | ⚠️ |
+| Contenu de la boîte | Lampe, télécommande (selon variante), câble USB-A vers USB-C | ✅ (visuel 09) · ⚠️ adaptateur secteur non inclus a priori |
 | Certification | CE | ✅ |
 | Classe énergie | G (étiquette visible sur l'annonce) | ✅ |
 | Substances préoccupantes | Aucune déclarée | ✅ |
@@ -68,7 +71,7 @@ Légende : ✅ confirmé (annonce, specs ou visuel vendeur) · ⚠️ à vérifi
 7. **Télécommande et minuterie 15, 30 et 60 min** (variante) : s'éteint seule une fois l'enfant endormi.
 8. **Design épuré blanc** qui s'intègre à toute déco.
 
-Usages à mettre en scène : chambre de bébé (tétée, change), chambre d'enfant (peur du noir), chevet adulte (lecture), éclairage de secours.
+Usages à mettre en scène : chambre de bébé (tétée, biberon de nuit, change ; visuel 10), chambre d'enfant (peur du noir), chevet adulte (lecture), éclairage de secours.
 
 ---
 
@@ -94,6 +97,8 @@ Usages à mettre en scène : chambre de bébé (tétée, change), chambre d'enfa
 | 05-batterie-6000mah-enfant.png | Enfant endormi, chiffres batterie | Section autonomie | Poignée non visible sur ce visuel |
 | 06-diffuseur-anti-eblouissement.png | Vue éclatée : LED et diffuseur | Section « lumière douce » | Allégations santé à reformuler |
 | 07-lumiere-douce-bebe-chevet.png | Enfant endormi, lampe sur la table de nuit | Hero ou section bébé | Poignée non visible ; le soleil est la zone tactile |
+| 09-dimensions-parametres.png | Cotes 9 × 9 × 11,5 cm, télécommande, câble, tableau de paramètres | Onglet « Caractéristiques » de la fiche | Texte en anglais incrusté |
+| 10-maman-biberon-telecommande.png | Mère donnant le biberon la nuit, lampe allumée, télécommande en main | Hero ou section parents | Poignée non visible ; slogan santé à ne pas reprendre |
 | 08-details-tactile-horloge-usbc.png | Gros plans : abat-jour, zone tactile, horloge, port USB-C | Section détails / FAQ | Texte en anglais incrusté |
 
 Points d'attention visuels :
