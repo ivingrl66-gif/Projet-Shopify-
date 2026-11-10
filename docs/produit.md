@@ -123,8 +123,10 @@ Points d'attention visuels :
 
 | Élément | Valeur |
 |---|---|
-| Nom de la boutique | ❓ |
-| Cible | ❓ (pistes : jeunes parents, enfants, chevet adulte) |
+| Nom de la boutique | **Nuitelle** (choix validé) · ⚠️ vérifier INPI/EUIPO (proximité phonétique avec Nutella) et nuitelle.fr |
+| Cible | **Jeunes parents** : lumière de nuit (biberon, change, veille) · validé |
+| Promesse | Lumière douce et diffuse qui n'éblouit pas la nuit · piste de slogan : « La lumière qui ne réveille personne. » |
+| Structure boutique | Produit héros + 1 ou 2 produits complémentaires max (à valider) |
 | Ton | ❓ |
 
 ## 8. Légal
