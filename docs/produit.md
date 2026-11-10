@@ -1,5 +1,7 @@
 # Fiche produit de référence : lampe de chevet LED rechargeable
 
+> ⚠️ **Modèle abandonné** (vendeur limité à 1 pièce par client). Le produit retenu est le **TL-0191** : voir `docs/produit-tl0191.md`. Les sections 6 à 8 (commerce, marque, légal) restent valables.
+
 Source de vérité pour le site. Elle se remplit au fil des envois.
 Légende : ✅ confirmé (annonce, specs ou visuel vendeur) · ⚠️ à vérifier sur l'échantillon · ❌ à ne pas affirmer
 
