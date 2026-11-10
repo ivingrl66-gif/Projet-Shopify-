@@ -1,0 +1,639 @@
+<title>Nuitelle</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,100&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: une seule colonne qui descend du jour vers la nuit. Hero nocturne, bloc d'achat immédiatement dessous, puis preuves (avant/après, teintes, gestes), puis réassurance claire (FAQ sur fond lin). */
+:root{
+  --nuit:#1E1A17;
+  --nuit-2:#2B2420;
+  --nuit-3:#3a312b;
+  --ambre:#E8A55B;
+  --ambre-fonce:#c9853d;
+  --miel:#F4D6A8;
+  --lin:#F6EFE6;
+  --lin-2:#ECE2D5;
+  --gris:#8C8178;
+  --gris-clair:#b8ada3;
+  --encre:#1E1A17;
+  --display:"Fraunces", "Iowan Old Style", Georgia, serif;
+  --texte:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r:14px;
+  --max:1180px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--nuit);color:var(--lin);font-family:var(--texte);font-size:17px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--nuit)}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--ambre);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);font-variation-settings:"SOFT" 100;font-weight:400;line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4.6vw,48px)}
+h3{font-size:22px}
+p{margin:0}
+.wrap{max-width:var(--max);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ambre);font-weight:600}
+.tbd{background:rgba(232,165,91,.14);border:1px dashed rgba(232,165,91,.7);border-radius:5px;padding:0 5px;color:var(--miel);font-style:normal;white-space:nowrap}
+.light .tbd{background:#f1dcc0;border-color:#b77a39;color:#6b4517}
+section{padding-block:clamp(64px,9vw,120px)}
+
+/* Logo */
+.logo{font-family:var(--display);font-variation-settings:"SOFT" 100;font-weight:400;font-size:26px;letter-spacing:.01em;text-decoration:none;color:var(--lin);display:inline-flex;align-items:baseline}
+.logo .i{position:relative;display:inline-block}
+.logo .halo{position:absolute;left:50%;top:.02em;width:.42em;height:.42em;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle,var(--miel) 0 18%,rgba(232,165,91,.85) 30%,rgba(232,165,91,.25) 58%,rgba(232,165,91,0) 72%);
+  animation:respire 4.5s ease-in-out infinite}
+@keyframes respire{0%,100%{opacity:.75;transform:translate(-50%,-50%) scale(.9)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
+
+/* Barre d'annonce + en-tête */
+.annonce{background:var(--nuit-2);color:var(--miel);font-size:14px;text-align:center;padding-block:9px}
+.annonce .wrap{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.maquette{background:#4a3a2c;color:var(--miel);font-size:12.5px;text-align:center;padding-block:6px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(30,26,23,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(246,239,230,.07)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+header nav{display:flex;align-items:center;gap:22px;font-size:15px}
+header nav a{text-decoration:none;color:var(--gris-clair)}
+header nav a:hover{color:var(--lin)}
+.cart-btn{background:none;border:1px solid rgba(246,239,230,.18);border-radius:999px;padding:7px 14px;display:inline-flex;gap:8px;align-items:center;font-size:15px}
+.cart-btn:hover{border-color:var(--ambre)}
+.cart-count{background:var(--ambre);color:var(--encre);border-radius:999px;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:13px;font-weight:600;padding-inline:6px}
+@media (max-width:640px){header nav .hide-sm{display:none}}
+
+/* Hero */
+.hero{position:relative;min-height:min(85vh,760px);display:flex;align-items:center;overflow:hidden;padding-block:0}
+.hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero picture img{object-position:70% 50%;animation:allumage 2.4s ease-out both}
+@keyframes allumage{from{filter:brightness(.55)}to{filter:brightness(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,26,23,.92) 0%,rgba(30,26,23,.7) 38%,rgba(30,26,23,0) 70%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-block:72px}
+.hero-txt{max-width:560px;display:grid;gap:22px}
+.hero h1{font-size:clamp(40px,6.4vw,76px);font-weight:300}
+.hero h1 em{font-style:italic;color:var(--miel)}
+.hero p.sub{font-size:clamp(17px,1.6vw,20px);color:#e6dccf;max-width:470px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero .micro{font-size:14px;color:var(--gris-clair);display:flex;gap:16px;flex-wrap:wrap}
+@media (max-width:760px){
+  .hero{min-height:auto;align-items:flex-end}
+  .hero picture img{object-position:50% 30%}
+  .hero::after{background:linear-gradient(180deg,rgba(30,26,23,.1) 0%,rgba(30,26,23,.15) 35%,rgba(30,26,23,.92) 72%,var(--nuit) 100%)}
+  .hero .wrap{padding-top:46vh;padding-bottom:40px}
+}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:15px 26px;font-weight:600;font-size:16.5px;text-decoration:none;border:0;transition:transform .2s,background .2s,box-shadow .3s}
+.btn-ambre{background:var(--ambre);color:var(--encre);box-shadow:0 0 0 0 rgba(232,165,91,.0)}
+.btn-ambre:hover{background:#f0b571;box-shadow:0 0 36px rgba(232,165,91,.45)}
+.btn-ambre:active{transform:scale(.98)}
+.btn-ligne{background:transparent;border:1px solid rgba(246,239,230,.3);color:var(--lin)}
+.btn-ligne:hover{border-color:var(--miel)}
+
+/* Bloc d'achat */
+.achat{padding-top:clamp(40px,6vw,80px);background:linear-gradient(180deg,var(--nuit) 0%,var(--nuit-2) 100%)}
+.achat-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,64px);align-items:start}
+@media (max-width:900px){.achat-grid{grid-template-columns:1fr}}
+.galerie{display:grid;gap:12px;min-width:0}
+.galerie .main{border-radius:var(--r);overflow:hidden;background:var(--nuit-3);aspect-ratio:4/5;max-width:100%}
+.galerie .main img{width:100%;height:100%;object-fit:cover;transition:opacity .35s}
+.thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.thumbs button{padding:0;border:1px solid transparent;border-radius:10px;overflow:hidden;background:none;aspect-ratio:1;opacity:.6;transition:opacity .2s,border-color .2s}
+.thumbs button[aria-current="true"]{opacity:1;border-color:var(--ambre)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+@media (max-width:900px){
+  .galerie .main{display:none}
+  .thumbs{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;scrollbar-width:none}
+  .thumbs::-webkit-scrollbar{display:none}
+  .thumbs button{aspect-ratio:4/5;opacity:1;scroll-snap-align:start;border:0;border-radius:var(--r)}
+}
+.fiche{display:grid;gap:22px;min-width:0;position:sticky;top:96px}
+@media (max-width:900px){.fiche{position:static}}
+.fiche h1{font-size:clamp(32px,3.6vw,42px)}
+.fiche .accroche{color:#ddd2c4}
+.prix{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.prix .p{font-family:var(--display);font-size:34px;font-variant-numeric:tabular-nums}
+.prix .note{font-size:14px;color:var(--gris-clair)}
+.offres{display:grid;gap:10px;border:0;padding:0;margin:0}
+.offres legend{font-size:14px;color:var(--gris-clair);margin-bottom:8px;padding:0}
+.offre{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;border:1px solid rgba(246,239,230,.14);border-radius:12px;padding:14px 16px;cursor:pointer;transition:border-color .2s,background .2s}
+.offre:has(input:checked){border-color:var(--ambre);background:rgba(232,165,91,.07)}
+.offre input{accent-color:var(--ambre);width:18px;height:18px;margin:0}
+.offre .t{font-weight:600}
+.offre .s{font-size:14px;color:var(--gris-clair)}
+.offre .v{font-variant-numeric:tabular-nums;font-weight:600;text-align:right}
+.offre .badge{display:inline-block;margin-left:8px;font-size:12px;background:var(--ambre);color:var(--encre);border-radius:999px;padding:2px 8px;font-weight:600;vertical-align:2px}
+.points{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.points li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;color:#e6dccf}
+.points li::before{content:"";width:10px;height:10px;margin:7px 0 0 4px;border-radius:50%;background:radial-gradient(circle,var(--miel) 0 30%,rgba(232,165,91,.35) 60%,transparent 72%)}
+.add{width:100%;padding-block:18px;font-size:17.5px}
+.reassure{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;font-size:14px;color:var(--gris-clair)}
+.reassure div{display:flex;gap:9px;align-items:flex-start}
+.reassure svg{flex:none;margin-top:2px;stroke:var(--ambre)}
+.paiement{font-size:13px;color:var(--gris);display:flex;gap:8px;flex-wrap:wrap}
+.paiement span{border:1px solid rgba(246,239,230,.14);border-radius:6px;padding:3px 8px}
+
+/* Avant / après */
+.compare h2{max-width:720px}
+.compare .lead{color:#ddd2c4;max-width:620px;margin-top:16px}
+.ba{position:relative;margin-top:40px;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;max-width:100%;user-select:none;-webkit-user-select:none;touch-action:pan-y;background:var(--nuit-3)}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .apres{clip-path:inset(0 0 0 var(--pos,50%))}
+.ba .ligne{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:var(--miel);transform:translateX(-1px);pointer-events:none;box-shadow:0 0 18px rgba(232,165,91,.8)}
+.ba .poignee{position:absolute;top:50%;left:var(--pos,50%);width:52px;height:52px;border-radius:50%;transform:translate(-50%,-50%);background:var(--nuit);border:2px solid var(--miel);display:grid;place-items:center;pointer-events:none;box-shadow:0 0 30px rgba(232,165,91,.5)}
+.ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba .tag{position:absolute;bottom:14px;font-size:13px;font-weight:600;letter-spacing:.04em;padding:6px 12px;border-radius:999px;pointer-events:none}
+.ba .tag.l{left:14px;background:rgba(255,255,255,.85);color:#333}
+.ba .tag.r{right:14px;background:rgba(30,26,23,.8);color:var(--miel)}
+@media (max-width:640px){.ba{aspect-ratio:4/3}}
+.legende{font-size:13px;color:var(--gris);margin-top:12px}
+.compare-pts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px}
+@media (max-width:760px){.compare-pts{grid-template-columns:1fr;gap:20px}}
+.compare-pts h3{font-size:20px;margin-bottom:6px;color:var(--miel)}
+.compare-pts p{color:#d8cdbf;font-size:16px}
+
+/* Teintes */
+.teintes{background:var(--nuit-2)}
+.teintes-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+@media (max-width:860px){.teintes-grid{grid-template-columns:1fr}}
+.teinte-img{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;max-width:100%;background:var(--nuit-3)}
+.teinte-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
+.teinte-img img.on{opacity:1}
+.teinte-txt{display:grid;gap:22px}
+.choix{display:grid;gap:10px}
+.choix button{display:grid;grid-template-columns:28px 1fr;gap:14px;align-items:center;text-align:left;background:none;border:1px solid rgba(246,239,230,.14);border-radius:12px;padding:14px 16px;transition:border-color .2s,background .2s}
+.choix button[aria-pressed="true"]{border-color:var(--ambre);background:rgba(232,165,91,.07)}
+.choix .pastille{width:26px;height:26px;border-radius:50%}
+.choix .t{font-weight:600;display:block}
+.choix .s{font-size:14px;color:var(--gris-clair)}
+
+/* Gestes */
+.gestes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+@media (max-width:760px){.gestes-grid{grid-template-columns:1fr}}
+.geste{border-top:1px solid rgba(246,239,230,.14);padding-top:22px;display:grid;gap:10px}
+.geste .sch{display:flex;gap:6px;height:28px;align-items:center}
+.geste .sch i{width:16px;height:16px;border-radius:50%;background:radial-gradient(circle,var(--miel) 0 30%,rgba(232,165,91,.4) 60%,transparent 72%)}
+.geste .sch b{height:8px;width:72px;border-radius:999px;background:linear-gradient(90deg,rgba(232,165,91,.15),var(--ambre))}
+.geste h3{color:var(--lin)}
+.geste p{color:#d8cdbf;font-size:16px}
+
+/* Usages */
+.usages{background:linear-gradient(180deg,var(--nuit) 0%,var(--nuit-2) 100%)}
+.usages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+@media (max-width:860px){.usages-grid{grid-template-columns:1fr}}
+.usage{display:grid;gap:14px}
+.usage .img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;max-width:100%}
+.usage .img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.usage:hover .img img{transform:scale(1.03)}
+.usage .heure{font-family:var(--display);color:var(--ambre);font-size:15px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.usage p{color:#d8cdbf;font-size:16px}
+
+/* Sections claires */
+.light{background:var(--lin);color:var(--encre)}
+.light .eyebrow{color:#9a5f22}
+.specs-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(28px,5vw,72px);align-items:start}
+@media (max-width:860px){.specs-grid{grid-template-columns:1fr}}
+.specs-grid > div{min-width:0}
+dl.specs{margin:0;display:grid;grid-template-columns:minmax(120px,38%) 1fr;border-top:1px solid #dccfbf}
+dl.specs dt,dl.specs dd{margin:0;padding:14px 0;border-bottom:1px solid #dccfbf;font-size:16px}
+dl.specs dt{color:#6f645a}
+dl.specs dd{font-weight:500}
+.boite{margin-top:26px;background:var(--lin-2);border-radius:var(--r);padding:20px 22px;font-size:15.5px;color:#4a4038;display:grid;gap:6px}
+.boite strong{color:var(--encre)}
+
+.faq-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(28px,5vw,72px);align-items:start}
+@media (max-width:860px){.faq-grid{grid-template-columns:1fr}}
+.faq-grid > div{min-width:0}
+.faq-intro p{color:#5b5048;margin-top:16px}
+.faq details{border-bottom:1px solid #dccfbf}
+.faq details:first-child{border-top:1px solid #dccfbf}
+.faq summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:600;font-size:17px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;border-right:2px solid #9a5f22;border-bottom:2px solid #9a5f22;transform:translateY(-70%) rotate(45deg);transition:transform .25s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq .rep{padding:0 0 22px;color:#4a4038;display:grid;gap:10px;max-width:640px}
+
+.garanties{background:var(--lin-2);color:var(--encre);padding-block:56px}
+.garanties .g{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+@media (max-width:860px){.garanties .g{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.garanties .g{grid-template-columns:1fr}}
+.garanties h3{font-size:19px;margin-bottom:6px}
+.garanties p{font-size:15px;color:#5b5048}
+
+/* Dernier appel */
+.final{text-align:left}
+.final .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+@media (max-width:860px){.final .wrap{grid-template-columns:1fr}}
+.final p{color:#ddd2c4;margin-top:16px;max-width:520px}
+.final .img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;max-width:420px;width:100%;justify-self:end}
+.final .img img{width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.final .img{justify-self:start}}
+
+footer{background:#16130f;color:var(--gris-clair);font-size:14.5px;padding-block:56px 40px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+@media (max-width:760px){footer .cols{grid-template-columns:1fr}}
+footer h4{font-family:var(--texte);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--lin);margin:0 0 12px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--lin)}
+footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,230,.08);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--gris)}
+
+/* Barre d'achat fixe mobile */
+.sticky-buy{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(43,36,32,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(246,239,230,.1);
+  padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+  display:flex;align-items:center;justify-content:space-between;gap:14px;transform:translateY(110%);transition:transform .35s}
+.sticky-buy.show{transform:none}
+.sticky-buy .n{font-size:14px;color:var(--gris-clair)}
+.sticky-buy .n strong{display:block;color:var(--lin);font-size:16px;font-variant-numeric:tabular-nums}
+.sticky-buy .btn{padding:13px 22px}
+@media (min-width:901px){.sticky-buy{display:none}}
+
+/* Panier */
+.voile{position:fixed;inset:0;background:rgba(10,8,6,.6);z-index:70;opacity:0;pointer-events:none;transition:opacity .3s}
+.voile.show{opacity:1;pointer-events:auto}
+.panier{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);z-index:80;background:var(--lin);color:var(--encre);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.7,.2,1);
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.panier.show{transform:none}
+.panier .tete{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid #dccfbf}
+.panier .tete h3{font-size:24px}
+.fermer{background:none;border:0;width:40px;height:40px;border-radius:50%;display:grid;place-items:center}
+.fermer:hover{background:var(--lin-2)}
+.jauge{padding:16px 22px;background:var(--lin-2);font-size:14.5px;display:grid;gap:10px}
+.jauge .barre{height:8px;border-radius:999px;background:#dccfbf;overflow:hidden}
+.jauge .barre i{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--ambre-fonce),var(--ambre));transition:width .5s}
+.panier .corps{flex:1;overflow-y:auto;padding:8px 22px 22px;display:grid;align-content:start;gap:4px}
+.ligne-p{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;padding-block:16px;border-bottom:1px solid #e3d8ca}
+.ligne-p img,.ligne-p .ico{width:72px;height:72px;object-fit:cover;border-radius:10px}
+.ligne-p .ico{background:var(--lin-2);display:grid;place-items:center}
+.ligne-p .t{font-weight:600;font-size:15.5px}
+.ligne-p .s{font-size:13.5px;color:#6f645a}
+.ligne-p .v{font-weight:600;font-variant-numeric:tabular-nums}
+.qte{display:inline-flex;align-items:center;border:1px solid #d4c6b5;border-radius:999px;margin-top:6px}
+.qte button{background:none;border:0;width:30px;height:30px}
+.qte span{min-width:20px;text-align:center;font-variant-numeric:tabular-nums;font-size:14px}
+.vide{padding:40px 0;text-align:center;color:#6f645a}
+.upsell{margin-top:18px;border:1px solid #d4c6b5;border-radius:12px;padding:14px;display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;background:#fbf7f2}
+.upsell .ico{width:52px;height:52px;border-radius:10px;background:var(--lin-2);display:grid;place-items:center}
+.upsell .t{font-weight:600;font-size:15px}
+.upsell .s{font-size:13px;color:#6f645a}
+.upsell button{background:var(--encre);color:var(--lin);border:0;border-radius:999px;padding:9px 14px;font-size:14px;font-weight:600;white-space:nowrap}
+.upsell button[disabled]{background:#cfc2b2;color:#5b5048;cursor:default}
+.panier .pied{border-top:1px solid #dccfbf;padding:18px 22px 22px;display:grid;gap:12px}
+.total{display:flex;justify-content:space-between;font-size:18px;font-weight:600;font-variant-numeric:tabular-nums}
+.panier .pied small{color:#6f645a;font-size:13px}
+.panier .btn-ambre:hover{box-shadow:none}
+.toast{position:fixed;left:50%;top:calc(20px + env(safe-area-inset-top,0px));transform:translate(-50%,-20px);background:var(--encre);color:var(--lin);border:1px solid var(--nuit-3);padding:12px 18px;border-radius:12px;font-size:14.5px;z-index:90;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+</style>
+
+<div class="maquette">Maquette · les informations <span class="tbd">en pointillés</span> sont provisoires</div>
+<div class="annonce"><div class="wrap"><span>Livraison offerte dès 40 €</span><span>Retours 30 jours</span><span>Garantie 2 ans</span></div></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#haut" aria-label="Nuitelle, accueil">nu<span class="i">ı<span class="halo" aria-hidden="true"></span></span>telle</a>
+    <nav aria-label="Navigation principale">
+      <a class="hide-sm" href="#lampe">La lampe</a>
+      <a class="hide-sm" href="#avant-apres">Avant / après</a>
+      <a href="#faq">FAQ</a>
+      <button class="cart-btn" id="open-cart" type="button" aria-label="Ouvrir le panier">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        Panier <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="haut">
+  <section class="hero" aria-labelledby="hero-titre">
+    <picture>
+      <source media="(max-width:760px)" srcset="img/hero-mobile.webp">
+      <img src="img/hero-desktop.webp" alt="Une mère donne le biberon à son bébé la nuit, à la lueur douce d'une lampe Nuitelle posée sur la commode" fetchpriority="high">
+    </picture>
+    <div class="wrap">
+      <div class="hero-txt">
+        <h1 id="hero-titre">La lumière qui ne réveille <em>personne</em>.</h1>
+        <p class="sub">Biberon de 3 h, change, petit cauchemar : une lueur douce et chaude, qui éclaire juste ce qu'il faut sans vous éblouir.</p>
+        <div class="ctas">
+          <a class="btn btn-ambre" href="#lampe">Découvrir la lampe · 34,90 €</a>
+        </div>
+        <div class="micro"><span>Sans fil, rechargeable</span><span>3 teintes de lumière</span><span>Horloge intégrée</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="achat" id="lampe" aria-labelledby="produit-titre">
+    <div class="wrap achat-grid">
+      <div class="galerie">
+        <div class="main"><img id="main-img" src="img/pack-on.webp" alt="La lampe Nuitelle allumée en lumière chaude, posée sur un linge en lin"></div>
+        <div class="thumbs" role="list" aria-label="Photos du produit">
+          <button type="button" role="listitem" aria-current="true" data-src="img/pack-on.webp" data-alt="La lampe Nuitelle allumée en lumière chaude, posée sur un linge en lin"><img src="img/pack-on.webp" alt="Lampe allumée"></button>
+          <button type="button" role="listitem" data-src="img/pack-touch.webp" data-alt="Un doigt touche le dessus de la lampe pour l'allumer"><img src="img/pack-touch.webp" alt="Commande tactile"></button>
+          <button type="button" role="listitem" data-src="img/pack-handle.webp" data-alt="La lampe portée par sa poignée dans un couloir sombre"><img src="img/pack-handle.webp" alt="Poignée de transport"></button>
+          <button type="button" role="listitem" data-src="img/usage-enfant.webp" data-alt="Un enfant dort à côté de la lampe allumée très bas"><img src="img/usage-enfant.webp" alt="Chambre d'enfant"></button>
+          <button type="button" role="listitem" data-src="img/usage-lecture.webp" data-alt="Lecture au lit sans réveiller l'autre"><img src="img/usage-lecture.webp" alt="Lecture au lit"></button>
+        </div>
+      </div>
+
+      <div class="fiche">
+        <div class="eyebrow">Veilleuse et lampe de chevet</div>
+        <h1 id="produit-titre">La lampe Nuitelle</h1>
+        <p class="accroche">Une lumière diffuse qui se règle d'un doigt, de la veilleuse à peine visible à la lumière de lecture.</p>
+        <div class="prix"><span class="p" id="prix-affiche">34,90 €</span><span class="note">TTC · livraison offerte dès 40 €</span></div>
+
+        <fieldset class="offres">
+          <legend>Choisissez votre offre</legend>
+          <label class="offre"><input type="radio" name="offre" id="offre-1" value="1" checked>
+            <span><span class="t">1 lampe</span><br><span class="s">Pour la chambre de bébé</span></span>
+            <span class="v">34,90 €</span></label>
+          <label class="offre"><input type="radio" name="offre" id="offre-2" value="2">
+            <span><span class="t">2 lampes <span class="badge">−9,90 €</span></span><br><span class="s">Une pour bébé, une pour vous</span></span>
+            <span class="v">59,90 €</span></label>
+        </fieldset>
+
+        <button class="btn btn-ambre add" id="add" type="button">Ajouter au panier</button>
+
+        <ul class="points">
+          <li>3 teintes : chaude pour la nuit, neutre, froide pour lire</li>
+          <li>Intensité réglable d'un appui long, jusqu'à une lueur très faible</li>
+          <li>Diffusion à 360° : la lumière vient de tout l'abat-jour, jamais d'un point qui éblouit</li>
+          <li>Sans fil, rechargeable, poignée escamotable pour se déplacer la nuit</li>
+          <li>Horloge et réveil intégrés : l'heure sans allumer votre téléphone</li>
+        </ul>
+
+        <div class="reassure">
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg><span>Livrée en <em class="tbd">X à Y</em> jours ouvrés, avec suivi</span></div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7M4 4v4h4"/></svg><span>30 jours pour changer d'avis</span></div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg><span>Garantie légale de 2 ans</span></div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Paiement sécurisé</span></div>
+        </div>
+        <div class="paiement" aria-label="Moyens de paiement"><span>CB</span><span>Visa</span><span>Mastercard</span><span>Apple Pay</span><span>PayPal</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="compare" id="avant-apres" aria-labelledby="ba-titre">
+    <div class="wrap">
+      <div class="eyebrow">Avant / après</div>
+      <h2 id="ba-titre">À 3 h du matin, le plafonnier réveille tout le monde.</h2>
+      <p class="lead">Faites glisser le curseur. À gauche, la lumière du plafond. À droite, Nuitelle réglée bas, en lumière chaude.</p>
+      <div class="ba" id="ba" style="--pos:50%">
+        <img src="img/before.webp" alt="Chambre de bébé éclairée par un plafonnier blanc et aveuglant">
+        <img class="apres" src="img/after.webp" alt="La même chambre éclairée uniquement par la lueur chaude de la lampe Nuitelle">
+        <span class="ligne" aria-hidden="true"></span>
+        <span class="poignee" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F4D6A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+        <span class="tag l">Plafonnier</span>
+        <span class="tag r">Nuitelle</span>
+        <input type="range" id="ba-range" min="0" max="100" value="50" aria-label="Comparer le plafonnier et la lampe Nuitelle">
+      </div>
+      <p class="legende">Illustration de l'ambiance lumineuse.</p>
+      <div class="compare-pts">
+        <div><h3>Pas de point lumineux</h3><p>L'abat-jour diffuse la lumière sur toute sa surface. Le regard ne tombe jamais sur une LED nue.</p></div>
+        <div><h3>Une teinte chaude</h3><p>La lumière ambrée reste douce pour des yeux à peine ouverts, et garde la chambre dans l'ambiance de la nuit.</p></div>
+        <div><h3>Juste assez</h3><p>Un appui long baisse l'intensité jusqu'à une simple lueur : de quoi voir le biberon, pas plus.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="teintes" aria-labelledby="teintes-titre">
+    <div class="wrap teintes-grid">
+      <div class="teinte-img" id="teinte-img">
+        <img class="on" data-t="chaud" src="img/pack-on.webp" alt="La lampe en lumière chaude">
+        <img data-t="neutre" src="img/tone-4500.webp" alt="La lampe en lumière neutre">
+        <img data-t="froid" src="img/tone-6000.webp" alt="La lampe en lumière froide">
+      </div>
+      <div class="teinte-txt">
+        <div class="eyebrow">Trois teintes</div>
+        <h2 id="teintes-titre">Une lumière pour chaque moment de la nuit.</h2>
+        <p style="color:#ddd2c4">Un double appui sur le dessus change la teinte. Essayez ici :</p>
+        <div class="choix" role="group" aria-label="Choisir une teinte">
+          <button type="button" aria-pressed="true" data-t="chaud"><span class="pastille" style="background:radial-gradient(circle,#ffd9a0,#e8a55b 70%)"></span><span><span class="t">Chaude</span><span class="s">Pour la nuit, les biberons, l'endormissement</span></span></button>
+          <button type="button" aria-pressed="false" data-t="neutre"><span class="pastille" style="background:radial-gradient(circle,#fff6e6,#f0dcbc 70%)"></span><span><span class="t">Neutre</span><span class="s">Pour se lever, s'habiller, ranger</span></span></button>
+          <button type="button" aria-pressed="false" data-t="froid"><span class="pastille" style="background:radial-gradient(circle,#ffffff,#d9e2ec 70%)"></span><span><span class="t">Froide</span><span class="s">Pour lire ou travailler</span></span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="gestes-titre">
+    <div class="wrap">
+      <div class="eyebrow">Mode d'emploi</div>
+      <h2 id="gestes-titre">Trois gestes, même à moitié endormi.</h2>
+      <div class="gestes-grid">
+        <div class="geste"><div class="sch" aria-hidden="true"><i></i></div><h3>Un appui</h3><p>Allumer ou éteindre, sans chercher d'interrupteur dans le noir.</p></div>
+        <div class="geste"><div class="sch" aria-hidden="true"><i></i><i></i></div><h3>Deux appuis</h3><p>Passer de la lumière chaude à la neutre, puis à la froide.</p></div>
+        <div class="geste"><div class="sch" aria-hidden="true"><i></i><b></b></div><h3>Appui long</h3><p>Monter ou baisser l'intensité, jusqu'à une lueur de veilleuse.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="usages" aria-labelledby="usages-titre">
+    <div class="wrap">
+      <div class="eyebrow">Au quotidien</div>
+      <h2 id="usages-titre">Pensée pour les nuits des jeunes parents.</h2>
+      <div class="usages-grid">
+        <article class="usage"><div class="img"><img src="img/hero-mobile.webp" alt="Biberon de nuit à la lueur de la lampe"></div><span class="heure">03:12</span><h3>Le biberon de nuit</h3><p>Assez de lumière pour préparer et donner le biberon, assez peu pour que bébé se rendorme vite.</p></article>
+        <article class="usage"><div class="img"><img src="img/usage-enfant.webp" alt="Enfant endormi près de la lampe" loading="lazy"></div><span class="heure">21:30</span><h3>La chambre d'enfant</h3><p>Une veilleuse rassurante pour les petits qui ont peur du noir, qui ne fait pas d'ombre inquiétante.</p></article>
+        <article class="usage"><div class="img"><img src="img/usage-lecture.webp" alt="Lecture au lit à côté de son partenaire endormi" loading="lazy"></div><span class="heure">23:45</span><h3>La lecture au lit</h3><p>Finir son chapitre sans réveiller la personne qui dort à côté.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="light" aria-labelledby="specs-titre">
+    <div class="wrap specs-grid">
+      <div>
+        <div class="eyebrow">Caractéristiques</div>
+        <h2 id="specs-titre" style="margin-top:12px">Tout ce qu'il faut savoir avant d'acheter.</h2>
+        <div class="boite">
+          <strong>Dans la boîte</strong>
+          <span>1 lampe Nuitelle · 1 câble de recharge <em class="tbd">à confirmer</em></span>
+          <span>Adaptateur secteur non inclus : vous pourrez l'ajouter dans votre panier.</span>
+        </div>
+      </div>
+      <dl class="specs">
+        <dt>Dimensions</dt><dd>9,4 × 9,4 × 10,5 cm</dd>
+        <dt>Teintes</dt><dd>Chaude, neutre, froide</dd>
+        <dt>Intensité</dt><dd>Réglable en continu (appui long)</dd>
+        <dt>Commande</dt><dd>Tactile, sur le dessus</dd>
+        <dt>Horloge</dt><dd>Écran numérique en façade, fonction réveil</dd>
+        <dt>Batterie</dt><dd>Intégrée, rechargeable · autonomie <em class="tbd">à confirmer</em></dd>
+        <dt>Recharge</dt><dd><em class="tbd">port et durée à confirmer</em></dd>
+        <dt>Poignée</dt><dd>Escamotable</dd>
+        <dt>Matériaux</dt><dd>Plastique, abat-jour diffusant</dd>
+        <dt>Durée de vie des LED</dt><dd>30 000 heures</dd>
+        <dt>Conformité</dt><dd>CE <em class="tbd">à confirmer</em> · classe énergie <em class="tbd">à compléter</em></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="light faq" id="faq" aria-labelledby="faq-titre" style="padding-top:0">
+    <div class="wrap faq-grid">
+      <div class="faq-intro">
+        <div class="eyebrow">Questions fréquentes</div>
+        <h2 id="faq-titre" style="margin-top:12px">Vos questions, nos réponses.</h2>
+        <p>Une autre question ? Écrivez-nous à <span class="tbd">contact@nuitelle.fr</span>, nous répondons sous 24 h ouvrées.</p>
+      </div>
+      <div>
+        <details><summary>Est-ce que la lumière éblouit ?</summary><div class="rep"><p>Non : l'abat-jour diffuse la lumière sur toute sa surface, il n'y a pas de point lumineux direct. En lumière chaude et à faible intensité, elle se regarde sans gêne, même au réveil.</p></div></details>
+        <details><summary>Peut-on la régler très bas, comme une veilleuse ?</summary><div class="rep"><p>Oui. Maintenez le doigt sur le dessus de la lampe pour baisser l'intensité jusqu'à une simple lueur. Relâchez quand le niveau vous convient.</p></div></details>
+        <details><summary>Combien de temps tient la batterie ?</summary><div class="rep"><p>L'autonomie dépend de l'intensité choisie : <span class="tbd">X h à pleine puissance, Y h en veilleuse</span>. Une recharge complète prend <span class="tbd">Z h</span>.</p></div></details>
+        <details><summary>L'adaptateur secteur est-il fourni ?</summary><div class="rep"><p>La lampe est livrée avec son câble de recharge, sans adaptateur. Vous pouvez utiliser un chargeur de téléphone USB, ou ajouter notre adaptateur dans votre panier.</p></div></details>
+        <details><summary>Peut-on l'utiliser dans une chambre de bébé ?</summary><div class="rep"><p>Oui, c'est l'usage pour lequel nous l'avons choisie. Elle fonctionne sur batterie, sans fil qui traîne pendant l'utilisation, et ses LED ne chauffent pas. Comme tout appareil électrique, placez-la hors de portée des jeunes enfants.</p></div></details>
+        <details><summary>Comment fonctionne l'horloge ?</summary><div class="rep"><p>L'heure s'affiche sur un petit écran en façade et se règle avec les deux boutons latéraux. Une fonction réveil est également intégrée.</p></div></details>
+        <details><summary>Quels sont les délais de livraison ?</summary><div class="rep"><p>Votre commande est expédiée sous <span class="tbd">X jours</span> et livrée en <span class="tbd">X à Y jours ouvrés</span>, avec un numéro de suivi envoyé par email. La livraison est offerte dès 40 € d'achat.</p></div></details>
+        <details><summary>Comment retourner la lampe ?</summary><div class="rep"><p>Vous avez 30 jours après réception pour changer d'avis. Écrivez-nous, nous vous envoyons la marche à suivre. Le remboursement intervient sous 14 jours après réception du retour. <span class="tbd">Frais de retour : à décider</span></p></div></details>
+        <details><summary>Quelle garantie ?</summary><div class="rep"><p>La lampe bénéficie de la garantie légale de conformité de 2 ans. En cas de défaut, nous la remplaçons ou la remboursons.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <div class="garanties">
+    <div class="wrap g">
+      <div><h3>Livraison suivie</h3><p>Offerte dès 40 €, numéro de suivi par email.</p></div>
+      <div><h3>30 jours pour essayer</h3><p>Si elle ne vous convient pas, vous la retournez.</p></div>
+      <div><h3>Garantie 2 ans</h3><p>Remplacement ou remboursement en cas de défaut.</p></div>
+      <div><h3>Une vraie équipe</h3><p>Une question, une réponse sous 24 h ouvrées.</p></div>
+    </div>
+  </div>
+
+  <section class="final" aria-labelledby="final-titre">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Nuitelle</div>
+        <h2 id="final-titre" style="margin-top:12px">Des nuits plus douces commencent par une lumière plus douce.</h2>
+        <p>34,90 € la lampe, 59,90 € les deux. Livraison offerte dès 40 €.</p>
+        <div style="margin-top:28px"><a class="btn btn-ambre" href="#lampe">Choisir ma lampe</a></div>
+      </div>
+      <div class="img"><img src="img/pack-handle.webp" alt="La lampe Nuitelle portée par sa poignée" loading="lazy"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="#haut">nu<span class="i">ı<span class="halo" aria-hidden="true"></span></span>telle</a>
+        <p style="margin-top:12px;max-width:320px">La lumière qui ne réveille personne.</p>
+        <p style="margin-top:12px"><span class="tbd">contact@nuitelle.fr</span></p>
+      </div>
+      <div><h4>Aide</h4><ul><li><a href="#faq">FAQ</a></li><li><a href="#">Livraison</a></li><li><a href="#">Retours et rétractation</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div><h4>Informations légales</h4><ul><li><a href="#">Mentions légales</a></li><li><a href="#">CGV</a></li><li><a href="#">Confidentialité et cookies</a></li><li><a href="#">Médiateur de la consommation</a></li></ul></div>
+    </div>
+    <div class="bas"><span>© 2026 Nuitelle · <span class="tbd">SIRET à compléter</span></span><span>Paiement sécurisé par Shopify</span></div>
+  </div>
+</footer>
+
+<div class="sticky-buy" id="sticky-buy" aria-hidden="true">
+  <div class="n">La lampe Nuitelle<strong>34,90 €</strong></div>
+  <button class="btn btn-ambre" type="button" id="sticky-add" tabindex="-1">Ajouter au panier</button>
+</div>
+
+<div class="voile" id="voile"></div>
+<aside class="panier" id="panier" aria-label="Panier" aria-hidden="true">
+  <div class="tete"><h3>Votre panier</h3><button class="fermer" id="close-cart" type="button" aria-label="Fermer le panier"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="jauge"><span id="jauge-txt">Plus que 40,00 € pour la livraison offerte</span><div class="barre"><i id="jauge-barre"></i></div></div>
+  <div class="corps" id="corps"></div>
+  <div class="pied">
+    <div class="total"><span>Total</span><span id="total">0,00 €</span></div>
+    <small id="livraison-txt">Livraison calculée à l'étape suivante.</small>
+    <button class="btn btn-ambre" type="button" id="checkout" style="width:100%">Passer commande</button>
+    <small>Paiement sécurisé par Shopify · CB, Apple Pay, PayPal</small>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var ICO='<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1A17" stroke-width="1.6" stroke-linecap="round"><rect x="6" y="8" width="12" height="10" rx="2"/><path d="M10 8V4M14 8V4M12 18v3"/></svg>';
+  var SEUIL=40, P1=34.90, P2=59.90, ADAPT=7.90;
+  var state={lampes:0, lots:0, adapt:0};
+  var $=function(s){return document.querySelector(s)};
+  var eur=function(n){return n.toFixed(2).replace('.',',')+' €'};
+
+  /* Galerie */
+  var main=$('#main-img');
+  document.querySelectorAll('.thumbs button').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(window.matchMedia('(max-width:900px)').matches) return;
+      document.querySelectorAll('.thumbs button').forEach(function(x){x.setAttribute('aria-current','false')});
+      b.setAttribute('aria-current','true');
+      main.style.opacity=0;
+      setTimeout(function(){main.src=b.dataset.src;main.alt=b.dataset.alt;main.style.opacity=1},180);
+    });
+  });
+
+  /* Prix selon l'offre */
+  document.querySelectorAll('input[name=offre]').forEach(function(r){
+    r.addEventListener('change',function(){
+      var two=$('#offre-2').checked;
+      $('#prix-affiche').textContent=eur(two?P2:P1);
+      document.querySelector('#sticky-buy strong').textContent=eur(two?P2:P1);
+    });
+  });
+
+  /* Avant / après */
+  var ba=$('#ba'), range=$('#ba-range');
+  range.addEventListener('input',function(){ba.style.setProperty('--pos',range.value+'%')});
+
+  /* Teintes */
+  document.querySelectorAll('.choix button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.choix button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+      document.querySelectorAll('#teinte-img img').forEach(function(i){i.classList.toggle('on',i.dataset.t===b.dataset.t)});
+    });
+  });
+
+  /* Barre d'achat fixe */
+  var sticky=$('#sticky-buy'), add=$('#add');
+  if('IntersectionObserver' in window){
+    var achatVu=false, heroVu=true;
+    var upd=function(){var show=!achatVu&&!heroVu;sticky.classList.toggle('show',show);sticky.setAttribute('aria-hidden',String(!show));$('#sticky-add').tabIndex=show?0:-1};
+    new IntersectionObserver(function(e){achatVu=e[0].isIntersecting;upd()}).observe(add);
+    new IntersectionObserver(function(e){heroVu=e[0].isIntersecting;upd()}).observe(document.querySelector('.hero'));
+  }
+
+  /* Panier */
+  var panier=$('#panier'), voile=$('#voile');
+  function total(){return state.lampes*P1+state.lots*P2+state.adapt*ADAPT}
+  function ouvrir(){panier.classList.add('show');voile.classList.add('show');panier.setAttribute('aria-hidden','false');setTimeout(function(){$('#close-cart').focus()},50)}
+  function fermer(){panier.classList.remove('show');voile.classList.remove('show');panier.setAttribute('aria-hidden','true');$('#open-cart').focus()}
+  function ligne(key,img,titre,sous,prix){
+    var vis = img==='adapt' ? '<div class="ico">'+ICO+'</div>' : '<img src="'+img+'" alt="">';
+    return '<div class="ligne-p">'+vis+'<div><div class="t">'+titre+'</div><div class="s">'+sous+'</div><div class="qte"><button type="button" data-k="'+key+'" data-d="-1" aria-label="Retirer un">−</button><span>'+state[key]+'</span><button type="button" data-k="'+key+'" data-d="1" aria-label="Ajouter un">+</button></div></div><div class="v">'+eur(prix*state[key])+'</div></div>';
+  }
+  function rendu(){
+    var n=state.lampes+state.lots*2;
+    $('#cart-count').textContent=n+state.adapt;
+    var h='';
+    if(state.lampes) h+=ligne('lampes','img/pack-on.webp','La lampe Nuitelle','1 lampe',P1);
+    if(state.lots) h+=ligne('lots','img/pack-on.webp','La lampe Nuitelle · lot de 2','2 lampes',P2);
+    if(state.adapt) h+=ligne('adapt','adapt','Adaptateur secteur USB','Prise européenne',ADAPT);
+    if(!n&&!state.adapt) h='<div class="vide">Votre panier est vide.</div>';
+    if(n&&!state.adapt){
+      h+='<div class="upsell"><div class="ico">'+ICO+'</div><div><div class="t">Adaptateur secteur USB</div><div class="s">La lampe est livrée sans adaptateur · '+eur(ADAPT)+'</div></div><button type="button" id="add-adapt">Ajouter</button></div>';
+    }
+    $('#corps').innerHTML=h;
+    var t=total(), reste=Math.max(0,SEUIL-t);
+    $('#total').textContent=eur(t);
+    $('#jauge-barre').style.width=Math.min(100,t/SEUIL*100)+'%';
+    $('#jauge-txt').textContent= t>=SEUIL ? 'La livraison vous est offerte.' : 'Plus que '+eur(reste)+' pour la livraison offerte';
+    $('#livraison-txt').textContent= t>=SEUIL ? 'Livraison offerte.' : 'Livraison : <frais à compléter>, offerte dès 40 €.';
+    var ad=$('#add-adapt'); if(ad) ad.addEventListener('click',function(){state.adapt=1;rendu();toast('Adaptateur ajouté')});
+    document.querySelectorAll('.qte button').forEach(function(b){b.addEventListener('click',function(){state[b.dataset.k]=Math.max(0,state[b.dataset.k]+Number(b.dataset.d));rendu()})});
+  }
+  function ajouter(){
+    if($('#offre-2').checked) state.lots++; else state.lampes++;
+    rendu(); ouvrir();
+  }
+  var tt; function toast(m){var e=$('#toast');e.textContent=m;e.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){e.classList.remove('show')},2200)}
+  add.addEventListener('click',ajouter);
+  $('#sticky-add').addEventListener('click',ajouter);
+  $('#open-cart').addEventListener('click',function(){rendu();ouvrir()});
+  $('#close-cart').addEventListener('click',fermer);
+  voile.addEventListener('click',fermer);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&panier.classList.contains('show'))fermer()});
+  $('#checkout').addEventListener('click',function(){toast(total()?'Maquette : le paiement Shopify s\'ouvrira ici.':'Votre panier est vide.')});
+  rendu();
+})();
+</script>
