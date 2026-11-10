@@ -9,6 +9,7 @@ Légende : ✅ confirmé (annonce, specs ou visuel vendeur) · ⚠️ à vérifi
 
 | Élément | Valeur | Statut |
 |---|---|---|
+| Titre de l'annonce fournisseur | « Lampe de nuit LED à réglage tactile avec affichage à distance de l'heure ou non Lampe de lecture Lampe de lecture de table de chevet Rechargeable » | ✅ (visuel 01) |
 | Type | Veilleuse / lampe de chevet LED portable | ✅ |
 | Nom fournisseur | « Portable soft light handheld light » | ✅ (visuel 09) |
 | Marque fournisseur | GGBEE | ✅ |
