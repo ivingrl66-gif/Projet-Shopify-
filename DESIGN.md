@@ -32,7 +32,14 @@ Règles :
 
 ## Logo
 
-Mot-symbole « nuitelle » en minuscules, en Fraunces. **Le point du « i » est un halo lumineux** (dégradé radial ambre). Le halo seul sert de favicon et d'avatar.
+**L'arche lumineuse** : une arche fine (la poignée de la lampe, et la lettre « n ») avec une lueur ambrée en dessous, comme une lumière sous une porte. À côté, le mot-symbole « nuitelle » en minuscules, en Fraunces légère, vectorisé.
+
+Fichiers dans `maquette/logo/` :
+- `nuitelle-logo-clair.svg` : pour fonds sombres ;
+- `nuitelle-logo-fonce.svg` : pour fonds clairs ;
+- `nuitelle-icone.svg` : l'arche seule, pour favicon et avatars.
+
+Pas de surtitre (petit libellé en capitales) au-dessus des titres : le titre parle seul.
 
 ## Photographie
 
