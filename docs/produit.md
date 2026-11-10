@@ -113,6 +113,8 @@ Points d'attention visuels :
 
 | Élément | Valeur |
 |---|---|
+| Négociation fournisseur | Pas de remise supplémentaire possible (réponse fournisseur) |
+| Quantité par client | Limitée par le fournisseur · ⚠️ demande de volume en cours |
 | Prix de vente | ❓ |
 | Fournisseur / mode d'envoi | ❓ |
 | Délais de livraison | ❓ |
