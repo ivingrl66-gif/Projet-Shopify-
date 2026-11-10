@@ -24,6 +24,7 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 body{margin:0;background:var(--nuit);color:var(--lin);font-family:var(--texte);font-size:17px;line-height:1.55}
@@ -219,6 +220,57 @@ dl.specs dd{font-weight:500}
 .garanties h3{font-size:19px;margin-bottom:6px}
 .garanties p{font-size:15px;color:#5b5048}
 
+/* Contact */
+.contact{background:var(--lin);color:var(--encre)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(28px,5vw,72px);align-items:start}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.contact-grid > *{min-width:0}
+.contact-intro{display:grid;gap:18px;position:sticky;top:96px}
+@media (max-width:860px){.contact-intro{position:static}}
+.contact-intro p{color:#4a4038;max-width:42ch}
+.engagement{display:grid;gap:10px;margin-top:8px;padding:0;list-style:none}
+.engagement li{display:grid;grid-template-columns:20px 1fr;gap:10px;color:#4a4038;font-size:15.5px}
+.engagement svg{margin-top:3px;stroke:#9a5f22}
+form.cf{display:grid;gap:22px;background:#fbf7f2;border:1px solid #e3d8ca;border-radius:18px;padding:clamp(20px,3vw,32px)}
+.cf .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:520px){.cf .row{grid-template-columns:1fr}}
+.champ{display:grid;gap:7px;min-width:0}
+.champ > label,.cf legend{font-weight:600;font-size:15px;color:var(--encre)}
+.cf fieldset{border:0;margin:0;padding:0;min-width:0}
+.cf legend{padding:0;margin-bottom:10px}
+.cf input[type=text],.cf input[type=email],.cf input[type=tel],.cf textarea{width:100%;font:inherit;font-size:16px;color:var(--encre);background:#fff;border:1px solid #d4c6b5;border-radius:10px;padding:13px 14px;transition:border-color .2s,box-shadow .2s}
+.cf textarea{min-height:132px;resize:vertical;line-height:1.5}
+.cf input::placeholder,.cf textarea::placeholder{color:#8a7d72}
+.cf input:focus,.cf textarea:focus{outline:none;border-color:#9a5f22;box-shadow:0 0 0 3px rgba(232,165,91,.28)}
+.cf [aria-invalid="true"]{border-color:#a8442a!important}
+.erreur{font-size:13.5px;color:#a8442a;min-height:0}
+.erreur:empty{display:none}
+.seg{display:inline-grid;grid-auto-flow:column;gap:4px;background:var(--lin-2);border-radius:999px;padding:4px}
+.seg label{position:relative;cursor:pointer}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:block;padding:9px 16px;border-radius:999px;font-size:14.5px;font-weight:500;color:#4a4038;transition:background .2s,color .2s}
+.seg input:checked + span{background:var(--encre);color:var(--lin)}
+.seg input:focus-visible + span{outline:2px solid #9a5f22;outline-offset:2px}
+.themes{display:flex;flex-wrap:wrap;gap:8px}
+.themes label{position:relative;cursor:pointer}
+.themes input{position:absolute;opacity:0;pointer-events:none}
+.themes span{display:block;padding:9px 14px;border:1px solid #d4c6b5;border-radius:999px;font-size:14.5px;background:#fff;transition:border-color .2s,background .2s}
+.themes label:hover span{border-color:#9a5f22}
+.themes input:checked + span{border-color:var(--encre);background:var(--encre);color:var(--lin)}
+.themes input:focus-visible + span{outline:2px solid #9a5f22;outline-offset:2px}
+.reponse-rapide{border-radius:12px;background:var(--lin-2);padding:16px 18px;display:grid;gap:6px;font-size:15px;color:#4a4038}
+.reponse-rapide strong{color:var(--encre);font-size:14px}
+.reponse-rapide[hidden]{display:none}
+.consent{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:14px;color:#5b5048;align-items:start}
+.consent input{width:18px;height:18px;margin:2px 0 0}
+.cf .envoyer{justify-self:start;padding-inline:30px}
+.cf .envoyer[aria-busy="true"]{opacity:.7;cursor:progress}
+.cf .compteur{font-size:13px;color:#6f645a;justify-self:end}
+.merci{display:grid;gap:14px;background:#fbf7f2;border:1px solid #e3d8ca;border-radius:18px;padding:clamp(24px,4vw,40px)}
+.merci h3{font-size:28px}
+.merci p{color:#4a4038}
+.merci .recap{font-size:14.5px;background:var(--lin-2);border-radius:10px;padding:12px 14px;color:#4a4038}
+
 /* Dernier appel */
 .final{text-align:left}
 .final .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
@@ -352,11 +404,11 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
         <button class="btn btn-ambre add" id="add" type="button">Ajouter au panier</button>
 
         <ul class="points">
-          <li>3 teintes : chaude pour la nuit, neutre, froide pour lire</li>
+          <li>3 teintes&#8239;: chaude pour la nuit, neutre, froide pour lire</li>
           <li>Intensité réglable d'un appui long, jusqu'à une lueur très faible</li>
-          <li>Diffusion à 360° : la lumière vient de tout l'abat-jour, jamais d'un point qui éblouit</li>
+          <li>Diffusion à 360°&#8239;: la lumière vient de tout l'abat-jour, jamais d'un point qui éblouit</li>
           <li>Sans fil, rechargeable, poignée escamotable pour se déplacer la nuit</li>
-          <li>Horloge et réveil intégrés : l'heure sans allumer votre téléphone</li>
+          <li>Horloge et réveil intégrés&#8239;: l'heure sans allumer votre téléphone</li>
         </ul>
 
         <div class="reassure">
@@ -387,7 +439,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
       <div class="compare-pts">
         <div><h3>Pas de point lumineux</h3><p>L'abat-jour diffuse la lumière sur toute sa surface. Le regard ne tombe jamais sur une LED nue.</p></div>
         <div><h3>Une teinte chaude</h3><p>La lumière ambrée reste douce pour des yeux à peine ouverts, et garde la chambre dans l'ambiance de la nuit.</p></div>
-        <div><h3>Juste assez</h3><p>Un appui long baisse l'intensité jusqu'à une simple lueur : de quoi voir le biberon, pas plus.</p></div>
+        <div><h3>Juste assez</h3><p>Un appui long baisse l'intensité jusqu'à une simple lueur&#8239;: de quoi voir le biberon, pas plus.</p></div>
       </div>
     </div>
   </section>
@@ -440,7 +492,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
         <div class="boite">
           <strong>Dans la boîte</strong>
           <span>1 lampe Nuitelle · 1 câble de recharge <em class="tbd">à confirmer</em></span>
-          <span>Adaptateur secteur non inclus : vous pourrez l'ajouter dans votre panier.</span>
+          <span>Adaptateur secteur non inclus&#8239;: vous pourrez l'ajouter dans votre panier.</span>
         </div>
       </div>
       <dl class="specs">
@@ -463,18 +515,18 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
     <div class="wrap faq-grid">
       <div class="faq-intro">
         <h2 id="faq-titre">Questions fréquentes</h2>
-        <p>Une autre question ? Écrivez-nous à <span class="tbd">contact@nuitelle.fr</span>, nous répondons sous 24 h ouvrées.</p>
+        <p>Vous ne trouvez pas votre réponse&#8239;? <a href="#contact">Posez-nous votre question</a>, nous répondons sous 24 h, les jours ouvrés.</p>
       </div>
       <div>
-        <details><summary>Est-ce que la lumière éblouit ?</summary><div class="rep"><p>Non : l'abat-jour diffuse la lumière sur toute sa surface, il n'y a pas de point lumineux direct. En lumière chaude et à faible intensité, elle se regarde sans gêne, même au réveil.</p></div></details>
-        <details><summary>Peut-on la régler très bas, comme une veilleuse ?</summary><div class="rep"><p>Oui. Maintenez le doigt sur le dessus de la lampe pour baisser l'intensité jusqu'à une simple lueur. Relâchez quand le niveau vous convient.</p></div></details>
-        <details><summary>Combien de temps tient la batterie ?</summary><div class="rep"><p>L'autonomie dépend de l'intensité choisie : <span class="tbd">X h à pleine puissance, Y h en veilleuse</span>. Une recharge complète prend <span class="tbd">Z h</span>.</p></div></details>
-        <details><summary>L'adaptateur secteur est-il fourni ?</summary><div class="rep"><p>La lampe est livrée avec son câble de recharge, sans adaptateur. Vous pouvez utiliser un chargeur de téléphone USB, ou ajouter notre adaptateur dans votre panier.</p></div></details>
-        <details><summary>Peut-on l'utiliser dans une chambre de bébé ?</summary><div class="rep"><p>Oui, c'est l'usage pour lequel nous l'avons choisie. Elle fonctionne sur batterie, sans fil qui traîne pendant l'utilisation, et ses LED ne chauffent pas. Comme tout appareil électrique, placez-la hors de portée des jeunes enfants.</p></div></details>
-        <details><summary>Comment fonctionne l'horloge ?</summary><div class="rep"><p>L'heure s'affiche sur un petit écran en façade et se règle avec les deux boutons latéraux. Une fonction réveil est également intégrée.</p></div></details>
-        <details><summary>Quels sont les délais de livraison ?</summary><div class="rep"><p>Votre commande est expédiée sous <span class="tbd">X jours</span> et livrée en <span class="tbd">X à Y jours ouvrés</span>, avec un numéro de suivi envoyé par email. La livraison est offerte dès 40 € d'achat.</p></div></details>
-        <details><summary>Comment retourner la lampe ?</summary><div class="rep"><p>Vous avez 30 jours après réception pour changer d'avis. Écrivez-nous, nous vous envoyons la marche à suivre. Le remboursement intervient sous 14 jours après réception du retour. <span class="tbd">Frais de retour : à décider</span></p></div></details>
-        <details><summary>Quelle garantie ?</summary><div class="rep"><p>La lampe bénéficie de la garantie légale de conformité de 2 ans. En cas de défaut, nous la remplaçons ou la remboursons.</p></div></details>
+        <details><summary>Est-ce que la lumière éblouit&#8239;?</summary><div class="rep"><p>Non&#8239;: l'abat-jour diffuse la lumière sur toute sa surface, il n'y a pas de point lumineux direct. En lumière chaude et à faible intensité, elle se regarde sans gêne, même au réveil.</p></div></details>
+        <details><summary>Peut-on la régler très bas, comme une veilleuse&#8239;?</summary><div class="rep"><p>Oui. Maintenez le doigt sur le dessus de la lampe pour baisser l'intensité jusqu'à une simple lueur. Relâchez quand le niveau vous convient.</p></div></details>
+        <details><summary>Combien de temps tient la batterie&#8239;?</summary><div class="rep"><p>L'autonomie dépend de l'intensité choisie&#8239;: <span class="tbd">X h à pleine puissance, Y h en veilleuse</span>. Une recharge complète prend <span class="tbd">Z h</span>.</p></div></details>
+        <details><summary>L'adaptateur secteur est-il fourni&#8239;?</summary><div class="rep"><p>La lampe est livrée avec son câble de recharge, sans adaptateur. Vous pouvez utiliser un chargeur de téléphone USB, ou ajouter notre adaptateur dans votre panier.</p></div></details>
+        <details><summary>Peut-on l'utiliser dans une chambre de bébé&#8239;?</summary><div class="rep"><p>Oui, c'est l'usage pour lequel nous l'avons choisie. Elle fonctionne sur batterie, sans fil qui traîne pendant l'utilisation, et ses LED ne chauffent pas. Comme tout appareil électrique, placez-la hors de portée des jeunes enfants.</p></div></details>
+        <details><summary>Comment fonctionne l'horloge&#8239;?</summary><div class="rep"><p>L'heure s'affiche sur un petit écran en façade et se règle avec les deux boutons latéraux. Une fonction réveil est également intégrée.</p></div></details>
+        <details><summary>Quels sont les délais de livraison&#8239;?</summary><div class="rep"><p>Votre commande est expédiée sous <span class="tbd">X jours</span> et livrée en <span class="tbd">X à Y jours ouvrés</span>, avec un numéro de suivi envoyé par email. La livraison est offerte dès 40 € d'achat.</p></div></details>
+        <details><summary>Comment retourner la lampe&#8239;?</summary><div class="rep"><p>Vous avez 30 jours après réception pour changer d'avis. Écrivez-nous, nous vous envoyons la marche à suivre. Le remboursement intervient sous 14 jours après réception du retour. <span class="tbd">Frais de retour&#8239;: à décider</span></p></div></details>
+        <details><summary>Quelle garantie&#8239;?</summary><div class="rep"><p>La lampe bénéficie de la garantie légale de conformité de 2 ans. En cas de défaut, nous la remplaçons ou la remboursons.</p></div></details>
       </div>
     </div>
   </section>
@@ -484,7 +536,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
       <div><h3>Livraison suivie</h3><p>Offerte dès 40 €, numéro de suivi par email.</p></div>
       <div><h3>30 jours pour essayer</h3><p>Si elle ne vous convient pas, vous la retournez.</p></div>
       <div><h3>Garantie 2 ans</h3><p>Remplacement ou remboursement en cas de défaut.</p></div>
-      <div><h3>Une réponse sous 24 h</h3><p>Écrivez-nous : une personne vous répond, les jours ouvrés.</p></div>
+      <div><h3>Une réponse sous 24 h</h3><p>Écrivez-nous&#8239;: une personne vous répond, les jours ouvrés.</p></div>
     </div>
   </div>
 
@@ -498,6 +550,74 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
       <div class="img"><img src="img/pack-handle.webp" alt="La lampe Nuitelle portée par sa poignée" loading="lazy"></div>
     </div>
   </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-titre">
+    <div class="wrap contact-grid">
+      <div class="contact-intro">
+        <h2 id="contact-titre">Une question précise&#8239;? Posez-la-nous.</h2>
+        <p>Batterie, garantie, livraison&#8239;: choisissez un thème, écrivez votre question, et nous vous répondons par le moyen que vous préférez.</p>
+        <ul class="engagement">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Réponse sous 24 h, les jours ouvrés</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M20 15a8 8 0 0 1-11.6 4.2L4 20l1-4.2A8 8 0 1 1 20 15z"/></svg><span>Une vraie personne vous répond, pas un robot</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Vos coordonnées servent uniquement à vous répondre</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <form class="cf" id="cf" novalidate>
+          <div class="row">
+            <div class="champ"><label for="cf-prenom">Prénom</label><input type="text" id="cf-prenom" name="prenom" autocomplete="given-name" aria-describedby="cf-prenom-err"><span class="erreur" id="cf-prenom-err"></span></div>
+            <div class="champ"><label for="cf-nom">Nom</label><input type="text" id="cf-nom" name="nom" autocomplete="family-name" aria-describedby="cf-nom-err"><span class="erreur" id="cf-nom-err"></span></div>
+          </div>
+
+          <fieldset>
+            <legend>Comment préférez-vous être recontacté&#8239;?</legend>
+            <div class="seg" role="radiogroup">
+              <label><input type="radio" name="canal" id="cf-canal-email" value="email" checked><span>Email</span></label>
+              <label><input type="radio" name="canal" id="cf-canal-sms" value="sms"><span>SMS</span></label>
+              <label><input type="radio" name="canal" id="cf-canal-tel" value="tel"><span>Appel</span></label>
+            </div>
+          </fieldset>
+
+          <div class="champ"><label for="cf-contact" id="cf-contact-label">Adresse email</label><input type="email" id="cf-contact" name="contact" autocomplete="email" inputmode="email" placeholder="prenom@exemple.fr" aria-describedby="cf-contact-err"><span class="erreur" id="cf-contact-err"></span></div>
+
+          <fieldset>
+            <legend>Votre question porte sur…</legend>
+            <div class="themes" id="cf-themes">
+              <label><input type="radio" name="theme" id="cf-t-lumiere" value="lumiere"><span>La lumière</span></label>
+              <label><input type="radio" name="theme" id="cf-t-batterie" value="batterie"><span>Batterie et recharge</span></label>
+              <label><input type="radio" name="theme" id="cf-t-duree" value="duree"><span>Durée de vie</span></label>
+              <label><input type="radio" name="theme" id="cf-t-garantie" value="garantie"><span>Garantie</span></label>
+              <label><input type="radio" name="theme" id="cf-t-livraison" value="livraison"><span>Livraison</span></label>
+              <label><input type="radio" name="theme" id="cf-t-retours" value="retours"><span>Retours</span></label>
+              <label><input type="radio" name="theme" id="cf-t-commande" value="commande"><span>Ma commande</span></label>
+              <label><input type="radio" name="theme" id="cf-t-autre" value="autre"><span>Autre</span></label>
+            </div>
+            <span class="erreur" id="cf-theme-err"></span>
+          </fieldset>
+
+          <div class="reponse-rapide" id="cf-rapide" hidden aria-live="polite"><strong>Réponse rapide</strong><span id="cf-rapide-txt"></span></div>
+
+          <div class="champ" id="cf-commande-champ" hidden><label for="cf-commande">Numéro de commande <span style="font-weight:400;color:#6f645a">(facultatif)</span></label><input type="text" id="cf-commande" name="commande" placeholder="#1001"></div>
+
+          <div class="champ"><label for="cf-message">Votre question</label><textarea id="cf-message" name="message" maxlength="1000" placeholder="Écrivez votre question ici" aria-describedby="cf-message-err cf-compteur"></textarea><span class="erreur" id="cf-message-err"></span><span class="compteur" id="cf-compteur">0 / 1000</span></div>
+
+          <label class="consent" for="cf-consent"><input type="checkbox" id="cf-consent" name="consent" aria-describedby="cf-consent-err"><span>J'accepte que Nuitelle utilise ces informations pour répondre à ma question. Elles ne sont ni revendues ni utilisées pour de la publicité. <a href="#">Politique de confidentialité</a></span></label>
+          <span class="erreur" id="cf-consent-err" style="margin-top:-14px"></span>
+
+          <button class="btn btn-ambre envoyer" type="submit" id="cf-envoyer">Envoyer ma question</button>
+        </form>
+
+        <div class="merci" id="cf-merci" hidden tabindex="-1">
+          <h3>Merci <span id="cf-merci-prenom"></span>, c'est bien noté.</h3>
+          <p id="cf-merci-txt">Nous vous répondons sous 24 h, les jours ouvrés.</p>
+          <div class="recap" id="cf-recap"></div>
+          <p style="font-size:14px;color:#6f645a">Maquette&#8239;: dans la boutique, ce message arrivera dans la boîte mail de Nuitelle.</p>
+          <button class="btn btn-ligne" type="button" id="cf-nouveau" style="justify-self:start;color:var(--encre);border-color:#cbbba8">Poser une autre question</button>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -508,7 +628,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
         <p style="margin-top:12px;max-width:320px">La lumière qui ne réveille personne.</p>
         <p style="margin-top:12px"><span class="tbd">contact@nuitelle.fr</span></p>
       </div>
-      <div><h4>Aide</h4><ul><li><a href="#faq">FAQ</a></li><li><a href="#">Livraison</a></li><li><a href="#">Retours et rétractation</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div><h4>Aide</h4><ul><li><a href="#faq">FAQ</a></li><li><a href="#">Livraison</a></li><li><a href="#">Retours et rétractation</a></li><li><a href="#contact">Contact</a></li></ul></div>
       <div><h4>Informations légales</h4><ul><li><a href="#">Mentions légales</a></li><li><a href="#">CGV</a></li><li><a href="#">Confidentialité et cookies</a></li><li><a href="#">Médiateur de la consommation</a></li></ul></div>
     </div>
     <div class="bas"><span>© 2026 Nuitelle · <span class="tbd">SIRET à compléter</span></span><span>Paiement sécurisé par Shopify</span></div>
@@ -627,5 +747,73 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&panier.classList.contains('show'))fermer()});
   $('#checkout').addEventListener('click',function(){toast(total()?'Maquette : le paiement Shopify s\'ouvrira ici.':'Votre panier est vide.')});
   rendu();
+})();
+
+/* Formulaire de contact */
+(function(){
+  var f=document.getElementById('cf'); if(!f) return;
+  var $=function(id){return document.getElementById(id)};
+  var RAPIDE={
+    lumiere:"La lumière est diffusée par tout l'abat-jour, sans point lumineux direct. En teinte chaude et à faible intensité, elle ne gêne pas les yeux, même au réveil.",
+    batterie:"La lampe se recharge avec le câble fourni. Autonomie\u202f: X h à pleine puissance, Y h en veilleuse (à compléter).",
+    duree:"Les LED sont données pour 30 000 heures, soit plus de 10 ans à raison de 8 heures par nuit.",
+    garantie:"La lampe bénéficie de la garantie légale de 2 ans. En cas de défaut, nous la remplaçons ou la remboursons.",
+    livraison:"Livraison en X à Y jours ouvrés, avec suivi, offerte dès 40 € (délais à compléter).",
+    retours:"Vous avez 30 jours après réception pour nous retourner la lampe.",
+    commande:"Indiquez votre numéro de commande : il figure dans l'email de confirmation.",
+    autre:""
+  };
+  var CANAL={email:{l:'Adresse email',t:'email',ac:'email',im:'email',ph:'prenom@exemple.fr'},
+             sms:{l:'Numéro de mobile',t:'tel',ac:'tel',im:'tel',ph:'06 12 34 56 78'},
+             tel:{l:'Numéro de téléphone',t:'tel',ac:'tel',im:'tel',ph:'06 12 34 56 78'}};
+  function canal(){return f.querySelector('input[name=canal]:checked').value}
+  function theme(){var t=f.querySelector('input[name=theme]:checked');return t?t.value:''}
+  f.querySelectorAll('input[name=canal]').forEach(function(r){r.addEventListener('change',function(){
+    var c=CANAL[canal()], i=$('cf-contact'); $('cf-contact-label').textContent=c.l; i.type=c.t; i.autocomplete=c.ac; i.inputMode=c.im; i.placeholder=c.ph; err('cf-contact','');
+  })});
+  f.querySelectorAll('input[name=theme]').forEach(function(r){r.addEventListener('change',function(){
+    var t=theme(), txt=RAPIDE[t]||''; $('cf-rapide').hidden=!txt; $('cf-rapide-txt').textContent=txt;
+    $('cf-commande-champ').hidden=t!=='commande'; $('cf-theme-err').textContent='';
+  })});
+  $('cf-consent').addEventListener('change',function(){if(this.checked)$('cf-consent-err').textContent=''});
+  $('cf-message').addEventListener('input',function(){$('cf-compteur').textContent=this.value.length+' / 1000'});
+  function err(id,m){var e=$(id+'-err'); if(e) e.textContent=m; var i=$(id); if(i&&i.tagName!=='FIELDSET') i.setAttribute('aria-invalid',m?'true':'false')}
+  f.querySelectorAll('input,textarea').forEach(function(i){i.addEventListener('input',function(){if(i.getAttribute('aria-invalid')==='true') err(i.id,'')})});
+  function valider(){
+    var ok=true, premier=null;
+    function ko(id,m){err(id,m);ok=false;if(!premier)premier=$(id)}
+    if(!$('cf-prenom').value.trim()) ko('cf-prenom','Indiquez votre prénom.'); else err('cf-prenom','');
+    if(!$('cf-nom').value.trim()) ko('cf-nom','Indiquez votre nom.'); else err('cf-nom','');
+    var v=$('cf-contact').value.trim();
+    if(canal()==='email'){
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) ko('cf-contact',v?'Cette adresse email semble incomplète. Exemple : prenom@exemple.fr':'Indiquez votre adresse email pour recevoir la réponse.'); else err('cf-contact','');
+    } else {
+      var d=v.replace(/[\s.\-]/g,'').replace(/^\+33/,'0');
+      if(!/^0[1-9]\d{8}$/.test(d)) ko('cf-contact',v?'Ce numéro ne semble pas valide. Exemple : 06 12 34 56 78':'Indiquez votre numéro pour être recontacté.'); else err('cf-contact','');
+    }
+    if(!theme()){$('cf-theme-err').textContent='Choisissez le thème de votre question.';ok=false;if(!premier)premier=f.querySelector('input[name=theme]')}
+    if($('cf-message').value.trim().length<5) ko('cf-message','Écrivez votre question en quelques mots.'); else err('cf-message','');
+    if(!$('cf-consent').checked){$('cf-consent-err').textContent='Cochez cette case pour que nous puissions vous répondre.';ok=false;if(!premier)premier=$('cf-consent')} else $('cf-consent-err').textContent='';
+    if(premier) premier.focus();
+    return ok;
+  }
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); if(!valider()) return;
+    var b=$('cf-envoyer'); b.setAttribute('aria-busy','true'); b.textContent='Envoi…';
+    setTimeout(function(){
+      var c=canal(), lab={email:'par email',sms:'par SMS',tel:'par téléphone'}[c];
+      var themeTxt=f.querySelector('input[name=theme]:checked').nextElementSibling.textContent;
+      $('cf-merci-prenom').textContent=$('cf-prenom').value.trim();
+      $('cf-merci-txt').textContent='Nous vous répondons '+lab+' sous 24 h, les jours ouvrés.';
+      $('cf-recap').textContent='Thème\u202f: '+themeTxt+' · Contact\u202f: '+$('cf-contact').value.trim();
+      f.hidden=true; $('cf-merci').hidden=false; $('cf-merci').focus();
+      b.removeAttribute('aria-busy'); b.textContent='Envoyer ma question';
+    },700);
+  });
+  $('cf-nouveau').addEventListener('click',function(){
+    f.reset(); $('cf-rapide').hidden=true; $('cf-commande-champ').hidden=true; $('cf-compteur').textContent='0 / 1000';
+    f.querySelector('input[name=canal]').dispatchEvent(new Event('change'));
+    $('cf-merci').hidden=true; f.hidden=false; $('cf-prenom').focus();
+  });
 })();
 </script>

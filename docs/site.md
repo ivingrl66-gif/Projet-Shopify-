@@ -27,6 +27,16 @@
 11. **Bouton d'achat fixe sur mobile**, qui apparaît dès que le bloc d'achat sort de l'écran.
 12. **Pied de page** : contact, pages légales, moyens de paiement.
 
+## Formulaire de contact (bas de page, ancre #contact)
+
+- Prénom, nom, canal de réponse au choix (email, SMS, appel) et coordonnée correspondante.
+- Thème : la lumière, batterie et recharge, durée de vie, garantie, livraison, retours, ma commande, autre.
+- **Réponse rapide** : dès qu'un thème est choisi, la réponse de la FAQ s'affiche, ce qui évite souvent l'envoi.
+- Numéro de commande facultatif pour le thème « Ma commande ».
+- Consentement RGPD obligatoire, validation en français, écran de confirmation.
+- Engagement affiché : réponse sous 24 h, les jours ouvrés.
+- Dans Shopify : formulaire de contact natif (`{% form 'contact' %}`), les messages arrivent dans la boîte mail de la boutique. Les réponses par SMS ou appel se font à la main.
+
 ## Panier (tiroir latéral)
 
 - Jauge de livraison offerte (« Plus que X € pour la livraison offerte »).
