@@ -114,7 +114,8 @@ Points d'attention visuels :
 | Élément | Valeur |
 |---|---|
 | Négociation fournisseur | Pas de remise supplémentaire possible (réponse fournisseur) |
-| Quantité par client | Limitée par le fournisseur · ⚠️ demande de volume en cours |
+| Quantité par client | **1 pièce par client** : le vendeur actuel est une boutique de détail (AliExpress), pas un grossiste · ❌ inutilisable pour la boutique |
+| Fournisseur de gros | ❓ à trouver (AliExpress Business, Alibaba, agent de dropshipping) · comparer specs et demander un échantillon |
 | Prix de vente | ❓ |
 | Fournisseur / mode d'envoi | ❓ |
 | Délais de livraison | ❓ |
