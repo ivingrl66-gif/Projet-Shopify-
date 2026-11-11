@@ -66,3 +66,9 @@ Prochaine étape : le propriétaire ouvre ces liens connecté à son compte, ou 
 - ScamAdviser : jugé « légitime », mais propriétaire masqué (WHOIS) et faible trafic.
 - Chiffres incohérents selon les pages (« 100 millions » ou « millions » de produits).
 - Verdict : **prudence**. Possible en test (devis et échantillon payé par moyen protégé), mais CJdropshipping reste plus sûr comme piste principale.
+
+### Devis Toonies (11/11)
+- Lampe : 2,65 $ l'unité · port : 10 $ pour 1 lampe (10 à 20 jours), 17 $ pour 2 lampes.
+- Coût livré (1 $ ≈ 0,92 €) : ≈ 11,65 € pour 1 lampe, ≈ 20,50 € pour 2.
+- Marge avant pub (frais de paiement ≈ 1,5 % + 0,25 €) : 1 lampe à 34,90 € ≈ 22,50 € ; à 39,90 € ≈ 27,40 € ; lot de 2 à 59,90 € ≈ 38,20 €.
+- ⚠️ Prix de 2,65 $ très bas : vérifier qu'il s'agit bien de la version avec poignée et horloge. Vérifier l'IOSS (TVA d'import ≈ 2,30 € par lampe si non incluse), CE, suivi, colis neutre. Échantillon avant tout.
