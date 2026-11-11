@@ -62,6 +62,9 @@ Mobile : barre d'achat fixe en bas. Panier : jauge, adaptateur, option cadeau.
 - Valider les prix, le seuil de livraison et le délai de réponse de 24 h.
 - Plus tard : section « Qui sommes-nous » (prénom et photo du propriétaire), à décider.
 
+### Réponse fournisseur du 11/11
+Frais de port : 23 USD pour 1 colis, 3,04 USD par lampe pour 30, 2,59 USD pour 50, 1,77 USD pour 100. Délai de 13 à 15 jours. Cartes de vœux offertes. Dropshipping à 23 USD par colis : non rentable. **Orientation : petit stock en France, expédié soi-même.** Prix unitaire et CE toujours manquants (détail dans `docs/fournisseurs.md`).
+
 ## Prochaines étapes
 
 1. Transformer la maquette en **thème Shopify** (Online Store 2.0), boutique protégée par mot de passe pendant l'attente du SIRET.
