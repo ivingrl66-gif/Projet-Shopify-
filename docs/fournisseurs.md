@@ -72,3 +72,10 @@ Prochaine étape : le propriétaire ouvre ces liens connecté à son compte, ou 
 - Coût livré (1 $ ≈ 0,92 €) : ≈ 11,65 € pour 1 lampe, ≈ 20,50 € pour 2.
 - Marge avant pub (frais de paiement ≈ 1,5 % + 0,25 €) : 1 lampe à 34,90 € ≈ 22,50 € ; à 39,90 € ≈ 27,40 € ; lot de 2 à 59,90 € ≈ 38,20 €.
 - ⚠️ Prix de 2,65 $ très bas : vérifier qu'il s'agit bien de la version avec poignée et horloge. Vérifier l'IOSS (TVA d'import ≈ 2,30 € par lampe si non incluse), CE, suivi, colis neutre. Échantillon avant tout.
+
+## QKsource (« European station »), 11/11
+- Annonce : https://qksource.com/product/rechargeable-lighting-portable-table-lamp-with-clock-led-light-p-2411130605041626300.html
+- Même famille de lampe : poignée sur le dessus, socle crème, horloge, minuterie 10 et 30 min. 280 g. Stock affiché : 10 569.
+- Variantes : horloge 2400 ou 4800 mAh, avec ou sans télécommande. Préférer « Remote Control Clock Type 4800 ».
+- Dropshipping depuis Shopify. Exemple vers le Royaume-Uni : ligne QSPacket, traitement 1 à 3 jours, livraison 5 à 9 jours, port 6,20 $, total 9,22 $ (lampe ≈ 3 $). **À recalculer vers la France.**
+- Fiabilité : très peu d'avis (Trustpilot 3/5 sur 1 avis négatif : rupture de stock et délai d'un mois ; appli Shopify ≈ 3,3/5 sur 3 avis ; ScamAdviser méfiant). Prudence : petit test, paiement protégé, CE exigé.
