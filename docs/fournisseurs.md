@@ -57,3 +57,12 @@ Limites : recherche web seulement (Alibaba, AliExpress et CJ bloquent les robots
 | CJdropshipping : lampes de nuit | https://cjdropshipping.com/list/wholesale-night-lights-l-538CB48E-B7A0-46F7-B5A2-BB8183247B23.html | Pas de modèle exact « poignée + horloge » trouvé | Faire une demande de sourcing avec photos |
 
 Prochaine étape : le propriétaire ouvre ces liens connecté à son compte, ou on utilise Claude dans Chrome pour parcourir les annonces depuis son navigateur.
+
+## Toonies.com (recherche du 11/11)
+
+- Plateforme chinoise de sourcing, gros et dropshipping, basée à Guangzhou, se dit active depuis 2015.
+- Entrepôts annoncés en Chine (Guangzhou, Hangzhou, Hebei), livraison annoncée en 7 à 15 jours.
+- **Aucun avis indépendant trouvé** (ni Trustpilot, ni Reddit) : la note de 4,8 et les témoignages viennent de son propre site.
+- ScamAdviser : jugé « légitime », mais propriétaire masqué (WHOIS) et faible trafic.
+- Chiffres incohérents selon les pages (« 100 millions » ou « millions » de produits).
+- Verdict : **prudence**. Possible en test (devis et échantillon payé par moyen protégé), mais CJdropshipping reste plus sûr comme piste principale.
