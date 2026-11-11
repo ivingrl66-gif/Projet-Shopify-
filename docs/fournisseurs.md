@@ -43,3 +43,17 @@ Pistes en parallèle :
 3. AliExpress (vendeurs « Choice » sans limite par client) + appli DSers pour automatiser les commandes depuis Shopify.
 
 Critères de choix : marquage CE fourni, port à l'unité bas, délai annoncé honnête, suivi, colis neutre sans prix, échantillon.
+
+## Recherche web du 11/11 (pistes à vérifier par le propriétaire)
+
+Limites : recherche web seulement (Alibaba, AliExpress et CJ bloquent les robots). Frais de port, limites par client et certificats non visibles.
+
+| Piste | Lien | Ce qu'on sait | À vérifier |
+|---|---|---|---|
+| AliExpress : lanterne GGBEE avec poignée, horloge, télécommande (≈ 8,50 $) | https://www.aliexpress.us/item/3256808420473192.html | Poignée, horloge, rechargeable, usage chambre de bébé | Même vendeur que l'annonce limitée à 1 pièce ? Port vers la France, CE |
+| AliExpress : annonce GGBEE d'origine | https://www.aliexpress.us/item/3256809066788866.html | Le premier modèle (1 pièce par client) | Pour comparer les photos |
+| AliExpress : recherche « touch lamp with clock » | https://www.aliexpress.com/w/wholesale-touch-lamp-with-clock.html | Modèles avec horloge à partir d'environ 4 à 6 $ | Filtrer « handle », badge Choice, vendeurs sans limite |
+| Alibaba : vitrine « clock night light » | https://www.alibaba.com/showroom/clock-night-light.html | Plus de 2 000 offres | Recherche par image du TL-0191, MOQ bas, dropshipping |
+| CJdropshipping : lampes de nuit | https://cjdropshipping.com/list/wholesale-night-lights-l-538CB48E-B7A0-46F7-B5A2-BB8183247B23.html | Pas de modèle exact « poignée + horloge » trouvé | Faire une demande de sourcing avec photos |
+
+Prochaine étape : le propriétaire ouvre ces liens connecté à son compte, ou on utilise Claude dans Chrome pour parcourir les annonces depuis son navigateur.
