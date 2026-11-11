@@ -30,3 +30,16 @@ Frais d'expédition vers la France (hors prix du produit) :
 - Toujours manquants : prix unitaire du produit, certificats CE/RoHS/batterie, droits de douane et TVA inclus ou non (DDP ?), transporteur, caractéristiques techniques.
 
 Conclusion provisoire : modèle « petit stock » (30 à 50 lampes reçues en France, expédiées soi-même), après échantillon et CE.
+
+## Décision du 11/11 : dropshipping uniquement
+
+Le propriétaire ne veut **aucun stock chez lui** : le fournisseur (ou un agent) doit expédier chaque commande directement au client.
+
+Objectif : **coût total livré ≤ environ 18 €** par lampe (produit + port), avec un port à l'unité **≤ environ 8 €**.
+
+Pistes en parallèle :
+1. Fournisseur actuel : demander une ligne économique et une boîte plus petite (20 cm³ facturés au volume pour une lampe de 10 cm).
+2. CJdropshipping : demande de sourcing du TL-0191, devis port à l'unité, entrepôt UE éventuel.
+3. AliExpress (vendeurs « Choice » sans limite par client) + appli DSers pour automatiser les commandes depuis Shopify.
+
+Critères de choix : marquage CE fourni, port à l'unité bas, délai annoncé honnête, suivi, colis neutre sans prix, échantillon.
