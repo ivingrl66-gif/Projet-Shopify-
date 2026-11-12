@@ -65,6 +65,9 @@ Mobile : barre d'achat fixe en bas. Panier : jauge, adaptateur, option cadeau.
 ### Réponse fournisseur du 11/11
 Frais de port : 23 USD pour 1 colis, 3,04 USD par lampe pour 30, 2,59 USD pour 50, 1,77 USD pour 100. Délai de 13 à 15 jours. Cartes de vœux offertes. Dropshipping à 23 USD par colis : non rentable. **Orientation : petit stock en France, expédié soi-même.** Prix unitaire et CE toujours manquants (détail dans `docs/fournisseurs.md`).
 
+### Sourcing CJ réussi (12/11)
+Lampe identique (poignée, télécommande, rechargeable) à **2,47 $ + 8,80 $ de port, livrée en 4 à 7 jours**. CJ devient le fournisseur principal pressenti. Échantillons en cours aussi chez Toonies et Temu (comparaison). Prix conseillé : 39,90 € livraison offerte, 59,90 € les 2.
+
 ## Prochaines étapes
 
 1. Transformer la maquette en **thème Shopify** (Online Store 2.0), boutique protégée par mot de passe pendant l'attente du SIRET.

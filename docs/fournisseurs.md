@@ -4,7 +4,7 @@
 |---|---|---|---|
 | Vendeur AliExpress (GGBEE) | Détail | Non | ❌ 1 pièce par client |
 | Fournisseur Alibaba (TL-0191) | Usine / grossiste | Non | ⏳ réponse partielle du 11/11 (voir plus bas) · 🚩 CE toujours pas fourni · prix unitaire inconnu |
-| CJdropshipping | Agent de dropshipping | Non (inscription gratuite) | 💡 à contacter : demande de sourcing du TL-0191, entrepôt UE (Pologne, Allemagne) |
+| CJdropshipping | Agent de dropshipping | Non (inscription gratuite) | ⭐ **Fournisseur principal pressenti** : sourcing réussi le 12/11 (voir plus bas) |
 | Zentrada | Grossiste B2B européen | Oui | 💡 après obtention du SIRET, pour comparer |
 | 1688 via agent (Superbuy, CSSBuy…) | Marché de gros chinois | Non | Moins cher mais complexe, plus tard |
 | DHgate | Plateforme de gros | Non | ⚠️ protection acheteur faible, déconseillé |
@@ -79,3 +79,10 @@ Prochaine étape : le propriétaire ouvre ces liens connecté à son compte, ou 
 - Variantes : horloge 2400 ou 4800 mAh, avec ou sans télécommande. Préférer « Remote Control Clock Type 4800 ».
 - Dropshipping depuis Shopify. Exemple vers le Royaume-Uni : ligne QSPacket, traitement 1 à 3 jours, livraison 5 à 9 jours, port 6,20 $, total 9,22 $ (lampe ≈ 3 $). **À recalculer vers la France.**
 - Fiabilité : très peu d'avis (Trustpilot 3/5 sur 1 avis négatif : rupture de stock et délai d'un mois ; appli Shopify ≈ 3,3/5 sur 3 avis ; ScamAdviser méfiant). Prudence : petit test, paiement protégé, CE exigé.
+
+## CJdropshipping : résultat du sourcing (12/11) ⭐
+- Modèle trouvé : **exactement la lampe visée**, avec poignée, télécommande, rechargeable.
+- **2,47 $ la lampe + 8,80 $ de port, livraison en 4 à 7 jours.**
+- Coût livré ≈ 10,40 € (1 $ ≈ 0,92 €). Marge avant pub : ≈ 28,70 € à 39,90 € ; ≈ 23,70 € à 34,90 €.
+- À confirmer : variante exacte (horloge, 2400 ou 4800 mAh), port pour 2 lampes dans un colis, IOSS (TVA incluse), colis neutre, certificats CE/RoHS/batterie, adaptateur USB disponible chez CJ, entrepôt de départ.
+- Prochaine étape : commander **1 échantillon via CJ** (teste toute la chaîne : qualité, délai, emballage).
