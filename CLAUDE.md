@@ -34,6 +34,8 @@ Pour **tout travail concret** (créer ou modifier le site, la maquette, le thèm
 
 **Superpowers** (obra/superpowers, installé le 12/11) : utiliser surtout `brainstorming` (avant une nouvelle fonctionnalité), `writing-plans`, `verification-before-completion` et `systematic-debugging`. Adaptations pour ce projet : on reste sur la branche `main` (pas de worktrees ni de branches, le propriétaire suit sur GitHub) ; les sous-agents seulement pour un gros chantier ; le TDD là où c'est pertinent (scripts, logique du panier), pas pour du texte ou du design ; poser les questions de cadrage en français, simplement, sans noyer le propriétaire.
 
+**Shopify** (installés le 12/11) : le skill officiel `shopify` (Shopify AI Toolkit : Liquid, Admin API, CLI, données personnalisées…, avec recherche dans la doc et validation du code) et les standards Liquid de `benjaminsehl/liquid-skills` (`shopify-liquid-themes`, `liquid-theme-standards`, `liquid-theme-a11y`). À utiliser pour tout le thème. L'accès à la boutique elle-même passe par le **connecteur Shopify** (outils `mcp__Shopify__*`), déjà relié à « Ma boutique 2 ». ⚠️ Les scripts du skill `shopify` envoient par défaut des statistiques d'usage à Shopify (dont un extrait de la demande) : demander l'avis du propriétaire avant de les lancer.
+
 **Animation et 3D** (installés le 12/11) :
 - **Motion design web** : skills d'Emil Kowalski (`animate`, `review-animations`, `improve-animations`, `choreograph`, `animation-performance`, `apple-design`…) pour décider quoi animer et comment ;
 - **GSAP officiel** (`gsap-core`, `gsap-scrolltrigger`, `gsap-timeline`…) pour les animations au défilement ;
