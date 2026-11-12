@@ -17,7 +17,7 @@ Le propriétaire est francophone, débutant en e-commerce, et attend un avis d'e
 
 ## Règle n° 1 : les skills d'abord (exigée par le propriétaire)
 
-Pour **toute demande** concernant le site, la boutique, la marque, le marketing ou le business, **avant de proposer quoi que ce soit** :
+Pour **tout travail concret** (créer ou modifier le site, la maquette, le thème, les visuels, les textes, les pages légales, les campagnes, la configuration Shopify…), **avant de proposer quoi que ce soit** :
 
 1. **Skills installés** : vérifier ceux du projet (`.claude/skills/`) et ceux de la session. Les utiliser s'ils couvrent la demande.
 2. **Annuaire public** : chercher des skills complémentaires avec `tools/find_skills.sh <mots-clés en anglais>` (annuaire skills.sh, trié par installations ; voir aussi le skill `find-skills`). Faire 2 ou 3 recherches avec des mots-clés différents.
@@ -28,7 +28,9 @@ Pour **toute demande** concernant le site, la boutique, la marque, le marketing 
    - installer dans `.claude/skills/<nom>/` du dépôt, puis commit et push.
 4. **Utiliser le ou les skills**, puis ajouter sa propre expertise par-dessus.
 5. **Si aucun skill ne convient**, le dire clairement au propriétaire (« aucun skill adapté trouvé »), puis travailler avec ses propres connaissances.
-6. **Dans chaque réponse**, indiquer en une ligne quels skills ont été utilisés ou trouvés.
+6. **Dans chaque réponse de travail**, indiquer en une ligne quels skills ont été utilisés ou trouvés.
+
+**Exception, voulue par le propriétaire** : pour une simple question ou une discussion (conseil rapide, explication, avis, analyse d'un devis ou d'un message fournisseur), répondre directement, sans chercher de skill.
 
 **Superpowers** (obra/superpowers, installé le 12/11) : utiliser surtout `brainstorming` (avant une nouvelle fonctionnalité), `writing-plans`, `verification-before-completion` et `systematic-debugging`. Adaptations pour ce projet : on reste sur la branche `main` (pas de worktrees ni de branches, le propriétaire suit sur GitHub) ; les sous-agents seulement pour un gros chantier ; le TDD là où c'est pertinent (scripts, logique du panier), pas pour du texte ou du design ; poser les questions de cadrage en français, simplement, sans noyer le propriétaire.
 
