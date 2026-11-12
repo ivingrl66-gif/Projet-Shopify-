@@ -107,3 +107,4 @@ Prochaine étape : le propriétaire ouvre ces liens connecté à son compte, ou 
 - Suite (12/11) : les 5,80 $ sont bien la **TVA IOSS**, calculée sur la valeur déclarée. CJ propose de baisser la valeur déclarée mais le déconseille : **ne pas sous-déclarer** (risque de redressement en douane, et indemnisation limitée en cas de perte). On garde le réglage par défaut : coût livré ≈ 16,45 € par lampe, donc **prix de vente à 39,90 €**.
 - Certificats CE/RoHS/batterie : CJ dit qu'il faut les demander au fabricant. Demander à l'agent de les obtenir auprès de l'usine. **Toujours bloquant avant lancement.**
 - L'agent demande la destination du lot de 2 (France) et notre volume de commandes.
+- **Lot de 2 (12/11)** : 25 $ tout compris (2 lampes, port Fast Line, TVA IOSS) ≈ 23 € soit ≈ 11,50 € la lampe. Marge avant pub du lot à 59,90 € ≈ 35,75 €.
