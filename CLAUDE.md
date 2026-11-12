@@ -34,6 +34,13 @@ Pour **tout travail concret** (créer ou modifier le site, la maquette, le thèm
 
 **Superpowers** (obra/superpowers, installé le 12/11) : utiliser surtout `brainstorming` (avant une nouvelle fonctionnalité), `writing-plans`, `verification-before-completion` et `systematic-debugging`. Adaptations pour ce projet : on reste sur la branche `main` (pas de worktrees ni de branches, le propriétaire suit sur GitHub) ; les sous-agents seulement pour un gros chantier ; le TDD là où c'est pertinent (scripts, logique du panier), pas pour du texte ou du design ; poser les questions de cadrage en français, simplement, sans noyer le propriétaire.
 
+**Animation et 3D** (installés le 12/11) :
+- **Motion design web** : skills d'Emil Kowalski (`animate`, `review-animations`, `improve-animations`, `choreograph`, `animation-performance`, `apple-design`…) pour décider quoi animer et comment ;
+- **GSAP officiel** (`gsap-core`, `gsap-scrolltrigger`, `gsap-timeline`…) pour les animations au défilement ;
+- **Three.js** (`threejs-*`, de cloudai-x) pour une éventuelle lampe 3D interactive.
+
+Règle du projet : les animations restent discrètes, n'alourdissent jamais le mobile et respectent `prefers-reduced-motion` (voir `DESIGN.md`). Une scène 3D doit prouver qu'elle aide à vendre avant d'être ajoutée (poids, vitesse, fidélité au produit).
+
 Attention aux skills juridiques : la plupart visent le droit américain. Pour les pages légales françaises, ils servent de base de structure, pas de référence juridique.
 
 ## Règles du projet
