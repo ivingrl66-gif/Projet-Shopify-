@@ -77,6 +77,7 @@ Attention aux skills juridiques : la plupart visent le droit américain. Pour le
 - Modèle utilisé : `gemini-3-pro-image`. Toujours fournir les photos réelles du produit en référence (`docs/produit/tl0191/visuels/`) pour que la lampe reste fidèle.
 - Style imposé : nuit, lumière chaude 3000 K, ombres brun chaud, aucun texte incrusté.
 - **Rendu naturel, pas « IA »** (retour du propriétaire) : style photo prise sur le vif au smartphone en mode nuit, vraie maison un peu en désordre (lange, babyphone, verre d'eau, linge), peau réelle et cernes, cadrage imparfait, grain. Jamais de rendu « éditorial », « premium » ou « cinéma ». Montrer le problème (la nuit, la fatigue, le plafonnier qui éblouit).
+- **Image d'accueil** (validée en sombre, le 12/11) : ambiance « dramatique et feutrée » de la toute première version, une seule lueur ambrée, environ deux tiers de l'image dans l'ombre, sujet à droite et grand mur sombre à gauche pour le titre. Palette ancrée sur #1E1A17, #E8A55B, #F6EFE6.
 - L'IA écrit mal les chiffres de l'horloge : vérifier par zoom, et si besoin tracer l'heure à la main (méthode utilisée pour `hero-desktop`).
 - Originaux archivés dans `docs/produit/tl0191/generees/`.
 
