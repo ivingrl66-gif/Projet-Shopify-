@@ -53,6 +53,8 @@ Ces skills visent surtout le marché américain : adapter au droit français (pa
 
 Attention aux skills juridiques : la plupart visent le droit américain. Pour les pages légales françaises, ils servent de base de structure, pas de référence juridique.
 
+**Disponibilité des skills** : ils sont dans `.claude/skills/` du dépôt (toute session sur ce projet les a). Pour les autres sessions cloud, le script de démarrage de l'environnement « Default » clone ce dépôt et copie les skills dans `~/.claude/skills/`. Après l'ajout d'un skill, faire commit et push pour qu'il se propage.
+
 ## Règles du projet
 
 - **Honnêteté commerciale** : jamais de faux avis, faux prix barrés, faux comptes à rebours ni fausses alertes de stock (illégal en France, et motif de suspension Google Merchant Center).
