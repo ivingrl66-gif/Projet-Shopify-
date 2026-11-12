@@ -37,6 +37,10 @@
 - Engagement affiché : réponse sous 24 h, les jours ouvrés.
 - Dans Shopify : formulaire de contact natif (`{% form 'contact' %}`), les messages arrivent dans la boîte mail de la boutique. Les réponses par SMS ou appel se font à la main.
 
+## Logos de paiement
+- Maquette : icônes officielles de la bibliothèque `payment_icons` (MIT), celles utilisées par Shopify.
+- Thème Shopify : afficher **uniquement les moyens réellement activés** avec `{% for type in shop.enabled_payment_types %}{{ type | payment_type_svg_tag: class: 'pi' }}{% endfor %}`, et le bouton de paiement express natif (`{{ form | payment_button }}`).
+
 ## Panier (tiroir latéral)
 
 - Jauge de livraison offerte (« Plus que X € pour la livraison offerte »).
