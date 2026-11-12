@@ -43,6 +43,14 @@ Pour **tout travail concret** (créer ou modifier le site, la maquette, le thèm
 
 Règle du projet : les animations restent discrètes, n'alourdissent jamais le mobile et respectent `prefers-reduced-motion` (voir `DESIGN.md`). Une scène 3D doit prouver qu'elle aide à vendre avant d'être ajoutée (poids, vitesse, fidélité au produit).
 
+**Optimisation et marketing** (installés le 12/11) :
+- **Conversion et textes** (Corey Haines, marketingskills) : `cro`, `copywriting`, `copy-editing`, `marketing-psychology`, `ab-testing`, `offers`, `pricing` ;
+- **Mesure et publicité** : `analytics`, `conversion-tracking`, `ads`, `ad-creative`, `emails`, `referrals`, `influencer-marketing` ;
+- **Vitesse** : `web-perf` (Cloudflare), `debug-optimize-lcp` (Chrome DevTools), `performance-optimization` (Addy Osmani) ;
+- **Référencement** : `schema`, `seo-audit`, `seo-ecommerce`, `storefront-best-practices` (Medusa).
+
+Ces skills visent surtout le marché américain : adapter au droit français (pas de faux prix barrés ni de fausse urgence, RGPD, consentement cookies) et au ton Nuitelle.
+
 Attention aux skills juridiques : la plupart visent le droit américain. Pour les pages légales françaises, ils servent de base de structure, pas de référence juridique.
 
 ## Règles du projet
