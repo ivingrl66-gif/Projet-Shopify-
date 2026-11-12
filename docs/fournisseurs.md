@@ -86,3 +86,15 @@ Prochaine étape : le propriétaire ouvre ces liens connecté à son compte, ou 
 - Coût livré ≈ 10,40 € (1 $ ≈ 0,92 €). Marge avant pub : ≈ 28,70 € à 39,90 € ; ≈ 23,70 € à 34,90 €.
 - À confirmer : variante exacte (horloge, 2400 ou 4800 mAh), port pour 2 lampes dans un colis, IOSS (TVA incluse), colis neutre, certificats CE/RoHS/batterie, adaptateur USB disponible chez CJ, entrepôt de départ.
 - Prochaine étape : commander **1 échantillon via CJ** (teste toute la chaîne : qualité, délai, emballage).
+
+### CJ : tarifs réels au panier (12/11)
+- Produit : « Bedroom Sleep-friendly Eye-care Charging Night Light », SKU **CJJT264865411KP**, variante **k3032 Remote control clock model**, **2,80 $**.
+- Options vers la France :
+  - **CJPacket Fast Line** ⭐ : 9,28 $ de port + 5,80 $ de « Customs Duty » = **15,08 $**, 6 à 9 jours, suivi.
+  - Ligne sans nom : 14,04 $, 7 à 12 jours.
+  - Liquid Line : 13,26 $, 7 à 11 jours, **DDU** (le client paie les taxes en cas de contrôle) : à éviter.
+  - Postal : 14,79 $, 12 à 50 jours : à éviter.
+  - Sensitive Over Length : 15,33 $, 10 à 18 jours.
+- Coût réel livré, Fast Line : 2,80 + 15,08 = 17,88 $ ≈ **16,45 €**. Marge avant pub ≈ **22,60 € à 39,90 €**, ≈ 17,70 € à 34,90 €.
+- Les 8,80 $ annoncés au sourcing ne comprenaient pas les 5,80 $ de taxes. Demander à l'agent le détail de ces 5,80 $ (TVA IOSS ?), le port pour 2 lampes, et un meilleur prix (« Request quote »).
+- Ne pas reprendre les textes des visuels CJ (« Relieve eye fatigue », « eye protection ») : allégations santé.
