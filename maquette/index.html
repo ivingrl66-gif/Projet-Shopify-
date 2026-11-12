@@ -1,8 +1,19 @@
 <title>Nuitelle</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preload" as="image" href="img/hero-mobile.webp" media="(max-width:760px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-desktop.webp" media="(min-width:761px)" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,100&family=Figtree:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"La lampe Nuitelle","brand":{"@type":"Brand","name":"Nuitelle"},
+"description":"Veilleuse et lampe de chevet sans fil, rechargeable, à lumière diffuse réglable (3 teintes), avec horloge, poignée et télécommande.",
+"image":["img/pack-on.webp","img/pack-touch.webp","img/pack-handle.webp"],
+"offers":{"@type":"Offer","price":"39.90","priceCurrency":"EUR","availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition",
+"shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"EUR"},"shippingDestination":{"@type":"DefinedRegion","addressCountry":"FR"},
+"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"DAY"},"transitTime":{"@type":"QuantitativeValue","minValue":5,"maxValue":6,"unitCode":"DAY"}}},
+"hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","applicableCountry":"FR","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":30}}}
+</script>
 <style>
 /* Layout: une seule colonne qui descend du jour vers la nuit. Hero nocturne, bloc d'achat immédiatement dessous, puis preuves (avant/après, teintes, gestes), puis réassurance claire (FAQ sur fond lin). */
 :root{
@@ -128,6 +139,13 @@ header nav a:hover{color:var(--lin)}
 .points li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;color:#e6dccf}
 .points li::before{content:"";width:10px;height:10px;margin:7px 0 0 4px;border-radius:50%;background:radial-gradient(circle,var(--miel) 0 30%,rgba(232,165,91,.35) 60%,transparent 72%)}
 .add{width:100%;padding-block:18px;font-size:17.5px}
+.actions{display:grid;gap:10px}
+.btn-express{width:100%;background:var(--lin);color:var(--encre);padding-block:14px;display:flex;flex-direction:column;gap:3px;line-height:1.35}
+.btn-express:hover{background:#fff}
+.express-logos{font-size:12.5px;font-weight:500;color:#5b5048}
+.dispo{display:flex;align-items:flex-start;gap:9px;font-size:15px;color:#e6dccf;margin-top:-6px}
+.dispo strong{color:var(--lin);font-weight:600}
+.pastille-stock{flex:none;margin-top:7px;width:9px;height:9px;border-radius:50%;background:#7fbf7a;box-shadow:0 2px 6px -1px rgba(127,191,122,.6)}
 .reassure{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;font-size:14px;color:var(--gris-clair)}
 .reassure div{display:flex;gap:9px;align-items:flex-start}
 .reassure svg{flex:none;margin-top:2px;stroke:var(--ambre)}
@@ -387,7 +405,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
 .ligne-p .s{font-size:13.5px;color:#6f645a}
 .ligne-p .v{font-weight:600;font-variant-numeric:tabular-nums}
 .qte{display:inline-flex;align-items:center;border:1px solid #d4c6b5;border-radius:999px;margin-top:6px}
-.qte button{background:none;border:0;width:32px;height:32px;display:grid;place-items:center;color:var(--encre)}
+.qte button{background:none;border:0;width:44px;height:44px;display:grid;place-items:center;color:var(--encre)}
 .qte span{min-width:20px;text-align:center;font-variant-numeric:tabular-nums;font-size:14px}
 .vide{padding:40px 0;text-align:center;color:#6f645a}
 .upsell{margin-top:18px;border:1px solid #d4c6b5;border-radius:12px;padding:14px;display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;background:#fbf7f2}
@@ -405,7 +423,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
 </style>
 
 <div class="maquette">Maquette · les informations <span class="tbd">en pointillés</span> sont provisoires</div>
-<div class="annonce"><div class="wrap"><span>Livraison offerte dès 40 €</span><span>Satisfait ou remboursé 30 jours</span><span>Garantie 2 ans</span></div></div>
+<div class="annonce"><div class="wrap"><span>Livraison offerte</span><span>Satisfait ou remboursé 30 jours</span><span>Garantie 2 ans</span></div></div>
 
 <header class="top">
   <div class="wrap">
@@ -416,7 +434,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
       <a href="#faq">FAQ</a>
       <button class="cart-btn" id="open-cart" type="button" aria-label="Ouvrir le panier">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-        Panier <span class="cart-count" id="cart-count">0</span>
+        Panier <span class="cart-count" id="cart-count" aria-live="polite">0</span>
       </button>
     </nav>
   </div>
@@ -433,7 +451,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
         <h1 id="hero-titre">La lumière qui ne réveille <em>personne</em>.</h1>
         <p class="sub">Pour le biberon de 3 h, le change ou le petit cauchemar. Une lueur douce et chaude qui éclaire juste ce qu'il faut, sans vous éblouir.</p>
         <div class="ctas">
-          <a class="btn btn-ambre" href="#lampe">Découvrir la lampe · 34,90 €</a>
+          <a class="btn btn-ambre" href="#lampe">Voir la lampe · 39,90 €</a>
         </div>
         <div class="micro"><span>Sans fil, rechargeable</span><span>3 teintes de lumière</span><span>Horloge intégrée</span></div>
       </div>
@@ -456,31 +474,36 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
       <div class="fiche">
                 <h1 id="produit-titre">La lampe Nuitelle</h1>
         <p class="accroche">Veilleuse et lampe de chevet sans fil. Sa lumière diffuse se règle d'un doigt, de la lueur à peine visible à la lumière de lecture.</p>
-        <div class="prix"><span class="p" id="prix-affiche">34,90 €</span><span class="note">TTC · livraison offerte dès 40 €</span></div>
+        <div class="prix"><span class="p" id="prix-affiche">39,90 €</span><span class="note">TTC · livraison offerte</span></div>
 
         <fieldset class="offres">
           <legend>Choisissez votre offre</legend>
           <label class="offre"><input type="radio" name="offre" id="offre-1" value="1" checked>
             <span><span class="t">1 lampe</span><br><span class="s">Pour bébé, pour vous, ou à offrir</span></span>
-            <span class="v">34,90 €</span></label>
+            <span class="v">39,90 €</span></label>
           <label class="offre"><input type="radio" name="offre" id="offre-2" value="2">
-            <span><span class="t">2 lampes <span class="badge">−9,90 €</span></span><br><span class="s">Une pour bébé, une pour vous · soit 29,95 € la lampe</span></span>
+            <span><span class="t">2 lampes <span class="badge">−19,90 €</span></span><br><span class="s">Une pour bébé, une pour vous · soit 29,95 € la lampe</span></span>
             <span class="v">59,90 €</span></label>
         </fieldset>
 
-        <button class="btn btn-ambre add" id="add" type="button">Ajouter au panier</button>
+        <p class="dispo"><span class="pastille-stock" aria-hidden="true"></span><span><strong>En stock</strong> · <span id="date-livraison">livrée en 6 à 9 jours ouvrés</span></span></p>
+        <div class="actions">
+          <button class="btn btn-ambre add" id="add" type="button">Ajouter au panier</button>
+          <button class="btn btn-express" id="express" type="button">Acheter maintenant <span class="express-logos" aria-hidden="true">Apple Pay · Shop Pay · Google Pay</span></button>
+        </div>
         <p class="cadeau-note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M3 13h18M12 9v12M12 9c-2-4-6-4-6-1.5S10 9 12 9zm0 0c2-4 6-4 6-1.5S14 9 12 9z"/></svg><span><strong>Une idée de cadeau de naissance.</strong> Ajoutez un message personnel dans le panier <span class="tbd">carte à confirmer</span>.</span></p>
 
         <ul class="points">
           <li>3 teintes&#8239;: chaude pour la nuit, neutre, froide pour lire</li>
           <li>Intensité réglable d'un appui long, jusqu'à une lueur très faible</li>
           <li>Diffusion à 360°&#8239;: la lumière vient de tout l'abat-jour, jamais d'un point qui éblouit</li>
-          <li>Sans fil, rechargeable, poignée escamotable pour se déplacer la nuit</li>
+          <li>Sans fil, rechargeable, avec une poignée pour l'emporter d'une pièce à l'autre</li>
+          <li>Télécommande incluse&#8239;: réglez la lumière sans vous lever</li>
           <li>Horloge et réveil intégrés&#8239;: l'heure sans allumer votre téléphone</li>
         </ul>
 
         <div class="reassure">
-          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg><span>Livrée en <em class="tbd">X à Y</em> jours ouvrés, avec suivi</span></div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg><span>Livraison offerte en 6 à 9 jours ouvrés, avec suivi</span></div>
           <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7M4 4v4h4"/></svg><span>Satisfait ou remboursé 30 jours</span></div>
           <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg><span>Garantie légale de 2 ans</span></div>
           <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Paiement sécurisé</span></div>
@@ -495,8 +518,8 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
             <h2 id="ba-titre">À 3 h du matin, le plafonnier réveille tout le monde.</h2>
       <p class="lead">Faites glisser le curseur. À gauche, la lumière du plafond. À droite, Nuitelle réglée bas, en lumière chaude.</p>
       <div class="ba" id="ba" style="--pos:50%">
-        <img src="img/before.webp" alt="Chambre de bébé éclairée par un plafonnier blanc et aveuglant">
-        <img class="apres" src="img/after.webp" alt="La même chambre éclairée uniquement par la lueur chaude de la lampe Nuitelle">
+        <img loading="lazy" decoding="async" src="img/before.webp" alt="Chambre de bébé éclairée par un plafonnier blanc et aveuglant">
+        <img loading="lazy" decoding="async" class="apres" src="img/after.webp" alt="La même chambre éclairée uniquement par la lueur chaude de la lampe Nuitelle">
         <span class="ligne" aria-hidden="true"></span>
         <span class="poignee" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F4D6A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
         <span class="tag l">Plafonnier</span>
@@ -516,8 +539,8 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
     <div class="wrap teintes-grid">
       <div class="teinte-img" id="teinte-img">
         <img class="on" data-t="chaud" src="img/pack-on.webp" alt="La lampe en lumière chaude">
-        <img data-t="neutre" src="img/tone-4500.webp" alt="La lampe en lumière neutre">
-        <img data-t="froid" src="img/tone-6000.webp" alt="La lampe en lumière froide">
+        <img loading="lazy" decoding="async" data-t="neutre" src="img/tone-4500.webp" alt="La lampe en lumière neutre">
+        <img loading="lazy" decoding="async" data-t="froid" src="img/tone-6000.webp" alt="La lampe en lumière froide">
       </div>
       <div class="teinte-txt">
                 <h2 id="teintes-titre">Une lumière pour chaque moment de la nuit.</h2>
@@ -546,7 +569,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
     <div class="wrap">
             <h2 id="usages-titre">Pensée pour les nuits des jeunes parents.</h2>
       <div class="usages-grid">
-        <article class="usage"><div class="img"><img src="img/hero-mobile.webp" alt="Biberon de nuit à la lueur de la lampe"></div><span class="heure">03:12</span><h3>Le biberon de nuit</h3><p>Assez de lumière pour préparer et donner le biberon, assez peu pour que bébé se rendorme vite.</p></article>
+        <article class="usage"><div class="img"><img loading="lazy" decoding="async" src="img/hero-mobile.webp" alt="Biberon de nuit à la lueur de la lampe"></div><span class="heure">03:12</span><h3>Le biberon de nuit</h3><p>Assez de lumière pour préparer et donner le biberon, assez peu pour que bébé se rendorme vite.</p></article>
         <article class="usage"><div class="img"><img src="img/usage-enfant.webp" alt="Enfant endormi près de la lampe" loading="lazy"></div><span class="heure">21:30</span><h3>La chambre d'enfant</h3><p>Une veilleuse rassurante pour les petits qui ont peur du noir, qui ne fait pas d'ombre inquiétante.</p></article>
         <article class="usage"><div class="img"><img src="img/usage-lecture.webp" alt="Lecture au lit à côté de son partenaire endormi" loading="lazy"></div><span class="heure">23:45</span><h3>La lecture au lit</h3><p>Finir son chapitre sans réveiller la personne qui dort à côté.</p></article>
       </div>
@@ -592,19 +615,19 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
         <h2 id="specs-titre">Tout ce qu'il faut savoir avant d'acheter.</h2>
         <div class="boite">
           <strong>Dans la boîte</strong>
-          <span>1 lampe Nuitelle · 1 câble de recharge <em class="tbd">à confirmer</em></span>
+          <span>1 lampe Nuitelle · 1 télécommande · 1 câble de recharge <em class="tbd">à confirmer</em></span>
           <span>Adaptateur secteur non inclus&#8239;: vous pourrez l'ajouter dans votre panier.</span>
         </div>
       </div>
       <dl class="specs">
-        <dt>Dimensions</dt><dd>9,4 × 9,4 × 10,5 cm</dd>
+        <dt>Dimensions</dt><dd><em class="tbd">à confirmer sur l'échantillon</em></dd>
         <dt>Teintes</dt><dd>Chaude, neutre, froide</dd>
         <dt>Intensité</dt><dd>Réglable en continu (appui long)</dd>
-        <dt>Commande</dt><dd>Tactile, sur le dessus</dd>
+        <dt>Commande</dt><dd>Tactile sur le dessus, et télécommande</dd>
         <dt>Horloge</dt><dd>Écran numérique en façade, fonction réveil</dd>
         <dt>Batterie</dt><dd>Intégrée, rechargeable · autonomie <em class="tbd">à confirmer</em></dd>
         <dt>Recharge</dt><dd><em class="tbd">port et durée à confirmer</em></dd>
-        <dt>Poignée</dt><dd>Escamotable</dd>
+        <dt>Poignée</dt><dd>Poignée de transport sur le dessus</dd>
         <dt>Matériaux</dt><dd>Plastique, abat-jour diffusant</dd>
         <dt>Durée de vie des LED</dt><dd>30 000 heures</dd>
         <dt>Conformité</dt><dd>CE <em class="tbd">à confirmer</em> · classe énergie <em class="tbd">à compléter</em></dd>
@@ -642,7 +665,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
         <details data-cat="lampe"><summary>L'adaptateur secteur est-il fourni&#8239;?</summary><div class="rep"><p>La lampe est livrée avec son câble de recharge, sans adaptateur. Vous pouvez utiliser un chargeur de téléphone USB, ou ajouter notre adaptateur dans votre panier.</p></div></details>
         <details data-cat="bebe"><summary>Peut-on l'utiliser dans une chambre de bébé&#8239;?</summary><div class="rep"><p>Oui, c'est l'usage pour lequel nous l'avons choisie. Elle fonctionne sur batterie, sans fil qui traîne pendant l'utilisation, et ses LED ne chauffent pas. Comme tout appareil électrique, placez-la hors de portée des jeunes enfants.</p></div></details>
         <details data-cat="lampe"><summary>Comment fonctionne l'horloge&#8239;?</summary><div class="rep"><p>L'heure s'affiche sur un petit écran en façade et se règle avec les deux boutons latéraux. Une fonction réveil est également intégrée.</p></div></details>
-        <details data-cat="livraison"><summary>Quels sont les délais de livraison&#8239;?</summary><div class="rep"><p>Votre commande est expédiée sous <span class="tbd">X jours</span> et livrée en <span class="tbd">X à Y jours ouvrés</span>, avec un numéro de suivi envoyé par email. La livraison est offerte dès 40 € d'achat.</p></div></details>
+        <details data-cat="livraison"><summary>Quels sont les délais de livraison&#8239;?</summary><div class="rep"><p>Votre lampe est livrée en 6 à 9 jours ouvrés, avec un numéro de suivi envoyé par email. La livraison est offerte, sans frais de douane à payer à la réception.</p></div></details>
         <details data-cat="livraison"><summary>Comment retourner la lampe&#8239;?</summary><div class="rep"><p>Vous êtes satisfait ou remboursé pendant 30 jours après réception. Écrivez-nous, nous vous envoyons la marche à suivre. Le remboursement intervient sous 14 jours après réception du retour. <span class="tbd">Frais de retour&#8239;: à décider</span></p></div></details>
                 <details data-cat="bebe"><summary>Les LED chauffent-elles&#8239;?</summary><div class="rep"><p>Non, ce sont des LED basse consommation&#8239;: l'abat-jour reste tiède au toucher, même après plusieurs heures. <span class="tbd">à vérifier sur l'échantillon</span></p></div></details>
         <details data-cat="bebe"><summary>À quelle distance la poser du berceau&#8239;?</summary><div class="rep"><p>Posez-la sur une commode ou une table de nuit, hors de portée de bébé. À faible intensité, elle éclaire assez pour vous, sans être dirigée vers le berceau.</p></div></details>
@@ -656,7 +679,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
 
   <div class="garanties">
     <div class="wrap g">
-      <div><h3>Livraison suivie</h3><p>Offerte dès 40 €, numéro de suivi par email.</p></div>
+      <div><h3>Livraison offerte</h3><p>En 6 à 9 jours ouvrés, avec un numéro de suivi par email.</p></div>
       <div><h3>Satisfait ou remboursé</h3><p>30 jours pour l'essayer chez vous. Si elle ne vous convient pas, nous vous remboursons.</p></div>
       <div><h3>Garantie 2 ans</h3><p>Remplacement ou remboursement en cas de défaut.</p></div>
       <div><h3>Une réponse sous 24 h</h3><p>Écrivez-nous&#8239;: une personne vous répond, les jours ouvrés.</p></div>
@@ -667,7 +690,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
     <div class="wrap">
       <div>
         <h2 id="final-titre">Allumez la lampe, pas toute la chambre.</h2>
-        <p>34,90 € la lampe, 59,90 € les deux. Livraison offerte dès 40 €.</p>
+        <p>39,90 € la lampe, 59,90 € les deux. Livraison offerte, satisfait ou remboursé 30 jours.</p>
         <div style="margin-top:28px"><a class="btn btn-ambre" href="#lampe">Choisir ma lampe</a></div>
       </div>
       <div class="img"><img src="img/pack-handle.webp" alt="La lampe Nuitelle portée par sa poignée" loading="lazy"></div>
@@ -759,14 +782,14 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
 </footer>
 
 <div class="sticky-buy" id="sticky-buy" aria-hidden="true">
-  <div class="n">La lampe Nuitelle<strong>34,90 €</strong></div>
+  <div class="n">La lampe Nuitelle<strong>39,90 €</strong></div>
   <button class="btn btn-ambre" type="button" id="sticky-add" tabindex="-1">Ajouter au panier</button>
 </div>
 
 <div class="voile" id="voile"></div>
 <aside class="panier" id="panier" aria-label="Panier" aria-hidden="true">
   <div class="tete"><h3>Votre panier</h3><button class="fermer" id="close-cart" type="button" aria-label="Fermer le panier"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-  <div class="jauge"><span id="jauge-txt">Plus que 40,00 € pour la livraison offerte</span><div class="barre"><i id="jauge-barre"></i></div></div>
+  <div class="jauge" id="jauge"><span><strong>Livraison offerte</strong> · <span id="panier-date">livrée en 6 à 9 jours ouvrés</span></span></div>
   <div class="corps" id="corps"></div>
   <div class="pied">
     <div class="total"><span>Total</span><span id="total">0,00 €</span></div>
@@ -781,7 +804,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
 (function(){
   var ICO='<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1A17" stroke-width="1.6" stroke-linecap="round"><rect x="6" y="8" width="12" height="10" rx="2"/><path d="M10 8V4M14 8V4M12 18v3"/></svg>';
   var MOINS='<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>', PLUS='<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6 2v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
-  var SEUIL=40, P1=34.90, P2=59.90, ADAPT=7.90;
+  var P1=39.90, P2=59.90, ADAPT=7.90;
   var state={lampes:0, lots:0, adapt:0, gift:false, msg:''};
   var $=function(s){return document.querySelector(s)};
   var eur=function(n){return n.toFixed(2).replace('.',',')+' €'};
@@ -852,11 +875,9 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
     $('#corps').innerHTML=h;
     var gc=$('#gift'); if(gc) gc.addEventListener('change',function(){state.gift=gc.checked;rendu();if(state.gift)$('#gift-msg').focus()});
     var gm=$('#gift-msg'); if(gm) gm.addEventListener('input',function(){state.msg=gm.value;$('#gift-cpt').textContent=gm.value.length+' / 200'});
-    var t=total(), reste=Math.max(0,SEUIL-t);
+    var t=total();
     $('#total').textContent=eur(t);
-    $('#jauge-barre').style.width=Math.min(100,t/SEUIL*100)+'%';
-    $('#jauge-txt').textContent= t>=SEUIL ? 'La livraison vous est offerte.' : 'Plus que '+eur(reste)+' pour la livraison offerte';
-    $('#livraison-txt').textContent= t>=SEUIL ? 'Livraison offerte.' : 'Livraison : <frais à compléter>, offerte dès 40 €.';
+    $('#livraison-txt').textContent='Livraison offerte, sans frais de douane à la réception.';
     var ad=$('#add-adapt'); if(ad) ad.addEventListener('click',function(){state.adapt=1;rendu();toast('Adaptateur ajouté')});
     document.querySelectorAll('.qte button').forEach(function(b){b.addEventListener('click',function(){state[b.dataset.k]=Math.max(0,state[b.dataset.k]+Number(b.dataset.d));rendu()})});
   }
@@ -871,6 +892,15 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
   $('#close-cart').addEventListener('click',fermer);
   voile.addEventListener('click',fermer);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&panier.classList.contains('show'))fermer()});
+  /* Date de livraison estimée : 6 à 9 jours ouvrés */
+  function ouvres(n){var d=new Date();while(n>0){d.setDate(d.getDate()+1);var j=d.getDay();if(j!==0&&j!==6)n--;}return d}
+  try{
+    var f=new Intl.DateTimeFormat('fr-FR',{weekday:'short',day:'numeric',month:'long'});
+    var txt='recevez-la entre le '+f.format(ouvres(6))+' et le '+f.format(ouvres(9));
+    $('#date-livraison').textContent='commandez aujourd\'hui, '+txt;
+    $('#panier-date').textContent=txt;
+  }catch(e){}
+  $('#express').addEventListener('click',function(){toast('Maquette : Apple Pay, Shop Pay ou Google Pay s\'ouvriront ici.')});
   $('#checkout').addEventListener('click',function(){toast(total()?'Maquette : le paiement Shopify s\'ouvrira ici.':'Votre panier est vide.')});
   rendu();
 })();
@@ -892,7 +922,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
     batterie:"La lampe se recharge avec le câble fourni. Autonomie\u202f: X h à pleine puissance, Y h en veilleuse (à compléter).",
     duree:"Les LED sont données pour 30 000 heures, soit plus de 10 ans à raison de 8 heures par nuit.",
     garantie:"La lampe bénéficie de la garantie légale de 2 ans. En cas de défaut, nous la remplaçons ou la remboursons.",
-    livraison:"Livraison en X à Y jours ouvrés, avec suivi, offerte dès 40 € (délais à compléter).",
+    livraison:"Livraison offerte en 6 à 9 jours ouvrés, avec suivi, sans frais de douane à la réception.",
     retours:"Satisfait ou remboursé : vous avez 30 jours après réception pour nous retourner la lampe.",
     commande:"Indiquez votre numéro de commande : il figure dans l'email de confirmation.",
     autre:""

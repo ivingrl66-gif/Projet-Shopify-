@@ -68,6 +68,15 @@ Frais de port : 23 USD pour 1 colis, 3,04 USD par lampe pour 30, 2,59 USD pour 5
 ### Sourcing CJ réussi (12/11)
 Lampe identique (poignée, télécommande, rechargeable) à **2,47 $ + 8,80 $ de port, livrée en 4 à 7 jours**. CJ devient le fournisseur principal pressenti. Échantillons en cours aussi chez Toonies et Temu (comparaison). Prix conseillé : 39,90 € livraison offerte, 59,90 € les 2.
 
+### Optimisation de la maquette (12/11, skills cro, storefront-best-practices, schema, web-perf, copywriting, impeccable)
+- Prix appliqués : 39,90 € la lampe, 59,90 € les 2 (−19,90 €), livraison offerte (jauge supprimée).
+- Délai CJ affiché : 6 à 9 jours ouvrés, avec date estimée calculée sous le bouton d'achat ; « En stock ».
+- Bouton « Acheter maintenant » (paiement express Apple Pay / Shop Pay / Google Pay, natif Shopify).
+- Produit retenu (CJ) : poignée fixe sur le dessus, télécommande incluse ; dimensions à confirmer sur l'échantillon.
+- Données structurées Produit (prix, stock, livraison offerte, retours 30 jours) pour Google Shopping.
+- Performance : image d'accueil préchargée, images hors écran en chargement différé. Mesure mobile ralentie : affichage principal 2,1 s → 1,4 s, stabilité 0,002.
+- Accessibilité : compteur du panier annoncé aux lecteurs d'écran, boutons de quantité de 44 px.
+
 ## Prochaines étapes
 
 1. Transformer la maquette en **thème Shopify** (Online Store 2.0), boutique protégée par mot de passe pendant l'attente du SIRET.
