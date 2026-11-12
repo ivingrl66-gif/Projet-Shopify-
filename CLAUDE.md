@@ -30,6 +30,8 @@ Pour **toute demande** concernant le site, la boutique, la marque, le marketing 
 5. **Si aucun skill ne convient**, le dire clairement au propriétaire (« aucun skill adapté trouvé »), puis travailler avec ses propres connaissances.
 6. **Dans chaque réponse**, indiquer en une ligne quels skills ont été utilisés ou trouvés.
 
+**Superpowers** (obra/superpowers, installé le 12/11) : utiliser surtout `brainstorming` (avant une nouvelle fonctionnalité), `writing-plans`, `verification-before-completion` et `systematic-debugging`. Adaptations pour ce projet : on reste sur la branche `main` (pas de worktrees ni de branches, le propriétaire suit sur GitHub) ; les sous-agents seulement pour un gros chantier ; le TDD là où c'est pertinent (scripts, logique du panier), pas pour du texte ou du design ; poser les questions de cadrage en français, simplement, sans noyer le propriétaire.
+
 Attention aux skills juridiques : la plupart visent le droit américain. Pour les pages légales françaises, ils servent de base de structure, pas de référence juridique.
 
 ## Règles du projet
