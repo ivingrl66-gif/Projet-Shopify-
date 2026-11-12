@@ -98,3 +98,9 @@ Prochaine étape : le propriétaire ouvre ces liens connecté à son compte, ou 
 - Coût réel livré, Fast Line : 2,80 + 15,08 = 17,88 $ ≈ **16,45 €**. Marge avant pub ≈ **22,60 € à 39,90 €**, ≈ 17,70 € à 34,90 €.
 - Les 8,80 $ annoncés au sourcing ne comprenaient pas les 5,80 $ de taxes. Demander à l'agent le détail de ces 5,80 $ (TVA IOSS ?), le port pour 2 lampes, et un meilleur prix (« Request quote »).
 - Ne pas reprendre les textes des visuels CJ (« Relieve eye fatigue », « eye protection ») : allégations santé.
+
+### Réponse de l'agent CJ (Alex), 12/11
+- ✅ **Colis neutre** : emballage neutre, sans prix ni facture.
+- ✅ **TVA (IOSS)** : CJ peut la payer pour nous via son propre numéro IOSS, avec environ 3 % de frais de service. Le client ne paie rien à la réception. Utiliser l'IOSS de CJ (un numéro IOSS propre n'a pas d'intérêt pour une micro-entreprise au démarrage).
+- ⏳ Version, batterie, entrepôt, port, certificats, adaptateur : l'agent demande le SKU et le pays. Réponse envoyée avec SKU CJJT264865411KP, variante k3032, France.
+- À éclaircir : les 5,80 $ de « Customs Duty » de la Fast Line semblent supérieurs à 20 % de TVA + 3 % (≈ 2,50 $ attendus).
