@@ -15,6 +15,23 @@ Le propriétaire est francophone, débutant en e-commerce, et attend un avis d'e
 
 `docs/produit.md` décrit l'ancien modèle abandonné (GGBEE), mais ses sections 6 à 8 (commerce, marque, légal) restent valables.
 
+## Règle n° 1 : les skills d'abord (exigée par le propriétaire)
+
+Pour **toute demande** concernant le site, la boutique, la marque, le marketing ou le business, **avant de proposer quoi que ce soit** :
+
+1. **Skills installés** : vérifier ceux du projet (`.claude/skills/`) et ceux de la session. Les utiliser s'ils couvrent la demande.
+2. **Annuaire public** : chercher des skills complémentaires avec `tools/find_skills.sh <mots-clés en anglais>` (annuaire skills.sh, trié par installations ; voir aussi le skill `find-skills`). Faire 2 ou 3 recherches avec des mots-clés différents.
+3. **Choisir avec soin** :
+   - préférer les sources officielles (`shopify/…`, `anthropics/…`, `vercel-labs/…`) et plus de 1 000 installations ;
+   - se méfier en dessous de 100 installations ;
+   - **lire entièrement le SKILL.md** (et tout script fourni) avant d'installer ;
+   - installer dans `.claude/skills/<nom>/` du dépôt, puis commit et push.
+4. **Utiliser le ou les skills**, puis ajouter sa propre expertise par-dessus.
+5. **Si aucun skill ne convient**, le dire clairement au propriétaire (« aucun skill adapté trouvé »), puis travailler avec ses propres connaissances.
+6. **Dans chaque réponse**, indiquer en une ligne quels skills ont été utilisés ou trouvés.
+
+Attention aux skills juridiques : la plupart visent le droit américain. Pour les pages légales françaises, ils servent de base de structure, pas de référence juridique.
+
 ## Règles du projet
 
 - **Honnêteté commerciale** : jamais de faux avis, faux prix barrés, faux comptes à rebours ni fausses alertes de stock (illégal en France, et motif de suspension Google Merchant Center).
