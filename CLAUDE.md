@@ -76,6 +76,7 @@ Attention aux skills juridiques : la plupart visent le droit américain. Pour le
 - Outil : `python3 -I tools/gemini_image.py <modèle> <images_ref_séparées_par_virgule> <sortie.png> <format ex 4:5> "<prompt>"`.
 - Modèle utilisé : `gemini-3-pro-image`. Toujours fournir les photos réelles du produit en référence (`docs/produit/tl0191/visuels/`) pour que la lampe reste fidèle.
 - Style imposé : nuit, lumière chaude 3000 K, ombres brun chaud, aucun texte incrusté.
+- **Rendu naturel, pas « IA »** (retour du propriétaire) : style photo prise sur le vif au smartphone en mode nuit, vraie maison un peu en désordre (lange, babyphone, verre d'eau, linge), peau réelle et cernes, cadrage imparfait, grain. Jamais de rendu « éditorial », « premium » ou « cinéma ». Montrer le problème (la nuit, la fatigue, le plafonnier qui éblouit).
 - L'IA écrit mal les chiffres de l'horloge : vérifier par zoom, et si besoin tracer l'heure à la main (méthode utilisée pour `hero-desktop`).
 - Originaux archivés dans `docs/produit/tl0191/generees/`.
 
