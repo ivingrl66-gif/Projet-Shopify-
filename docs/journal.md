@@ -109,3 +109,4 @@ Piste « Maison » (13/11, .fr libres sur AFNIC) : maisonberceuse.fr, maisondorl
 
 ### Domiciliation (13/11)
 Dossier envoyé à une société de domiciliation (adresse du siège). Prochaine étape : signer le contrat, puis déclarer la micro-entreprise sur formalites.entreprises.gouv.fr (ACRE) et attendre le SIRET. L'adresse de domiciliation servira dans les mentions légales (aucune adresse personnelle sur le site).
+- La société de domiciliation prépare aussi le dossier d'immatriculation (micro-entreprise, RCS) : extrait K et SIRET attendus sous 5 à 9 jours (annoncé le 13/11). À vérifier sur le récapitulatif : activité commerciale de vente en ligne, nom commercial « Maison Dorlote », adresse de domiciliation, ACRE.
