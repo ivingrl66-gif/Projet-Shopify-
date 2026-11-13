@@ -6,26 +6,22 @@
 2. **Simplicité** : un seul produit, un seul parcours, aucun popup intrusif, aucune étape inutile.
 3. **Honnêteté** : pas de faux avis, faux prix barrés, faux comptes à rebours ni fausses alertes de stock. C'est aussi une condition pour que Google Merchant Center ne suspende pas le compte.
 
-## Page d'accueil (= page produit)
+## Page d'accueil (= page produit) : « produit d'abord » (13/11)
 
-1. **Barre d'annonce** : livraison offerte dès X € · retours 30 jours.
-2. **En-tête** : logo, lien FAQ, panier.
-3. **Hero plein écran horizontal** : photo de nuit (parent, bébé, lampe allumée), slogan qui pose le problème et la solution, bouton « Découvrir la lampe » qui descend vers l'achat, et rappel du prix. Hauteur d'environ 85 % de l'écran : le haut du bloc d'achat doit dépasser pour inviter à défiler.
-4. **Bloc d'achat**, au-dessus de tout le reste :
-   - galerie photos (glisser sur mobile, miniatures sur ordinateur) ;
-   - nom, prix, variantes (horloge, télécommande) ;
-   - choix 1 lampe ou lot de 2 ;
-   - bouton « Ajouter au panier » ;
-   - réassurance : délai de livraison réel, retours, paiement sécurisé, garantie 2 ans ;
-   - 4 à 5 points clés.
-5. **Avant-après interactif** : plafonnier qui éblouit / Nuitelle à faible intensité.
-6. **Sélecteur des 3 teintes** (3000, 4500 et 6000 K) qui change l'ambiance de la photo.
-7. **Usages** : biberon de nuit, change, chambre d'enfant, lecture.
-8. **Caractéristiques** : autonomie, recharge USB-C, dimensions, contenu de la boîte, adaptateur non inclus.
-9. **FAQ** (voir plus bas).
-10. **Garanties** : livraison, retours, garantie légale, contact.
-11. **Bouton d'achat fixe sur mobile**, qui apparaît dès que le bloc d'achat sort de l'écran.
-12. **Pied de page** : contact, pages légales, moyens de paiement.
+Le client venu de Google doit voir la photo, le prix et le bouton d'achat **sans défiler**, sur mobile comme sur ordinateur.
+
+1. **Barre d'annonce** : livraison offerte · satisfait ou remboursé 30 jours (· garantie 2 ans sur ordinateur).
+2. **En-tête** : logo, FAQ, panier.
+3. **Bloc d'achat en premier** (ordinateur : galerie à gauche, fiche à droite collante ; mobile : galerie qui glisse puis fiche) :
+   - galerie : 1. lampe seule allumée, 2. maman de nuit, 3. tactile, 4. poignée, 5. lumière neutre, 6. chambre d'enfant (compteur « 1 / 6 » sur mobile) ;
+   - nom, promesse « La lumière qui ne réveille personne. », prix, offres 1 ou 2 lampes (côte à côte sur mobile) ;
+   - « Ajouter au panier », « Acheter maintenant » (paiement express), « En stock » et date de livraison estimée ;
+   - idée cadeau, réassurance, logos de paiement ;
+   - **volets** : Description (ouvert), Caractéristiques, Livraison et retours, Questions fréquentes.
+   - Mesure : bouton d'achat visible dès l'arrivée (mobile 390 × 844 : haut du bouton à environ 740 px ; ordinateur 1440 × 900 : environ 680 px).
+4. **Récit** : la grande image sombre de la maman, avec le titre et le problème de 3 h du matin.
+5. Avant/après, teintes, gestes, usages, sécurité, comparatif, avis, FAQ complète, garanties, dernier appel, contact.
+6. **Barre d'achat fixe sur mobile** dès que le bouton d'achat est dépassé.
 
 ## Formulaire de contact (bas de page, ancre #contact)
 
