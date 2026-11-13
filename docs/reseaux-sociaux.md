@@ -29,3 +29,26 @@ Livraison offerte · Satisfait ou remboursé 30 jours
 
 ## Règles
 Pas d'allégation santé (« sommeil », « yeux »), pas de fausse urgence, promesses tenues seulement (livraison offerte, 30 jours). Vouvoiement, pas d'emojis en rafale.
+
+## Bio Instagram avec emojis (13/11, demandée par le propriétaire)
+Recommandée (≈ 144 car.) :
+```
+🏡 La lumière qui ne réveille personne
+🍼 Pour les nuits avec bébé
+🎁 Un cadeau de naissance utile
+🚚 Livraison offerte · Satisfait ou remboursé
+```
+Variante « biberon » (≈ 129 car.) :
+```
+✨ La lumière qui ne réveille personne
+🍼 Pour le biberon de 3 h, sans plafonnier
+🎁 Idée cadeau de naissance
+🤍 Livraison offerte
+```
+Variante courte (≈ 115 car.) :
+```
+Bienvenue à la maison 🏡✨
+Une lueur douce pour les nuits avec bébé 🍼
+Cadeau de naissance 🎁 · Livraison offerte 🚚
+```
+Emojis réservés à la marque : 🏡 (le logo), ✨ (la lueur), 🍼, 🎁, 🤍. Éviter 🌙⭐ (vus partout) et 🕯️ (flamme près de bébé).
