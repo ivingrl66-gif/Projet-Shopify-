@@ -52,3 +52,21 @@ Une lueur douce pour les nuits avec bébé 🍼
 Cadeau de naissance 🎁 · Livraison offerte 🚚
 ```
 Emojis réservés à la marque : 🏡 (le logo), ✨ (la lueur), 🍼, 🎁, 🤍. Éviter 🌙⭐ (vus partout) et 🕯️ (flamme près de bébé).
+
+## Première publication Instagram (13/11)
+Image : `docs/reseaux/instagram-premiere-publication.jpg` (1080 × 1350, IA retravaillée façon photo de téléphone : léger grain, cadrage de travers, aucun texte ni logo). Première version « affiche + photo produit » refusée par le propriétaire : trop « IA / pub ».
+Légende :
+```
+3 h 12. Le biberon est prêt, bébé a les yeux mi-clos, et vous savez qu'allumer le plafonnier suffirait à tout gâcher.
+
+C'est pour ce moment-là qu'on a créé Maison Dorlote. Notre lampe donne juste assez de lumière pour le biberon, le change ou un câlin, sans réveiller bébé ni la personne qui dort à côté.
+
+Un appui sur le dessus pour l'allumer, un appui long pour baisser la lumière, un double appui pour changer de teinte. Elle est sans fil et rechargeable, avec une horloge pour savoir où en est la nuit et une télécommande pour ne pas quitter le fauteuil.
+
+La boutique ouvre très bientôt. Abonnez-vous pour être prévenus le jour du lancement 🤍
+
+Et chez vous, à quelle heure sonne le biberon ?
+
+#veilleusebebe #biberondenuit #jeunesparents #chambrebebe #cadeaunaissance
+```
+Texte alternatif : « Un parent donne le biberon à son bébé la nuit, dans un fauteuil, à côté d'une lampe Dorlote allumée en lumière douce sur la table de chevet. »
