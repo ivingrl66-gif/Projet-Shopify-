@@ -92,3 +92,6 @@ Lampe identique (poignée, télécommande, rechargeable) à **2,47 $ + 8,80 $ de
 - Avis : offrir des lampes à 5 à 10 parents de l'entourage contre un avis honnête, en signalant que le produit a été offert.
 - Tester un prix de 39,90 € une fois les premières ventes faites.
 - Emails de panier abandonné de Shopify (gratuits) : à activer au lancement.
+
+### Nom de marque remis en question (13/11)
+« Nuitelle » trop proche de « Nutella ». Pistes avec un .fr libre (vérifié sur le registre AFNIC le 13/11) : petitchut.fr, lueurette.fr, petiteveille.fr, nuitambree.fr, troisheures.fr, sourdinette.fr, lueurdenuit.fr, brindelueur.fr. Aucune marque trouvée sous ces noms par recherche web (à confirmer à l'INPI). Décision en attente.
