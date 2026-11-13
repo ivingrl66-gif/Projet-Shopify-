@@ -96,3 +96,4 @@ Lampe identique (poignée, télécommande, rechargeable) à **2,47 $ + 8,80 $ de
 ### Nom de marque remis en question (13/11)
 « Nuitelle » trop proche de « Nutella ». Pistes avec un .fr libre (vérifié sur le registre AFNIC le 13/11) : petitchut.fr, lueurette.fr, petiteveille.fr, nuitambree.fr, troisheures.fr, sourdinette.fr, lueurdenuit.fr, brindelueur.fr. Aucune marque trouvée sous ces noms par recherche web (à confirmer à l'INPI). Décision en attente.
 « Petit Chut » écarté (13/11) : à l'oreille, on entend « petite chute ». Nouvelles pistes avec .fr libre (AFNIC, 13/11) : chuchoti.fr, chutchut.fr, toutbas.fr, murmurette.fr, toutdoucement.fr. Aucune marque trouvée par recherche web (INPI à confirmer).
+Pistes « plus sérieuses » (13/11, .fr libres sur AFNIC) : demivoix.fr, maisonchuchoti.fr, nuitfeutree.fr, maisonsourdine.fr, demiteinte.fr (sens négatif « résultat en demi-teinte »). Recommandation : Demi-Voix.
