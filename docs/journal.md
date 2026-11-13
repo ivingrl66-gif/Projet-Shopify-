@@ -106,3 +106,6 @@ Piste « Maison » (13/11, .fr libres sur AFNIC) : maisonberceuse.fr, maisondorl
 - **Logo validé : « la maison veilleuse »** (piste A, fenêtre allumée). Kit complet : logos clair/foncé, empilé, icône, une couleur, avatars Instagram/TikTok 1080 px, favicons (`docs/logo/`).
 - **Maquette renommée** : nom, logo, favicon, email, domaine dans les données Google.
 - Reste à faire : vérifier « Maison Dorlote » sur data.inpi.fr (et dépôt de marque après le SIRET), réserver @maisondorlote sur Instagram et TikTok, rediriger maisondorlotte.fr.
+
+### Domiciliation (13/11)
+Dossier envoyé à une société de domiciliation (adresse du siège). Prochaine étape : signer le contrat, puis déclarer la micro-entreprise sur formalites.entreprises.gouv.fr (ACRE) et attendre le SIRET. L'adresse de domiciliation servira dans les mentions légales (aucune adresse personnelle sur le site).
