@@ -1,0 +1,31 @@
+<section class="usages" aria-labelledby="titre-{{ section.id }}">
+  <div class="wrap">
+    <h2 id="titre-{{ section.id }}">{{ section.settings.titre | escape }}</h2>
+    <div class="usages-grid">
+      {%- for block in section.blocks -%}
+        <article class="usage" {{ block.shopify_attributes }}>
+          <div class="img">{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', sizes: '(max-width: 860px) 100vw, 380px', widths: '400, 600, 800' }}{%- endif -%}</div>
+          {%- if block.settings.heure != blank -%}<span class="heure">{{ block.settings.heure | escape }}</span>{%- endif -%}
+          <h3>{{ block.settings.titre | escape }}</h3><p>{{ block.settings.texte | escape }}</p>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Usages",
+  "settings": [ { "type": "text", "id": "titre", "label": "Titre", "default": "Pensée pour les nuits des jeunes parents." } ],
+  "blocks": [
+    { "type": "usage", "name": "Usage", "settings": [
+      { "type": "image_picker", "id": "image", "label": "Image" },
+      { "type": "text", "id": "heure", "label": "Heure", "default": "03:12" },
+      { "type": "text", "id": "titre", "label": "Titre", "default": "Le biberon de nuit" },
+      { "type": "textarea", "id": "texte", "label": "Texte", "default": "Assez de lumière pour le biberon." }
+    ] }
+  ],
+  "max_blocks": 4,
+  "presets": [{ "name": "Usages" }]
+}
+{% endschema %}

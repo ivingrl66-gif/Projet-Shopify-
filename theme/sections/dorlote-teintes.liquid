@@ -1,0 +1,41 @@
+<section class="teintes" aria-labelledby="titre-{{ section.id }}">
+  <div class="wrap teintes-grid">
+    <div class="teinte-img" id="teinte-img">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.image != blank -%}
+          <img {% if forloop.first %}class="on" {% endif %}data-t="{{ block.id }}" src="{{ block.settings.image | image_url: width: 1000 }}" srcset="{{ block.settings.image | image_url: width: 500 }} 500w, {{ block.settings.image | image_url: width: 1000 }} 1000w" sizes="(max-width: 860px) 100vw, 560px" alt="{{ block.settings.image.alt | escape }}" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}" loading="lazy">
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    <div class="teinte-txt">
+      <h2 id="titre-{{ section.id }}">{{ section.settings.titre | escape }}</h2>
+      {%- if section.settings.texte != blank -%}<p style="color:#ddd2c4">{{ section.settings.texte | escape }}</p>{%- endif -%}
+      <div class="choix" role="group" aria-label="Choisir une teinte">
+        {%- for block in section.blocks -%}
+          <button type="button" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" data-t="{{ block.id }}" {{ block.shopify_attributes }}><span class="pastille" style="background:radial-gradient(circle,{{ block.settings.couleur_centre }},{{ block.settings.couleur }} 70%)"></span><span><span class="t">{{ block.settings.nom | escape }}</span><span class="s">{{ block.settings.usage | escape }}</span></span></button>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Teintes",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Une lumière pour chaque moment de la nuit." },
+    { "type": "textarea", "id": "texte", "label": "Texte", "default": "Sur la lampe, un double appui change la teinte. Ici, choisissez-en une pour voir la différence." }
+  ],
+  "blocks": [
+    { "type": "teinte", "name": "Teinte", "settings": [
+      { "type": "text", "id": "nom", "label": "Nom", "default": "Chaude" },
+      { "type": "text", "id": "usage", "label": "Usage", "default": "Pour la nuit" },
+      { "type": "image_picker", "id": "image", "label": "Image" },
+      { "type": "color", "id": "couleur", "label": "Couleur de la pastille", "default": "#e8a55b" },
+      { "type": "color", "id": "couleur_centre", "label": "Centre de la pastille", "default": "#ffd9a0" }
+    ] }
+  ],
+  "max_blocks": 3,
+  "presets": [{ "name": "Teintes" }]
+}
+{% endschema %}

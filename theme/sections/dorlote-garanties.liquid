@@ -1,0 +1,21 @@
+<div class="garanties">
+  <div class="wrap g">
+    {%- for block in section.blocks -%}
+      <div {{ block.shopify_attributes }}><h3>{{ block.settings.titre | escape }}</h3><p>{{ block.settings.texte | escape }}</p></div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Garanties",
+  "blocks": [
+    { "type": "garantie", "name": "Garantie", "settings": [
+      { "type": "text", "id": "titre", "label": "Titre", "default": "Livraison offerte" },
+      { "type": "textarea", "id": "texte", "label": "Texte", "default": "En 6 à 9 jours ouvrés, avec un numéro de suivi par email." }
+    ] }
+  ],
+  "max_blocks": 4,
+  "presets": [{ "name": "Garanties" }]
+}
+{% endschema %}

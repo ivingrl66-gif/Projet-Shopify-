@@ -1,0 +1,48 @@
+<section class="compare" id="avant-apres" aria-labelledby="titre-{{ section.id }}">
+  <div class="wrap">
+    <h2 id="titre-{{ section.id }}">{{ section.settings.titre | escape }}</h2>
+    {%- if section.settings.texte != blank -%}<p class="lead">{{ section.settings.texte | escape }}</p>{%- endif -%}
+    <div class="ba" id="ba" style="--pos:50%">
+      {%- if section.settings.avant != blank -%}{{ section.settings.avant | image_url: width: 1400 | image_tag: loading: 'lazy', sizes: '(max-width: 1180px) 100vw, 1180px', widths: '700, 1000, 1400' }}{%- endif -%}
+      {%- if section.settings.apres != blank -%}{{ section.settings.apres | image_url: width: 1400 | image_tag: class: 'apres', loading: 'lazy', sizes: '(max-width: 1180px) 100vw, 1180px', widths: '700, 1000, 1400' }}{%- endif -%}
+      <span class="ligne" aria-hidden="true"></span>
+      <span class="poignee" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F4D6A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+      <span class="tag l">{{ section.settings.etiquette_avant | escape }}</span>
+      <span class="tag r">{{ section.settings.etiquette_apres | escape }}</span>
+      <input type="range" id="ba-range" min="0" max="100" value="50" aria-label="Comparer {{ section.settings.etiquette_avant | escape }} et {{ section.settings.etiquette_apres | escape }}">
+    </div>
+    {%- if section.settings.legende != blank -%}<p class="legende">{{ section.settings.legende | escape }}</p>{%- endif -%}
+    {%- if section.blocks.size > 0 -%}
+      <div class="compare-pts">
+        {%- for block in section.blocks -%}<div {{ block.shopify_attributes }}><h3>{{ block.settings.titre | escape }}</h3><p>{{ block.settings.texte | escape }}</p></div>{%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Avant / après",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "default": "À 3 h du matin, le plafonnier réveille tout le monde." },
+    { "type": "textarea", "id": "texte", "label": "Texte", "default": "Faites glisser le curseur. À gauche, la lumière du plafond. À droite, la lampe Dorlote réglée bas, en lumière chaude." },
+    { "type": "image_picker", "id": "avant", "label": "Image avant" },
+    { "type": "image_picker", "id": "apres", "label": "Image après" },
+    { "type": "text", "id": "etiquette_avant", "label": "Étiquette avant", "default": "Plafonnier" },
+    { "type": "text", "id": "etiquette_apres", "label": "Étiquette après", "default": "Dorlote" },
+    { "type": "text", "id": "legende", "label": "Légende", "default": "Illustration de l'ambiance lumineuse." }
+  ],
+  "blocks": [
+    { "type": "point", "name": "Argument", "settings": [
+      { "type": "text", "id": "titre", "label": "Titre", "default": "Pas de point lumineux" },
+      { "type": "textarea", "id": "texte", "label": "Texte", "default": "L'abat-jour diffuse la lumière sur toute sa surface." }
+    ] }
+  ],
+  "max_blocks": 3,
+  "presets": [{ "name": "Avant / après", "blocks": [
+    { "type": "point", "settings": { "titre": "Pas de point lumineux", "texte": "L'abat-jour diffuse la lumière sur toute sa surface. Le regard ne tombe jamais sur une LED nue." } },
+    { "type": "point", "settings": { "titre": "Une teinte chaude", "texte": "La lumière ambrée reste douce pour des yeux à peine ouverts, et garde la chambre dans l'ambiance de la nuit." } },
+    { "type": "point", "settings": { "titre": "Juste assez", "texte": "Un appui long baisse l'intensité jusqu'à une simple lueur : de quoi voir le biberon, pas plus." } }
+  ] }]
+}
+{% endschema %}

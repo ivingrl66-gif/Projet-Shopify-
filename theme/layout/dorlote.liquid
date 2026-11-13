@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <link rel="canonical" href="{{ canonical_url }}">
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64, height: 64 }}">
+      <link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180, height: 180 }}">
+    {%- endif -%}
+    <title>
+      {{- page_title -}}
+      {%- unless page_title contains shop.name %} · {{ shop.name }}{% endunless -%}
+    </title>
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+    {%- render 'meta-tags', product: product -%}
+    <meta name="theme-color" content="#1E1A17">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,100&family=Figtree:wght@400;500;600&display=swap">
+    {%- render 'dorlote-styles' -%}
+    {{ content_for_header }}
+  </head>
+  <body>
+    <a class="skip" href="#haut">Aller au contenu</a>
+    {%- section 'dorlote-annonce' -%}
+    {%- section 'dorlote-header' -%}
+    <main id="haut">
+      {{ content_for_layout }}
+    </main>
+    {%- section 'dorlote-footer' -%}
+    {%- render 'dorlote-panier' -%}
+    <script src="{{ 'dorlote.js' | asset_url }}" defer></script>
+  </body>
+</html>

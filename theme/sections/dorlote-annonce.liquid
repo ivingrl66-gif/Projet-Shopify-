@@ -1,0 +1,33 @@
+{%- if section.blocks.size > 0 -%}
+  <div class="annonce">
+    <div class="wrap">
+      {%- for block in section.blocks -%}
+        <span {{ block.shopify_attributes }}>{{ block.settings.texte | escape }}</span>
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Barre d'annonce",
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        { "type": "text", "id": "texte", "label": "Texte", "default": "Livraison offerte" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [{ "name": "Barre d'annonce" }],
+  "default": {
+    "blocks": [
+      { "type": "message", "settings": { "texte": "Livraison offerte" } },
+      { "type": "message", "settings": { "texte": "Satisfait ou remboursé 30 jours" } },
+      { "type": "message", "settings": { "texte": "Garantie 2 ans" } }
+    ]
+  }
+}
+{% endschema %}

@@ -1,0 +1,161 @@
+{%- liquid
+  assign p = product
+  if p == blank
+    assign p = section.settings.produit
+  endif
+  assign v1 = p.variants.first
+  assign current = p.selected_or_first_available_variant
+-%}
+
+<section class="achat" id="lampe" aria-labelledby="produit-titre-{{ section.id }}">
+  {%- if p == blank -%}
+    <div class="wrap"><p>Choisissez le produit à afficher dans les réglages de cette section.</p></div>
+  {%- else -%}
+  <div class="wrap achat-grid">
+    <div class="galerie">
+      {%- assign premiere = p.featured_media -%}
+      <div class="main">
+        {%- if premiere -%}
+          {{ premiere.preview_image | image_url: width: 1200 | image_tag: id: 'main-img', alt: premiere.alt, fetchpriority: 'high', sizes: '(max-width: 900px) 100vw, 600px', widths: '600, 900, 1200' }}
+        {%- endif -%}
+      </div>
+      <div class="thumbs" role="list" aria-label="Photos du produit">
+        {%- for media in p.media -%}
+          {%- if media.media_type == 'image' -%}
+            <button type="button" role="listitem" {% if forloop.first %}aria-current="true"{% endif %} data-src="{{ media.preview_image | image_url: width: 1200 }}" data-alt="{{ media.alt | escape }}">
+              {{ media.preview_image | image_url: width: 600 | image_tag: alt: media.alt, loading: 'lazy', sizes: '(max-width: 900px) 85vw, 100px', widths: '200, 400, 600' }}
+            </button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <p class="compteur-galerie" id="compteur-galerie" aria-hidden="true">1 / {{ p.media.size }}</p>
+    </div>
+
+    <div class="fiche">
+      <h1 id="produit-titre-{{ section.id }}">{{ p.title }}</h1>
+      {%- if section.settings.promesse != blank -%}<p class="promesse">{{ section.settings.promesse }}</p>{%- endif -%}
+      {%- if section.settings.accroche != blank -%}<p class="accroche">{{ section.settings.accroche }}</p>{%- endif -%}
+      <div class="prix"><span class="p" id="prix-affiche">{{ current.price | money }}</span><span class="note">{{ section.settings.note_prix }}</span></div>
+
+      {%- form 'product', p, id: 'form-produit', class: 'form-produit', novalidate: 'novalidate' -%}
+        {%- if p.has_only_default_variant -%}
+          <input type="hidden" name="id" value="{{ current.id }}">
+        {%- else -%}
+          <fieldset class="offres">
+            <legend>{{ section.settings.titre_offres }}</legend>
+            {%- for variant in p.variants -%}
+              {%- liquid
+                if forloop.first
+                  assign sous = section.settings.sous_titre_1
+                else
+                  assign sous = section.settings.sous_titre_2
+                endif
+              -%}
+              <label class="offre">
+                <input type="radio" name="id" value="{{ variant.id }}" data-prix="{{ variant.price | money }}" {% if variant.id == current.id %}checked{% endif %} {% unless variant.available %}disabled{% endunless %}>
+                <span>
+                  <span class="t">{{ variant.title }}
+                    {%- if forloop.index == 2 and section.settings.lot_quantite > 1 -%}
+                      {%- assign economie = v1.price | times: section.settings.lot_quantite | minus: variant.price -%}
+                      {%- if economie > 0 %} <span class="badge">−{{ economie | money }}</span>{% endif -%}
+                    {%- endif -%}
+                  </span><br>
+                  <span class="s">{{ sous }}
+                    {%- if forloop.index == 2 and section.settings.lot_quantite > 1 -%}
+                      {%- assign unitaire = variant.price | divided_by: section.settings.lot_quantite -%}
+                      {{ ' · soit ' }}{{ unitaire | money }} la lampe
+                    {%- endif -%}
+                  </span>
+                </span>
+                <span class="v">{{ variant.price | money }}</span>
+              </label>
+            {%- endfor -%}
+          </fieldset>
+        {%- endif -%}
+
+        <p class="dispo"><span class="pastille-stock" aria-hidden="true"></span><span><strong>{{ section.settings.texte_stock }}</strong> · <span id="date-livraison" data-min="{{ section.settings.delai_min }}" data-max="{{ section.settings.delai_max }}">livrée en {{ section.settings.delai_min }} à {{ section.settings.delai_max }} jours ouvrés</span></span></p>
+
+        <div class="actions">
+          <button class="btn btn-ambre add" id="add" type="submit" name="add">{{ section.settings.texte_bouton }}</button>
+          {{ form | payment_button }}
+        </div>
+      {%- endform -%}
+
+      {%- if section.settings.note_cadeau != blank -%}
+        <p class="cadeau-note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M3 13h18M12 9v12M12 9c-2-4-6-4-6-1.5S10 9 12 9zm0 0c2-4 6-4 6-1.5S14 9 12 9z"/></svg><span>{{ section.settings.note_cadeau }}</span></p>
+      {%- endif -%}
+
+      <div class="reassure">
+        {%- if section.settings.reassure_1 != blank -%}<div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg><span>{{ section.settings.reassure_1 | escape }}</span></div>{%- endif -%}
+        {%- if section.settings.reassure_2 != blank -%}<div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7M4 4v4h4"/></svg><span>{{ section.settings.reassure_2 | escape }}</span></div>{%- endif -%}
+        {%- if section.settings.reassure_3 != blank -%}<div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg><span>{{ section.settings.reassure_3 | escape }}</span></div>{%- endif -%}
+        {%- if section.settings.reassure_4 != blank -%}<div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>{{ section.settings.reassure_4 | escape }}</span></div>{%- endif -%}
+      </div>
+
+      {%- if shop.enabled_payment_types.size > 0 -%}
+        <div class="paiement"><span class="pi-row" role="img" aria-label="Moyens de paiement acceptés">
+          {%- for type in shop.enabled_payment_types -%}{{ type | payment_type_svg_tag: class: 'pi' }}{%- endfor -%}
+        </span></div>
+      {%- endif -%}
+
+      <div class="volets">
+        <details {% if section.settings.description_ouverte %}open{% endif %}><summary>{{ section.settings.titre_description }}</summary><div class="volet rte">{{ p.description }}</div></details>
+        {%- for block in section.blocks -%}
+          <details {{ block.shopify_attributes }}><summary>{{ block.settings.titre | escape }}</summary><div class="volet rte">{{ block.settings.contenu }}</div></details>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
+</section>
+
+{%- if p != blank -%}
+  <div class="sticky-buy" id="sticky-buy" aria-hidden="true">
+    <div class="n">{{ p.title }}<strong>{{ current.price | money }}</strong></div>
+    <button class="btn btn-ambre" type="button" id="sticky-add" tabindex="-1">{{ section.settings.texte_bouton }}</button>
+  </div>
+  <script type="application/ld+json">{{ p | structured_data }}</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Fiche produit Dorlote",
+  "tag": "div",
+  "settings": [
+    { "type": "product", "id": "produit", "label": "Produit (page d'accueil)" },
+    { "type": "text", "id": "promesse", "label": "Promesse", "default": "La lumière qui ne réveille personne." },
+    { "type": "textarea", "id": "accroche", "label": "Accroche", "default": "Une lueur chaude et diffuse pour le biberon de 3 h, sans allumer le plafonnier. Sans fil, avec télécommande et horloge." },
+    { "type": "text", "id": "note_prix", "label": "Texte à côté du prix", "default": "TTC · livraison offerte" },
+    { "type": "header", "content": "Offres" },
+    { "type": "text", "id": "titre_offres", "label": "Titre du choix", "default": "Choisissez votre offre" },
+    { "type": "text", "id": "sous_titre_1", "label": "Sous-titre de la 1re offre", "default": "Pour bébé, pour vous, ou à offrir" },
+    { "type": "text", "id": "sous_titre_2", "label": "Sous-titre de la 2e offre", "default": "Une pour bébé, une pour vous" },
+    { "type": "range", "id": "lot_quantite", "label": "Nombre de lampes dans la 2e offre", "min": 1, "max": 4, "step": 1, "default": 2 },
+    { "type": "header", "content": "Disponibilité et achat" },
+    { "type": "text", "id": "texte_stock", "label": "Texte de disponibilité", "default": "En stock" },
+    { "type": "range", "id": "delai_min", "label": "Délai de livraison minimum (jours ouvrés)", "min": 1, "max": 20, "step": 1, "default": 6 },
+    { "type": "range", "id": "delai_max", "label": "Délai de livraison maximum (jours ouvrés)", "min": 1, "max": 30, "step": 1, "default": 9 },
+    { "type": "text", "id": "texte_bouton", "label": "Texte du bouton", "default": "Ajouter au panier" },
+    { "type": "richtext", "id": "note_cadeau", "label": "Note cadeau", "default": "<p><strong>Une idée de cadeau de naissance.</strong> Ajoutez un message personnel dans le panier.</p>" },
+    { "type": "header", "content": "Réassurance" },
+    { "type": "text", "id": "reassure_1", "label": "Livraison", "default": "Livraison offerte en 6 à 9 jours ouvrés, avec suivi" },
+    { "type": "text", "id": "reassure_2", "label": "Retours", "default": "Satisfait ou remboursé 30 jours" },
+    { "type": "text", "id": "reassure_3", "label": "Garantie", "default": "Garantie légale de 2 ans" },
+    { "type": "text", "id": "reassure_4", "label": "Paiement", "default": "Paiement sécurisé" },
+    { "type": "header", "content": "Volets" },
+    { "type": "text", "id": "titre_description", "label": "Titre du volet description", "default": "Description" },
+    { "type": "checkbox", "id": "description_ouverte", "label": "Description ouverte par défaut", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "volet",
+      "name": "Volet",
+      "settings": [
+        { "type": "text", "id": "titre", "label": "Titre", "default": "Livraison et retours" },
+        { "type": "html", "id": "contenu", "label": "Contenu (HTML)", "default": "<p>Votre texte</p>" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Fiche produit Dorlote" }]
+}
+{% endschema %}

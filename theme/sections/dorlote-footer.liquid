@@ -1,0 +1,47 @@
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}, accueil">
+          {%- if settings.logo != blank -%}{{ settings.logo | image_url: width: 480 | image_tag: alt: shop.name, height: 40, loading: 'lazy' }}{%- else -%}<span class="logo-texte">{{ shop.name }}</span>{%- endif -%}
+        </a>
+        {%- if section.settings.slogan != blank -%}<p style="margin-top:12px;max-width:320px">{{ section.settings.slogan | escape }}</p>{%- endif -%}
+        {%- if section.settings.email != blank -%}<p style="margin-top:12px"><a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></p>{%- endif -%}
+      </div>
+      <div><h4>{{ section.settings.titre_aide | escape }}</h4><ul>
+        {%- if section.settings.menu_aide != blank -%}
+          {%- for link in section.settings.menu_aide.links -%}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{%- endfor -%}
+        {%- else -%}
+          <li><a href="#faq">FAQ</a></li>
+          {%- if shop.shipping_policy -%}<li><a href="{{ shop.shipping_policy.url }}">Livraison</a></li>{%- endif -%}
+          {%- if shop.refund_policy -%}<li><a href="{{ shop.refund_policy.url }}">Retours et rétractation</a></li>{%- endif -%}
+          <li><a href="#contact">Contact</a></li>
+        {%- endif -%}
+      </ul></div>
+      <div><h4>{{ section.settings.titre_legal | escape }}</h4><ul>
+        {%- if section.settings.menu_legal != blank -%}
+          {%- for link in section.settings.menu_legal.links -%}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{%- endfor -%}
+        {%- else -%}
+          {%- for policy in shop.policies -%}<li><a href="{{ policy.url }}">{{ policy.title }}</a></li>{%- endfor -%}
+        {%- endif -%}
+      </ul></div>
+    </div>
+    <div class="bas"><span>© {{ 'now' | date: '%Y' }} {{ shop.name }}{% if section.settings.mention != blank %} · {{ section.settings.mention }}{% endif %}</span><span>{{ section.settings.paiement | escape }}</span></div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Pied de page Dorlote",
+  "settings": [
+    { "type": "text", "id": "slogan", "label": "Slogan", "default": "La lumière qui ne réveille personne." },
+    { "type": "text", "id": "email", "label": "Email de contact", "default": "contact@maisondorlote.fr" },
+    { "type": "text", "id": "titre_aide", "label": "Titre colonne 1", "default": "Aide" },
+    { "type": "link_list", "id": "menu_aide", "label": "Menu colonne 1" },
+    { "type": "text", "id": "titre_legal", "label": "Titre colonne 2", "default": "Informations légales" },
+    { "type": "link_list", "id": "menu_legal", "label": "Menu colonne 2" },
+    { "type": "inline_richtext", "id": "mention", "label": "Mention (SIRET…)", "default": "SIRET à compléter" },
+    { "type": "text", "id": "paiement", "label": "Texte paiement", "default": "Paiement sécurisé par Shopify" }
+  ]
+}
+{% endschema %}

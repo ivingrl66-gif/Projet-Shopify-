@@ -1,0 +1,38 @@
+<section class="light faq" id="faq" aria-labelledby="titre-{{ section.id }}">
+  <div class="wrap faq-grid">
+    <div class="faq-intro">
+      <h2 id="titre-{{ section.id }}">{{ section.settings.titre | escape }}</h2>
+      {%- if section.settings.texte != blank -%}{{ section.settings.texte }}{%- endif -%}
+    </div>
+    <div>
+      <div class="faq-filtres" role="group" aria-label="Filtrer les questions">
+        <button type="button" aria-pressed="true" data-f="tout">Toutes</button>
+        <button type="button" aria-pressed="false" data-f="lampe">La lampe</button>
+        <button type="button" aria-pressed="false" data-f="bebe">Bébé et sécurité</button>
+        <button type="button" aria-pressed="false" data-f="livraison">Livraison, retours, garantie</button>
+        <button type="button" aria-pressed="false" data-f="cadeau">Offrir</button>
+      </div>
+      {%- for block in section.blocks -%}
+        <details data-cat="{{ block.settings.categorie }}" {{ block.shopify_attributes }}><summary>{{ block.settings.question | escape }}</summary><div class="rep rte">{{ block.settings.reponse }}</div></details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Questions fréquentes",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Questions fréquentes" },
+    { "type": "richtext", "id": "texte", "label": "Texte", "default": "<p>Vous ne trouvez pas votre réponse ? <a href=\"#contact\">Posez-nous votre question</a>, nous répondons sous 24 h, les jours ouvrés.</p>" }
+  ],
+  "blocks": [
+    { "type": "question", "name": "Question", "settings": [
+      { "type": "select", "id": "categorie", "label": "Catégorie", "options": [ { "value": "lampe", "label": "La lampe" }, { "value": "bebe", "label": "Bébé et sécurité" }, { "value": "livraison", "label": "Livraison, retours, garantie" }, { "value": "cadeau", "label": "Offrir" } ], "default": "lampe" },
+      { "type": "text", "id": "question", "label": "Question", "default": "Votre question ?" },
+      { "type": "richtext", "id": "reponse", "label": "Réponse", "default": "<p>Votre réponse.</p>" }
+    ] }
+  ],
+  "presets": [{ "name": "Questions fréquentes" }]
+}
+{% endschema %}

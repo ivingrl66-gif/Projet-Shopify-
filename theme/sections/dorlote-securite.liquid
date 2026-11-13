@@ -1,0 +1,38 @@
+<section class="secu" aria-labelledby="titre-{{ section.id }}">
+  <div class="wrap">
+    <h2 id="titre-{{ section.id }}">{{ section.settings.titre | escape }}</h2>
+    <div class="secu-grid">
+      {%- for block in section.blocks -%}
+        <div class="secu-item" {{ block.shopify_attributes }}>
+          {%- case block.settings.icone -%}
+            {%- when 'batterie' -%}<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10.5v3M7 10.5v3M10.5 10.5v3"/></svg>
+            {%- when 'chaleur' -%}<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.8V5a2 2 0 1 0-4 0v9.8a4 4 0 1 0 4 0z"/></svg>
+            {%- when 'diffusion' -%}<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M8 12a4 4 0 0 1 8 0"/></svg>
+            {%- else -%}<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          {%- endcase -%}
+          <h3>{{ block.settings.titre | escape }}</h3><p>{{ block.settings.texte }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.note != blank -%}<p class="note">{{ section.settings.note | escape }}</p>{%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sécurité",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Faite pour dormir à côté de bébé." },
+    { "type": "textarea", "id": "note", "label": "Note", "default": "Comme tout appareil électrique, placez la lampe hors de portée des jeunes enfants, et rechargez-la hors du lit." }
+  ],
+  "blocks": [
+    { "type": "point", "name": "Point", "settings": [
+      { "type": "select", "id": "icone", "label": "Icône", "options": [ { "value": "batterie", "label": "Batterie" }, { "value": "chaleur", "label": "Chaleur" }, { "value": "diffusion", "label": "Diffusion" }, { "value": "norme", "label": "Norme" } ], "default": "batterie" },
+      { "type": "text", "id": "titre", "label": "Titre", "default": "Aucun fil la nuit" },
+      { "type": "inline_richtext", "id": "texte", "label": "Texte", "default": "Elle fonctionne sur batterie." }
+    ] }
+  ],
+  "max_blocks": 4,
+  "presets": [{ "name": "Sécurité" }]
+}
+{% endschema %}

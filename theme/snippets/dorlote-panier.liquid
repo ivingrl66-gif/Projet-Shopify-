@@ -1,0 +1,16 @@
+{%- comment -%}Tiroir du panier (API Ajax de Shopify). Sans JavaScript, le bouton du panier mène à /cart.{%- endcomment -%}
+<div class="voile" id="voile"></div>
+<aside class="panier" id="panier" aria-label="Panier" aria-hidden="true" data-cart-url="{{ routes.cart_url }}">
+  <div class="tete"><h3>Votre panier</h3><button class="fermer" id="close-cart" type="button" aria-label="Fermer le panier"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="jauge" id="jauge"><span><strong>Livraison offerte</strong> · <span id="panier-date">livrée en 6 à 9 jours ouvrés</span></span></div>
+  <div class="corps" id="corps"><div class="vide">Votre panier est vide.</div></div>
+  <div class="pied">
+    <div class="total"><span>Total</span><span id="total">{{ cart.total_price | money }}</span></div>
+    <small id="livraison-txt">Livraison offerte, sans frais de douane à la réception.</small>
+    <form action="{{ routes.cart_url }}" method="post" style="margin:0"><button class="btn btn-ambre" type="submit" name="checkout" id="checkout" style="width:100%">Passer commande</button></form>
+    <small class="pied-paie">Paiement sécurisé par Shopify
+      <span class="pi-row" role="img" aria-label="Moyens de paiement acceptés">{%- for type in shop.enabled_payment_types -%}{{ type | payment_type_svg_tag: class: 'pi' }}{%- endfor -%}</span>
+    </small>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>

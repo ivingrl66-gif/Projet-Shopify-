@@ -1,0 +1,79 @@
+<section class="contact" id="contact" aria-labelledby="titre-{{ section.id }}">
+  <div class="wrap contact-grid">
+    <div class="contact-intro">
+      <h2 id="titre-{{ section.id }}">{{ section.settings.titre | escape }}</h2>
+      <p>{{ section.settings.texte | escape }}</p>
+      <ul class="engagement">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>{{ section.settings.engagement_1 | escape }}</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M20 15a8 8 0 0 1-11.6 4.2L4 20l1-4.2A8 8 0 1 1 20 15z"/></svg><span>{{ section.settings.engagement_2 | escape }}</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>{{ section.settings.engagement_3 | escape }}</span></li>
+      </ul>
+    </div>
+
+    <div>
+      {%- form 'contact', id: 'cf', class: 'cf', novalidate: 'novalidate' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="form-statut ok" tabindex="-1" autofocus>{{ section.settings.merci | escape }}</p>
+        {%- elsif form.errors -%}
+          <p class="form-statut ko" tabindex="-1" autofocus>Le message n'a pas pu être envoyé : {{ form.errors | default_errors }}</p>
+        {%- endif -%}
+        <div class="row">
+          <div class="champ"><label for="cf-prenom">Prénom</label><input type="text" id="cf-prenom" name="contact[Prénom]" autocomplete="given-name" aria-describedby="cf-prenom-err"><span class="erreur" id="cf-prenom-err"></span></div>
+          <div class="champ"><label for="cf-nom">Nom</label><input type="text" id="cf-nom" name="contact[Nom]" autocomplete="family-name" aria-describedby="cf-nom-err"><span class="erreur" id="cf-nom-err"></span></div>
+        </div>
+
+        <fieldset>
+          <legend>Comment préférez-vous être recontacté&#8239;?</legend>
+          <div class="seg" role="radiogroup">
+            <label><input type="radio" name="contact[Canal de réponse]" value="Email" data-canal="email" checked><span>Email</span></label>
+            <label><input type="radio" name="contact[Canal de réponse]" value="SMS" data-canal="sms"><span>SMS</span></label>
+            <label><input type="radio" name="contact[Canal de réponse]" value="Appel" data-canal="tel"><span>Appel</span></label>
+          </div>
+        </fieldset>
+
+        <div class="champ"><label for="cf-email">Adresse email</label><input type="email" id="cf-email" name="contact[email]" autocomplete="email" inputmode="email" placeholder="prenom@exemple.fr" aria-describedby="cf-email-err"><span class="erreur" id="cf-email-err"></span></div>
+        <div class="champ" id="cf-tel-champ" hidden><label for="cf-tel">Numéro de téléphone</label><input type="tel" id="cf-tel" name="contact[phone]" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" aria-describedby="cf-tel-err"><span class="erreur" id="cf-tel-err"></span></div>
+
+        <fieldset>
+          <legend>Votre question porte sur…</legend>
+          <div class="themes" id="cf-themes">
+            {%- assign themes = 'La lumière,Batterie et recharge,Durée de vie,Garantie,Livraison,Retours,Ma commande,Autre' | split: ',' -%}
+            {%- for t in themes -%}
+              <label><input type="radio" name="contact[Thème]" value="{{ t }}" data-index="{{ forloop.index0 }}"><span>{{ t }}</span></label>
+            {%- endfor -%}
+          </div>
+          <span class="erreur" id="cf-theme-err"></span>
+        </fieldset>
+
+        <div class="reponse-rapide" id="cf-rapide" hidden aria-live="polite"><strong>Réponse rapide</strong><span id="cf-rapide-txt"></span></div>
+        <script type="application/json" id="cf-reponses">{{ section.settings.reponses_rapides | newline_to_br | split: '<br />' | json }}</script>
+
+        <div class="champ" id="cf-commande-champ" hidden><label for="cf-commande">Numéro de commande <span style="font-weight:400;color:#6f645a">(facultatif)</span></label><input type="text" id="cf-commande" name="contact[Numéro de commande]" placeholder="#1001"></div>
+
+        <div class="champ"><label for="cf-message">Votre question</label><textarea id="cf-message" name="contact[body]" maxlength="1000" placeholder="Écrivez votre question ici" aria-describedby="cf-message-err cf-compteur"></textarea><span class="erreur" id="cf-message-err"></span><span class="compteur" id="cf-compteur">0 / 1000</span></div>
+
+        <label class="consent" for="cf-consent"><input type="checkbox" id="cf-consent" name="contact[Consentement]" value="Oui" aria-describedby="cf-consent-err"><span>{{ section.settings.consentement }}</span></label>
+        <span class="erreur" id="cf-consent-err" style="margin-top:-14px"></span>
+
+        <button class="btn btn-ambre envoyer" type="submit" id="cf-envoyer">Envoyer ma question</button>
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Une question précise ? Posez-la-nous." },
+    { "type": "textarea", "id": "texte", "label": "Texte", "default": "Batterie, garantie, livraison : choisissez un thème, écrivez votre question, et nous vous répondons par le moyen que vous préférez." },
+    { "type": "text", "id": "engagement_1", "label": "Engagement 1", "default": "Réponse sous 24 h, les jours ouvrés" },
+    { "type": "text", "id": "engagement_2", "label": "Engagement 2", "default": "Une vraie personne vous répond, pas un robot" },
+    { "type": "text", "id": "engagement_3", "label": "Engagement 3", "default": "Vos coordonnées servent uniquement à vous répondre" },
+    { "type": "inline_richtext", "id": "consentement", "label": "Texte du consentement", "default": "J'accepte que Maison Dorlote utilise ces informations pour répondre à ma question. Elles ne sont ni revendues ni utilisées pour de la publicité." },
+    { "type": "text", "id": "merci", "label": "Message après envoi", "default": "Merci, c'est bien noté. Nous vous répondons sous 24 h, les jours ouvrés." },
+    { "type": "textarea", "id": "reponses_rapides", "label": "Réponses rapides (une ligne par thème, dans l'ordre : lumière, batterie, durée de vie, garantie, livraison, retours, commande, autre)", "default": "La lumière est diffusée par tout l'abat-jour, sans point lumineux direct. En teinte chaude et à faible intensité, elle ne gêne pas les yeux, même au réveil.\nLa lampe se recharge avec le câble fourni. L'autonomie exacte sera indiquée ici dès la réception de notre échantillon.\nLes LED sont données pour 30 000 heures, soit plus de 10 ans à raison de 8 heures par nuit.\nLa lampe bénéficie de la garantie légale de 2 ans. En cas de défaut, nous la remplaçons ou la remboursons.\nLivraison offerte en 6 à 9 jours ouvrés, avec suivi, sans frais de douane à la réception.\nSatisfait ou remboursé : vous avez 30 jours après réception pour nous retourner la lampe.\nIndiquez votre numéro de commande : il figure dans l'email de confirmation.\n " }
+  ],
+  "presets": [{ "name": "Contact" }]
+}
+{% endschema %}

@@ -1,0 +1,24 @@
+<section class="final" aria-labelledby="titre-{{ section.id }}">
+  <div class="wrap">
+    <div>
+      <h2 id="titre-{{ section.id }}">{{ section.settings.titre | escape }}</h2>
+      <p>{{ section.settings.texte | escape }}</p>
+      {%- if section.settings.bouton != blank -%}<div style="margin-top:28px"><a class="btn btn-ambre" href="{{ section.settings.lien | default: '#lampe' }}">{{ section.settings.bouton | escape }}</a></div>{%- endif -%}
+    </div>
+    <div class="img">{%- if section.settings.image != blank -%}{{ section.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', sizes: '(max-width: 860px) 100vw, 480px', widths: '450, 700, 900' }}{%- endif -%}</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Dernier appel",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Pour le prochain biberon de 3 h, une simple lueur suffit." },
+    { "type": "textarea", "id": "texte", "label": "Texte", "default": "39,90 € la lampe, 59,90 € les deux. Livraison offerte, satisfait ou remboursé 30 jours." },
+    { "type": "text", "id": "bouton", "label": "Texte du bouton", "default": "Choisir ma lampe" },
+    { "type": "text", "id": "lien", "label": "Lien du bouton", "default": "#lampe" },
+    { "type": "image_picker", "id": "image", "label": "Image" }
+  ],
+  "presets": [{ "name": "Dernier appel" }]
+}
+{% endschema %}

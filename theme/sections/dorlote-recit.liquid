@@ -1,0 +1,45 @@
+<section class="hero recit" aria-labelledby="titre-{{ section.id }}">
+  {%- if section.settings.image != blank -%}
+    <picture>
+      {%- if section.settings.image_mobile != blank -%}
+        <source media="(max-width:760px)" srcset="{{ section.settings.image_mobile | image_url: width: 900 }}">
+      {%- endif -%}
+      {{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', sizes: '100vw', widths: '800, 1200, 1600' }}
+    </picture>
+  {%- endif -%}
+  <div class="wrap">
+    <div class="hero-txt">
+      <h2 id="titre-{{ section.id }}">{{ section.settings.titre }}</h2>
+      {%- if section.settings.texte != blank -%}<p class="sub">{{ section.settings.texte | escape }}</p>{%- endif -%}
+      {%- if section.settings.bouton != blank -%}
+        <div class="ctas"><a class="btn btn-ambre" href="{{ section.settings.lien | default: '#lampe' }}">{{ section.settings.bouton | escape }}</a></div>
+      {%- endif -%}
+      {%- if section.blocks.size > 0 -%}
+        <div class="micro">{%- for block in section.blocks -%}<span {{ block.shopify_attributes }}>{{ block.settings.texte | escape }}</span>{%- endfor -%}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Récit (grande image)",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image (ordinateur)" },
+    { "type": "image_picker", "id": "image_mobile", "label": "Image (mobile)" },
+    { "type": "inline_richtext", "id": "titre", "label": "Titre", "default": "La lumière qui ne réveille <em>personne</em>." },
+    { "type": "textarea", "id": "texte", "label": "Texte", "default": "3 h du matin, bébé pleure. Le plafonnier vous éblouit et finit de le réveiller. La lampe Dorlote diffuse une lueur chaude, juste assez pour le biberon." },
+    { "type": "text", "id": "bouton", "label": "Texte du bouton", "default": "Choisir ma lampe · 39,90 €" },
+    { "type": "text", "id": "lien", "label": "Lien du bouton", "default": "#lampe" }
+  ],
+  "blocks": [
+    { "type": "point", "name": "Point", "settings": [ { "type": "text", "id": "texte", "label": "Texte", "default": "Sans fil, rechargeable" } ] }
+  ],
+  "max_blocks": 4,
+  "presets": [{ "name": "Récit (grande image)", "blocks": [
+    { "type": "point", "settings": { "texte": "Sans fil, rechargeable" } },
+    { "type": "point", "settings": { "texte": "3 teintes de lumière" } },
+    { "type": "point", "settings": { "texte": "Horloge intégrée" } }
+  ] }]
+}
+{% endschema %}

@@ -1,0 +1,20 @@
+<section class="avis" id="avis" aria-labelledby="titre-{{ section.id }}">
+  <div class="wrap">
+    <div>
+      <h2 id="titre-{{ section.id }}">{{ section.settings.titre | escape }}</h2>
+      <p>{{ section.settings.texte | escape }}</p>
+    </div>
+    <div class="etoiles" aria-hidden="true">{%- for i in (1..5) -%}<svg width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg>{%- endfor -%}</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Avis clients",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Avis clients" },
+    { "type": "textarea", "id": "texte", "label": "Texte", "default": "Maison Dorlote vient de naître. Les avis de nos premiers clients apparaîtront ici, uniquement après un achat vérifié. En attendant, vous avez 30 jours pour l'essayer, satisfait ou remboursé." }
+  ],
+  "presets": [{ "name": "Avis clients" }]
+}
+{% endschema %}

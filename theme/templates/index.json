@@ -1,0 +1,535 @@
+{
+  "layout": "dorlote",
+  "sections": {
+    "produit": {
+      "type": "dorlote-produit",
+      "settings": {
+        "produit": "lampe-dorlote"
+      },
+      "blocks": {
+        "b0": {
+          "type": "volet",
+          "settings": {
+            "titre": "Caractéristiques",
+            "contenu": "<dl class=\"specs\">\n<dt>Dimensions</dt><dd><em class=\"tbd\">à confirmer sur l'échantillon</em></dd>\n<dt>Teintes</dt><dd>Chaude, neutre, froide</dd>\n<dt>Intensité</dt><dd>Réglable en continu (appui long)</dd>\n<dt>Commande</dt><dd>Tactile sur le dessus, et télécommande</dd>\n<dt>Horloge</dt><dd>Écran numérique en façade, fonction réveil</dd>\n<dt>Batterie</dt><dd>Intégrée, rechargeable · autonomie <em class=\"tbd\">à confirmer</em></dd>\n<dt>Recharge</dt><dd><em class=\"tbd\">port et durée à confirmer</em></dd>\n<dt>Poignée</dt><dd>Poignée de transport sur le dessus</dd>\n<dt>Matériaux</dt><dd>Plastique, abat-jour diffusant</dd>\n<dt>Durée de vie des LED</dt><dd>30 000 heures</dd>\n<dt>Conformité</dt><dd>CE <em class=\"tbd\">à confirmer</em> · classe énergie <em class=\"tbd\">à compléter</em></dd>\n</dl>\n<div class=\"boite\">\n<strong>Dans la boîte</strong>\n<span>1 lampe Dorlote · 1 télécommande · 1 câble de recharge <em class=\"tbd\">à confirmer</em></span>\n<span>Adaptateur secteur non inclus&#8239;: vous pourrez l'ajouter dans votre panier.</span>\n</div>"
+          }
+        },
+        "b1": {
+          "type": "volet",
+          "settings": {
+            "titre": "Livraison et retours",
+            "contenu": "<p><strong>Livraison offerte</strong> en 6 à 9 jours ouvrés, avec un numéro de suivi par email. Aucun frais de douane à payer à la réception.</p>\n<p><strong>Satisfait ou remboursé 30 jours</strong> après réception. Écrivez-nous, nous vous envoyons la marche à suivre. <span class=\"tbd\">Frais de retour : à décider</span></p>\n<p><strong>Garantie légale de 2 ans</strong>&#8239;: remplacement ou remboursement en cas de défaut.</p>"
+          }
+        },
+        "b2": {
+          "type": "volet",
+          "settings": {
+            "titre": "Questions fréquentes",
+            "contenu": "<p><strong>Est-ce que la lumière éblouit&#8239;?</strong> Non, l'abat-jour la diffuse sur toute sa surface&#8239;: aucune LED visible.</p>\n<p><strong>L'adaptateur est-il fourni&#8239;?</strong> Non, la lampe est livrée avec son câble. Vous pouvez ajouter un adaptateur dans le panier.</p>\n<p><strong>Peut-on l'offrir&#8239;?</strong> Oui, cochez «&#8239;C'est pour offrir&#8239;» dans le panier pour ajouter un message.</p>\n<p><a href=\"#faq\">Voir toutes les questions</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2"
+      ]
+    },
+    "recit": {
+      "type": "dorlote-recit",
+      "settings": {
+        "image": "shopify://shop_images/dorlote-recit.webp",
+        "image_mobile": "shopify://shop_images/dorlote-recit-mobile.webp"
+      },
+      "blocks": {
+        "b0": {
+          "type": "point",
+          "settings": {
+            "texte": "Sans fil, rechargeable"
+          }
+        },
+        "b1": {
+          "type": "point",
+          "settings": {
+            "texte": "3 teintes de lumière"
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "texte": "Horloge intégrée"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2"
+      ]
+    },
+    "avant_apres": {
+      "type": "dorlote-avant-apres",
+      "settings": {
+        "avant": "shopify://shop_images/dorlote-avant.webp",
+        "apres": "shopify://shop_images/dorlote-apres.webp"
+      },
+      "blocks": {
+        "b0": {
+          "type": "point",
+          "settings": {
+            "titre": "Pas de point lumineux",
+            "texte": "L'abat-jour diffuse la lumière sur toute sa surface. Le regard ne tombe jamais sur une LED nue."
+          }
+        },
+        "b1": {
+          "type": "point",
+          "settings": {
+            "titre": "Une teinte chaude",
+            "texte": "La lumière ambrée reste douce pour des yeux à peine ouverts, et garde la chambre dans l'ambiance de la nuit."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "titre": "Juste assez",
+            "texte": "Un appui long baisse l'intensité jusqu'à une simple lueur : de quoi voir le biberon, pas plus."
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2"
+      ]
+    },
+    "teintes": {
+      "type": "dorlote-teintes",
+      "settings": {},
+      "blocks": {
+        "b0": {
+          "type": "teinte",
+          "settings": {
+            "nom": "Chaude",
+            "usage": "Pour la nuit, les biberons, l'endormissement",
+            "image": "shopify://shop_images/dorlote-teinte-chaude.webp",
+            "couleur": "#e8a55b",
+            "couleur_centre": "#ffd9a0"
+          }
+        },
+        "b1": {
+          "type": "teinte",
+          "settings": {
+            "nom": "Neutre",
+            "usage": "Pour se lever, s'habiller, ranger",
+            "image": "shopify://shop_images/dorlote-teinte-neutre.webp",
+            "couleur": "#f0dcbc",
+            "couleur_centre": "#fff6e6"
+          }
+        },
+        "b2": {
+          "type": "teinte",
+          "settings": {
+            "nom": "Froide",
+            "usage": "Pour lire ou travailler",
+            "image": "shopify://shop_images/dorlote-teinte-froide.webp",
+            "couleur": "#d9e2ec",
+            "couleur_centre": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2"
+      ]
+    },
+    "gestes": {
+      "type": "dorlote-gestes",
+      "settings": {},
+      "blocks": {
+        "b0": {
+          "type": "geste",
+          "settings": {
+            "schema": "un",
+            "titre": "Un appui",
+            "texte": "Allumer ou éteindre, sans chercher d'interrupteur dans le noir."
+          }
+        },
+        "b1": {
+          "type": "geste",
+          "settings": {
+            "schema": "deux",
+            "titre": "Deux appuis",
+            "texte": "Passer de la lumière chaude à la neutre, puis à la froide."
+          }
+        },
+        "b2": {
+          "type": "geste",
+          "settings": {
+            "schema": "long",
+            "titre": "Appui long",
+            "texte": "Monter ou baisser l'intensité, jusqu'à une lueur de veilleuse."
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2"
+      ]
+    },
+    "usages": {
+      "type": "dorlote-usages",
+      "settings": {},
+      "blocks": {
+        "b0": {
+          "type": "usage",
+          "settings": {
+            "image": "shopify://shop_images/dorlote-usage-biberon.webp",
+            "heure": "03:12",
+            "titre": "Le biberon de nuit",
+            "texte": "Assez de lumière pour préparer et donner le biberon, assez peu pour que bébé se rendorme vite."
+          }
+        },
+        "b1": {
+          "type": "usage",
+          "settings": {
+            "image": "shopify://shop_images/dorlote-usage-enfant.webp",
+            "heure": "21:30",
+            "titre": "La chambre d'enfant",
+            "texte": "Une veilleuse rassurante pour les petits qui ont peur du noir, qui ne fait pas d'ombre inquiétante."
+          }
+        },
+        "b2": {
+          "type": "usage",
+          "settings": {
+            "image": "shopify://shop_images/dorlote-usage-lecture.webp",
+            "heure": "23:45",
+            "titre": "La lecture au lit",
+            "texte": "Finir son chapitre sans réveiller la personne qui dort à côté."
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2"
+      ]
+    },
+    "securite": {
+      "type": "dorlote-securite",
+      "settings": {},
+      "blocks": {
+        "b0": {
+          "type": "point",
+          "settings": {
+            "icone": "batterie",
+            "titre": "Aucun fil la nuit",
+            "texte": "Elle fonctionne sur batterie : pas de câble qui traîne près du lit ou du berceau."
+          }
+        },
+        "b1": {
+          "type": "point",
+          "settings": {
+            "icone": "chaleur",
+            "titre": "Des LED qui restent tièdes",
+            "texte": "Des LED basse consommation, qui ne chauffent pas comme une ampoule classique (à vérifier sur l'échantillon)."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "icone": "diffusion",
+            "titre": "Aucune LED visible",
+            "texte": "La lumière passe à travers tout l'abat-jour : rien ne fixe le regard de bébé."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "icone": "norme",
+            "titre": "Normes européennes",
+            "texte": "Marquage CE et conformité RoHS, documents disponibles sur demande (à confirmer)."
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "comparatif": {
+      "type": "dorlote-comparatif",
+      "settings": {},
+      "blocks": {
+        "b0": {
+          "type": "ligne",
+          "settings": {
+            "critere": "Lumière chaude qui n'éblouit pas",
+            "v1": "oui",
+            "v2": "oui",
+            "v3": "non"
+          }
+        },
+        "b1": {
+          "type": "ligne",
+          "settings": {
+            "critere": "Intensité réglable, de la lueur à la lecture",
+            "v1": "oui",
+            "v2": "non",
+            "v3": "Parfois"
+          }
+        },
+        "b2": {
+          "type": "ligne",
+          "settings": {
+            "critere": "3 teintes de lumière",
+            "v1": "oui",
+            "v2": "non",
+            "v3": "non"
+          }
+        },
+        "b3": {
+          "type": "ligne",
+          "settings": {
+            "critere": "Sans fil, se transporte d'une pièce à l'autre",
+            "v1": "oui",
+            "v2": "Rarement",
+            "v3": "non"
+          }
+        },
+        "b4": {
+          "type": "ligne",
+          "settings": {
+            "critere": "L'heure visible sans allumer son téléphone",
+            "v1": "oui",
+            "v2": "non",
+            "v3": "non"
+          }
+        },
+        "b5": {
+          "type": "ligne",
+          "settings": {
+            "critere": "Satisfait ou remboursé 30 jours",
+            "v1": "oui",
+            "v2": "Selon le vendeur",
+            "v3": "—"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5"
+      ]
+    },
+    "avis": {
+      "type": "dorlote-avis",
+      "settings": {}
+    },
+    "faq": {
+      "type": "dorlote-faq",
+      "settings": {},
+      "blocks": {
+        "b0": {
+          "type": "question",
+          "settings": {
+            "categorie": "lampe",
+            "question": "Est-ce que la lumière éblouit ?",
+            "reponse": "<p>Non : l'abat-jour diffuse la lumière sur toute sa surface, il n'y a pas de point lumineux direct. En lumière chaude et à faible intensité, elle se regarde sans gêne, même au réveil.</p>"
+          }
+        },
+        "b1": {
+          "type": "question",
+          "settings": {
+            "categorie": "lampe",
+            "question": "Peut-on la régler très bas, comme une veilleuse ?",
+            "reponse": "<p>Oui. Maintenez le doigt sur le dessus de la lampe pour baisser l'intensité jusqu'à une simple lueur. Relâchez quand le niveau vous convient.</p>"
+          }
+        },
+        "b2": {
+          "type": "question",
+          "settings": {
+            "categorie": "lampe",
+            "question": "Combien de temps tient la batterie ?",
+            "reponse": "<p>L'autonomie dépend de l'intensité choisie : (X h à pleine puissance, Y h en veilleuse). Une recharge complète prend (Z h).</p>"
+          }
+        },
+        "b3": {
+          "type": "question",
+          "settings": {
+            "categorie": "lampe",
+            "question": "L'adaptateur secteur est-il fourni ?",
+            "reponse": "<p>La lampe est livrée avec son câble de recharge, sans adaptateur. Vous pouvez utiliser un chargeur de téléphone USB, ou ajouter notre adaptateur dans votre panier.</p>"
+          }
+        },
+        "b4": {
+          "type": "question",
+          "settings": {
+            "categorie": "bebe",
+            "question": "Peut-on l'utiliser dans une chambre de bébé ?",
+            "reponse": "<p>Oui, c'est l'usage pour lequel nous l'avons choisie. Elle fonctionne sur batterie, sans fil qui traîne pendant l'utilisation, et ses LED ne chauffent pas. Comme tout appareil électrique, placez-la hors de portée des jeunes enfants.</p>"
+          }
+        },
+        "b5": {
+          "type": "question",
+          "settings": {
+            "categorie": "lampe",
+            "question": "Comment fonctionne l'horloge ?",
+            "reponse": "<p>L'heure s'affiche sur un petit écran en façade et se règle avec les deux boutons latéraux. Une fonction réveil est également intégrée.</p>"
+          }
+        },
+        "b6": {
+          "type": "question",
+          "settings": {
+            "categorie": "livraison",
+            "question": "Quels sont les délais de livraison ?",
+            "reponse": "<p>Votre lampe est livrée en 6 à 9 jours ouvrés, avec un numéro de suivi envoyé par email. La livraison est offerte, sans frais de douane à payer à la réception.</p>"
+          }
+        },
+        "b7": {
+          "type": "question",
+          "settings": {
+            "categorie": "livraison",
+            "question": "Comment retourner la lampe ?",
+            "reponse": "<p>Vous êtes satisfait ou remboursé pendant 30 jours après réception. Écrivez-nous, nous vous envoyons la marche à suivre. Le remboursement intervient sous 14 jours après réception du retour. (Frais de retour : à décider)</p>"
+          }
+        },
+        "b8": {
+          "type": "question",
+          "settings": {
+            "categorie": "bebe",
+            "question": "Les LED chauffent-elles ?",
+            "reponse": "<p>Non, ce sont des LED basse consommation : l'abat-jour reste tiède au toucher, même après plusieurs heures. (à vérifier sur l'échantillon)</p>"
+          }
+        },
+        "b9": {
+          "type": "question",
+          "settings": {
+            "categorie": "bebe",
+            "question": "À quelle distance la poser du berceau ?",
+            "reponse": "<p>Posez-la sur une commode ou une table de nuit, hors de portée de bébé. À faible intensité, elle éclaire assez pour vous, sans être dirigée vers le berceau.</p>"
+          }
+        },
+        "b10": {
+          "type": "question",
+          "settings": {
+            "categorie": "cadeau",
+            "question": "Peut-on l'offrir avec un message ?",
+            "reponse": "<p>Oui. Dans le panier, cochez « C'est pour offrir » et écrivez votre message. (carte imprimée à confirmer avec le fournisseur)</p>"
+          }
+        },
+        "b11": {
+          "type": "question",
+          "settings": {
+            "categorie": "cadeau",
+            "question": "Le prix apparaît-il dans le colis ?",
+            "reponse": "<p>Non, aucun prix ni facture n'est glissé dans le colis : vous pouvez le faire livrer directement chez les jeunes parents. (à confirmer avec le fournisseur)</p>"
+          }
+        },
+        "b12": {
+          "type": "question",
+          "settings": {
+            "categorie": "cadeau",
+            "question": "Est-ce un bon cadeau de naissance ?",
+            "reponse": "<p>C'est l'un des objets que les jeunes parents utilisent chaque nuit, dès les premiers biberons, puis comme veilleuse quand l'enfant grandit. Le lot de 2 permet d'en offrir une et d'en garder une, ou d'équiper la chambre des parents.</p>"
+          }
+        },
+        "b13": {
+          "type": "question",
+          "settings": {
+            "categorie": "livraison",
+            "question": "Quelle garantie ?",
+            "reponse": "<p>La lampe bénéficie de la garantie légale de conformité de 2 ans. En cas de défaut, nous la remplaçons ou la remboursons.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
+        "b9",
+        "b10",
+        "b11",
+        "b12",
+        "b13"
+      ]
+    },
+    "garanties": {
+      "type": "dorlote-garanties",
+      "settings": {},
+      "blocks": {
+        "b0": {
+          "type": "garantie",
+          "settings": {
+            "titre": "Livraison offerte",
+            "texte": "En 6 à 9 jours ouvrés, avec un numéro de suivi par email."
+          }
+        },
+        "b1": {
+          "type": "garantie",
+          "settings": {
+            "titre": "Satisfait ou remboursé",
+            "texte": "30 jours pour l'essayer chez vous. Si elle ne vous convient pas, nous vous remboursons."
+          }
+        },
+        "b2": {
+          "type": "garantie",
+          "settings": {
+            "titre": "Garantie 2 ans",
+            "texte": "Remplacement ou remboursement en cas de défaut."
+          }
+        },
+        "b3": {
+          "type": "garantie",
+          "settings": {
+            "titre": "Une réponse sous 24 h",
+            "texte": "Écrivez-nous : une personne vous répond, les jours ouvrés."
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "final": {
+      "type": "dorlote-final",
+      "settings": {
+        "image": "shopify://shop_images/dorlote-teinte-chaude.webp"
+      }
+    },
+    "contact": {
+      "type": "dorlote-contact",
+      "settings": {}
+    }
+  },
+  "order": [
+    "produit",
+    "recit",
+    "avant_apres",
+    "teintes",
+    "gestes",
+    "usages",
+    "securite",
+    "comparatif",
+    "avis",
+    "faq",
+    "garanties",
+    "final",
+    "contact"
+  ]
+}

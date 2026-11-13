@@ -1,0 +1,46 @@
+{%- capture oui -%}<svg class="oui" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-label="Oui" role="img"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>{%- endcapture -%}
+{%- capture non -%}<svg class="non" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-label="Non" role="img"><path d="M7 12h10"/></svg>{%- endcapture -%}
+<section class="light comparatif" aria-labelledby="titre-{{ section.id }}">
+  <div class="wrap">
+    <h2 id="titre-{{ section.id }}">{{ section.settings.titre | escape }}</h2>
+    {%- if section.settings.texte != blank -%}<p class="lead">{{ section.settings.texte | escape }}</p>{%- endif -%}
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><td></td><th scope="col" class="nous">{{ section.settings.col_1 | escape }}</th><th scope="col">{{ section.settings.col_2 | escape }}</th><th scope="col">{{ section.settings.col_3 | escape }}</th></tr></thead>
+        <tbody>
+          {%- for block in section.blocks -%}
+            <tr {{ block.shopify_attributes }}><th scope="row">{{ block.settings.critere | escape }}</th>
+              {%- for i in (1..3) -%}
+                {%- assign k = 'v' | append: i -%}{%- assign val = block.settings[k] -%}
+                <td{% if i == 1 %} class="nous"{% endif %}>{%- case val -%}{%- when 'oui' -%}{{ oui }}{%- when 'non' -%}{{ non }}{%- else -%}<span class="txt">{{ val | escape }}</span>{%- endcase -%}</td>
+              {%- endfor -%}
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Comparatif",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Pourquoi pas une simple veilleuse ?" },
+    { "type": "textarea", "id": "texte", "label": "Texte", "default": "Une veilleuse éclaire trop peu, un plafonnier beaucoup trop. La lampe Dorlote se règle entre les deux." },
+    { "type": "text", "id": "col_1", "label": "Colonne 1", "default": "Dorlote" },
+    { "type": "text", "id": "col_2", "label": "Colonne 2", "default": "Veilleuse classique" },
+    { "type": "text", "id": "col_3", "label": "Colonne 3", "default": "Plafonnier" }
+  ],
+  "blocks": [
+    { "type": "ligne", "name": "Ligne", "settings": [
+      { "type": "text", "id": "critere", "label": "Critère", "default": "Lumière chaude" },
+      { "type": "text", "id": "v1", "label": "Colonne 1 (oui, non ou un texte)", "default": "oui" },
+      { "type": "text", "id": "v2", "label": "Colonne 2 (oui, non ou un texte)", "default": "non" },
+      { "type": "text", "id": "v3", "label": "Colonne 3 (oui, non ou un texte)", "default": "non" }
+    ] }
+  ],
+  "max_blocks": 10,
+  "presets": [{ "name": "Comparatif" }]
+}
+{% endschema %}
