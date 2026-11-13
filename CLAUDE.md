@@ -1,6 +1,6 @@
-# Projet Nuitelle : instructions pour Claude
+# Projet Maison Dorlote : instructions pour Claude
 
-Boutique Shopify mono-produit **Nuitelle** : une lampe de chevet / veilleuse LED rechargeable (modèle fournisseur TL-0191), pour les **jeunes parents** (biberon de nuit, chambre de bébé), aussi vendue comme **cadeau de naissance**.
+Boutique Shopify mono-produit **Maison Dorlote** (produit : « la lampe Dorlote » ; nommée Nuitelle jusqu'au 13/11, abandonné car trop proche de Nutella) : une lampe de chevet / veilleuse LED rechargeable (modèle fournisseur TL-0191), pour les **jeunes parents** (biberon de nuit, chambre de bébé), aussi vendue comme **cadeau de naissance**.
 
 Le propriétaire est francophone, débutant en e-commerce, et attend un avis d'expert critique. **Toujours répondre en français**, avec des phrases simples.
 
@@ -49,7 +49,7 @@ Règle du projet : les animations restent discrètes, n'alourdissent jamais le m
 - **Vitesse** : `web-perf` (Cloudflare), `debug-optimize-lcp` (Chrome DevTools), `performance-optimization` (Addy Osmani) ;
 - **Référencement** : `schema`, `seo-audit`, `seo-ecommerce`, `storefront-best-practices` (Medusa).
 
-Ces skills visent surtout le marché américain : adapter au droit français (pas de faux prix barrés ni de fausse urgence, RGPD, consentement cookies) et au ton Nuitelle.
+Ces skills visent surtout le marché américain : adapter au droit français (pas de faux prix barrés ni de fausse urgence, RGPD, consentement cookies) et au ton Maison Dorlote.
 
 Attention aux skills juridiques : la plupart visent le droit américain. Pour les pages légales françaises, ils servent de base de structure, pas de référence juridique.
 
@@ -83,8 +83,14 @@ Attention aux skills juridiques : la plupart visent le droit américain. Pour le
 
 ## Logo
 
-- « L'arche lumineuse » : arche (poignée de la lampe / lettre n) + lueur ambrée, et mot-symbole « nuitelle » en Fraunces vectorisé.
-- Régénérer : `python3 -I tools/logos.py tools tools/fonts/fraunces-400.ttf <dossier_sortie>` (variante B = l'arche).
+- « La maison veilleuse » (validé le 13/11) : une maison au trait, une seule fenêtre allumée en ambre avec un halo, et le mot-symbole « MAISON / Dorlote » en Fraunces vectorisé.
+- Fichiers dans `maquette/logo/` (SVG), exports PNG (avatars 1080, favicons, logos 1200) dans `docs/logo/export/`, aperçu dans `docs/logo/maison-dorlote-kit.png`.
+- Régénérer : `python3 tools/logos_dorlote.py maquette/logo final`.
+
+## Domaine et email
+
+- Domaines achetés chez IONOS le 13/11 (jusqu'au 13/11/2027) : **maisondorlote.fr** (principal) et maisondorlotte.fr (faute de frappe, à rediriger).
+- Email : **contact@maisondorlote.fr** (IONOS, IMAP `imap.ionos.fr` / SMTP `smtp.ionos.fr`), fonctionnel.
 
 ## Boutique Shopify
 

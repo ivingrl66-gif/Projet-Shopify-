@@ -1,6 +1,6 @@
-# Journal du projet Nuitelle
+# Journal du projet Maison Dorlote (ex-Nuitelle)
 
-Dernière mise à jour : 11 novembre 2026.
+Dernière mise à jour : 13 novembre 2026.
 
 ## Où en est-on
 
@@ -98,3 +98,11 @@ Lampe identique (poignée, télécommande, rechargeable) à **2,47 $ + 8,80 $ de
 « Petit Chut » écarté (13/11) : à l'oreille, on entend « petite chute ». Nouvelles pistes avec .fr libre (AFNIC, 13/11) : chuchoti.fr, chutchut.fr, toutbas.fr, murmurette.fr, toutdoucement.fr. Aucune marque trouvée par recherche web (INPI à confirmer).
 Pistes « plus sérieuses » (13/11, .fr libres sur AFNIC) : demivoix.fr, maisonchuchoti.fr, nuitfeutree.fr, maisonsourdine.fr, demiteinte.fr (sens négatif « résultat en demi-teinte »). Recommandation : Demi-Voix.
 Piste « Maison » (13/11, .fr libres sur AFNIC) : maisonberceuse.fr, maisondorlote.fr, maisontendre.fr, maisonpetale.fr, maisondoudou.fr. Maison Dodo écarté (marque de literie DODO existante). Recommandation : Maison Berceuse.
+
+### Nouveau nom : Maison Dorlote (13/11) ✅
+- **Nom choisi : Maison Dorlote** (« dorloter » : tendresse ; « Maison » : sérieux). Produit : « la lampe Dorlote ». Slogan inchangé.
+- **Domaines achetés chez IONOS** (jusqu'au 13/11/2027) : maisondorlote.fr (principal) et maisondorlotte.fr (faute de frappe, à rediriger vers le principal). Vérifiés sur l'AFNIC.
+- **Email** : contact@maisondorlote.fr, fonctionnel (testé par le propriétaire), configuré sur iPhone en IMAP.
+- **Logo validé : « la maison veilleuse »** (piste A, fenêtre allumée). Kit complet : logos clair/foncé, empilé, icône, une couleur, avatars Instagram/TikTok 1080 px, favicons (`docs/logo/`).
+- **Maquette renommée** : nom, logo, favicon, email, domaine dans les données Google.
+- Reste à faire : vérifier « Maison Dorlote » sur data.inpi.fr (et dépôt de marque après le SIRET), réserver @maisondorlote sur Instagram et TikTok, rediriger maisondorlotte.fr.

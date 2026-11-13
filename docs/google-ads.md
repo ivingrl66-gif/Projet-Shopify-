@@ -38,4 +38,4 @@ Reciblage des visiteurs (YouTube, Gmail).
 - Vérifier l'offre de crédit publicitaire pour les nouveaux comptes.
 
 ## À faire
-Annonces complètes : 15 titres, 4 descriptions et extensions, dans le ton Nuitelle.
+Annonces complètes : 15 titres, 4 descriptions et extensions, dans le ton Maison Dorlote.

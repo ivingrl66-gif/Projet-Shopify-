@@ -1,4 +1,4 @@
-# Nuitelle : système de design
+# Maison Dorlote : système de design
 
 > Référence visuelle de tout le site. Toute nouvelle page ou section doit s'y conformer.
 
@@ -32,12 +32,17 @@ Règles :
 
 ## Logo
 
-**L'arche lumineuse** : une arche fine (la poignée de la lampe, et la lettre « n ») avec une lueur ambrée en dessous, comme une lumière sous une porte. À côté, le mot-symbole « nuitelle » en minuscules, en Fraunces légère, vectorisé.
+**La maison veilleuse** : une maison au trait arrondi, la nuit, avec une seule fenêtre allumée en ambre (#E8A55B) et un halo doux. Elle dit « Maison » et « veilleuse » d'un coup d'œil. À côté, le mot-symbole « MAISON » (petites capitales espacées) au-dessus de « Dorlote », en Fraunces 400, vectorisé. Le sérieux vient de la typographie, la tendresse de la lueur.
 
 Fichiers dans `maquette/logo/` :
-- `nuitelle-logo-clair.svg` : pour fonds sombres ;
-- `nuitelle-logo-fonce.svg` : pour fonds clairs ;
-- `nuitelle-icone.svg` : l'arche seule, pour favicon et avatars.
+- `maison-dorlote-logo-clair.svg` : logo horizontal pour fonds sombres (en-tête et pied du site) ;
+- `maison-dorlote-logo-fonce.svg` : pour fonds clairs (page de paiement Shopify, factures) ;
+- `maison-dorlote-empile-clair.svg` / `-fonce.svg` : version empilée (emballage, cartes, réseaux) ;
+- `maison-dorlote-icone.svg` : la maison seule sur fond nuit (favicon) ;
+- `maison-dorlote-mono-noir.svg` / `-mono-blanc.svg` / `-icone-mono.svg` : une couleur, sans halo (impression, tampon) ;
+- `maison-dorlote-avatar.svg` / `-avatar-nom.svg` : avatars Instagram et TikTok.
+
+Exports PNG dans `docs/logo/export/`. Règles : ne pas déformer, ne pas changer les couleurs, ne pas ajouter d'ombre ; laisser autour du logo un espace libre égal à la hauteur de la maison ; taille minimale du logo horizontal : 100 px de large.
 
 Pas de surtitre (petit libellé en capitales) au-dessus des titres : le titre parle seul.
 

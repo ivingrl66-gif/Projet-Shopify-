@@ -14,7 +14,7 @@ Légende : ✅ confirmé · ⚠️ à vérifier / à demander au fournisseur · 
 | Référence | TL-0191 | ✅ |
 | Désignation fournisseur | « Appuyez sur la lampe de bureau » (lampe tactile) | ✅ |
 | Origine | Guangdong, Chine | ✅ |
-| Marque | Aucune (sans marque) : idéal pour Nuitelle | ✅ |
+| Marque | Aucune (sans marque) : idéal pour Maison Dorlote | ✅ |
 | Brevet | Non | ✅ |
 | Échantillon gratuit | Non (payant) | ✅ |
 | Minimum de commande | 50 pièces | ✅ · ⚠️ négocier 30, ou dropshipping |

@@ -128,7 +128,7 @@ Points d'attention visuels :
 
 | Élément | Valeur |
 |---|---|
-| Nom de la boutique | **Nuitelle** (choix validé) · ⚠️ vérifier INPI/EUIPO (proximité phonétique avec Nutella) et nuitelle.fr |
+| Nom de la boutique | **Maison Dorlote** (13/11, remplace Nuitelle, trop proche de Nutella) · domaine maisondorlote.fr acheté · INPI à vérifier |
 | Cible | **Jeunes parents** : lumière de nuit (biberon, change, veille) · validé |
 | Promesse | Lumière douce et diffuse qui n'éblouit pas la nuit · piste de slogan : « La lumière qui ne réveille personne. » |
 | Structure boutique | **Mono-produit** (second produit plus tard, si les ventes suivent) · validé |
