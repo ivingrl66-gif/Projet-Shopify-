@@ -1,4 +1,5 @@
-<title>Maison Dorlote</title>
+<title>Lampe de chevet veilleuse rechargeable pour bébé · Maison Dorlote</title>
+<meta name="description" content="La lampe Dorlote : une lueur chaude et réglable pour le biberon de nuit, sans réveiller personne. Sans fil, télécommande, horloge. Livraison offerte, satisfait ou remboursé 30 jours.">
 <link rel="icon" href="logo/maison-dorlote-icone.svg" type="image/svg+xml">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preload" as="image" href="img/pack-on.webp" fetchpriority="high">
@@ -349,6 +350,7 @@ table.cmp{width:100%;border-collapse:collapse;font-size:15.5px}
   .fiche .dispo{order:1}
   .fiche .actions ~ *{order:2}
   .fiche .accroche{display:none}
+  .fiche .type-produit{display:block}
   .offres legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   .thumbs{grid-auto-columns:70%}
   .galerie{position:relative}
@@ -498,6 +500,10 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
 .lien-details:hover{border-color:var(--miel);background:rgba(244,214,168,.1)}
 .lien-details:hover svg{transform:translateY(2px)}
 @media (prefers-reduced-motion:reduce){.lien-details:hover svg{transform:none}}
+/* Type de produit, visible seulement sur mobile (l'accroche y est masquée) */
+.type-produit{display:none;font-size:14.5px;color:var(--gris-clair);margin-top:-8px}
+.offre .badge{white-space:nowrap}
+@media (max-width:520px){.offre .badge{font-size:11px;padding:2px 7px}}
 /* Disponibilité plus lisible (14/11) */
 .fiche .dispo{font-size:16.5px;color:var(--lin)}
 .fiche .dispo strong{font-size:17px}
@@ -541,6 +547,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
       <div class="fiche">
                 <h1 id="produit-titre">La lampe Dorlote</h1>
         <p class="promesse">La lumière qui ne réveille personne.</p>
+        <p class="type-produit">Lampe de chevet sans fil · télécommande · horloge</p>
         <p class="accroche">Une lueur chaude et diffuse pour le biberon de 3 h, sans allumer le plafonnier. Sans fil, avec télécommande et horloge.</p>
         <div class="prix"><span class="p" id="prix-affiche">39,90 €</span><span class="note">TTC · livraison offerte</span></div>
 
@@ -550,7 +557,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
             <span><span class="t">1 lampe</span><br><span class="s">Pour bébé, pour vous, ou à offrir</span></span>
             <span class="v">39,90 €</span></label>
           <label class="offre"><input type="radio" name="offre" id="offre-2" value="2">
-            <span><span class="t">2 lampes <span class="badge">−19,90 €</span></span><br><span class="s">Une pour bébé, une pour vous · soit 29,95 € la lampe</span></span>
+            <span><span class="t">2 lampes <span class="badge">Économisez 19,90 €</span></span><br><span class="s">Une pour bébé, une pour vous · soit 29,95 € la lampe</span></span>
             <span class="v">59,90 €</span></label>
         </fieldset>
 
