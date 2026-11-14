@@ -129,3 +129,4 @@ Dossier envoyé à une société de domiciliation (adresse du siège). Prochaine
 - Méthode : retouches d'abord sur la maquette seulement ; report dans Shopify en un lot, sur demande.
 - Barre d'annonce transformée en bandeau qui défile lentement (32 s, linéaire), pause au survol, immobile si « mouvement réduit ». Ajouté : « Paiement sécurisé ». À reporter dans le thème Shopify.
 - Page de paiement : c'est la page sécurisée de Shopify (non modifiable en code sur le plan Basic). Personnalisable seulement en couleurs, logo et polices (Paramètres › Paiement › Personnaliser). Le numéro de carte s'y met déjà en forme par groupes de 4 chiffres (espaces), automatiquement.
+- Maquette alignée (14/11) : volets sortis du bloc d'achat vers « Tout savoir sur la lampe » (après les usages), lien discret « Voir les caractéristiques de la lampe » sous le bloc d'achat, section gestes et toute mention du tactile supprimées, photo du doigt retirée de la galerie.
