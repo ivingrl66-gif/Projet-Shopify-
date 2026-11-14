@@ -98,12 +98,6 @@
         </span></div>
       {%- endif -%}
 
-      <div class="volets">
-        <details {% if section.settings.description_ouverte %}open{% endif %}><summary>{{ section.settings.titre_description }}</summary><div class="volet rte">{{ p.description }}</div></details>
-        {%- for block in section.blocks -%}
-          <details {{ block.shopify_attributes }}><summary>{{ block.settings.titre | escape }}</summary><div class="volet rte">{{ block.settings.contenu }}</div></details>
-        {%- endfor -%}
-      </div>
     </div>
   </div>
   {%- endif -%}
@@ -141,20 +135,7 @@
     { "type": "text", "id": "reassure_1", "label": "Livraison", "default": "Livraison offerte en 6 à 9 jours ouvrés, avec suivi" },
     { "type": "text", "id": "reassure_2", "label": "Retours", "default": "Satisfait ou remboursé 30 jours" },
     { "type": "text", "id": "reassure_3", "label": "Garantie", "default": "Garantie légale de 2 ans" },
-    { "type": "text", "id": "reassure_4", "label": "Paiement", "default": "Paiement sécurisé" },
-    { "type": "header", "content": "Volets" },
-    { "type": "text", "id": "titre_description", "label": "Titre du volet description", "default": "Description" },
-    { "type": "checkbox", "id": "description_ouverte", "label": "Description ouverte par défaut", "default": true }
-  ],
-  "blocks": [
-    {
-      "type": "volet",
-      "name": "Volet",
-      "settings": [
-        { "type": "text", "id": "titre", "label": "Titre", "default": "Livraison et retours" },
-        { "type": "html", "id": "contenu", "label": "Contenu (HTML)", "default": "<p>Votre texte</p>" }
-      ]
-    }
+    { "type": "text", "id": "reassure_4", "label": "Paiement", "default": "Paiement sécurisé" }
   ],
   "presets": [{ "name": "Fiche produit Dorlote" }]
 }

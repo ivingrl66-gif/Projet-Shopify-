@@ -1,0 +1,44 @@
+{%- liquid
+  assign p = product
+  if p == blank
+    assign p = section.settings.produit
+  endif
+-%}
+<section class="details" id="details" aria-labelledby="titre-{{ section.id }}">
+  <div class="wrap details-grid">
+    <div class="details-intro">
+      <h2 id="titre-{{ section.id }}">{{ section.settings.titre | escape }}</h2>
+      {%- if section.settings.texte != blank -%}<p>{{ section.settings.texte | escape }}</p>{%- endif -%}
+      {%- if section.settings.bouton != blank -%}<a class="btn btn-ambre" href="#lampe">{{ section.settings.bouton | escape }}</a>{%- endif -%}
+    </div>
+    <div class="volets">
+      {%- if p != blank and p.description != blank -%}
+        <details {% if section.settings.description_ouverte %}open{% endif %}><summary>{{ section.settings.titre_description | escape }}</summary><div class="volet rte">{{ p.description }}</div></details>
+      {%- endif -%}
+      {%- for block in section.blocks -%}
+        <details {{ block.shopify_attributes }}><summary>{{ block.settings.titre | escape }}</summary><div class="volet rte">{{ block.settings.contenu }}</div></details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Tout savoir sur la lampe",
+  "settings": [
+    { "type": "product", "id": "produit", "label": "Produit (page d'accueil)" },
+    { "type": "text", "id": "titre", "label": "Titre", "default": "Tout savoir sur la lampe." },
+    { "type": "textarea", "id": "texte", "label": "Texte", "default": "Caractéristiques, livraison, retours : tout ce qu'il faut savoir avant de l'adopter." },
+    { "type": "text", "id": "bouton", "label": "Texte du bouton", "default": "Choisir ma lampe" },
+    { "type": "text", "id": "titre_description", "label": "Titre du volet description", "default": "Description" },
+    { "type": "checkbox", "id": "description_ouverte", "label": "Description ouverte par défaut", "default": true }
+  ],
+  "blocks": [
+    { "type": "volet", "name": "Volet", "settings": [
+      { "type": "text", "id": "titre", "label": "Titre", "default": "Livraison et retours" },
+      { "type": "html", "id": "contenu", "label": "Contenu (HTML)", "default": "<p>Votre texte</p>" }
+    ] }
+  ],
+  "presets": [{ "name": "Tout savoir sur la lampe" }]
+}
+{% endschema %}

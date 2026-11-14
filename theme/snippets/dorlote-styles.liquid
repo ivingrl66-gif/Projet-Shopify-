@@ -478,5 +478,18 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
 .form-statut{border-radius:var(--r);padding:14px 16px;margin-bottom:18px;font-size:15px}
 .form-statut.ok{background:#e7f1e3;color:#24401d}
 .form-statut.ko{background:#f7e2dc;color:#6b2615}
+/* Bloc « Tout savoir » (volets sortis du bloc d'achat, 14/11) */
+.details{background:var(--nuit)}
+.details-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(28px,5vw,72px);align-items:start}
+@media (max-width:860px){.details-grid{grid-template-columns:1fr}}
+.details-intro{display:grid;gap:18px;justify-items:start;position:sticky;top:96px}
+@media (max-width:860px){.details-intro{position:static}}
+.details-intro p{color:#ddd2c4;max-width:42ch}
+.details .volets{margin-top:0}
+.details .volets summary{font-size:18px;padding-block:20px}
+/* Disponibilité plus lisible (14/11) */
+.fiche .dispo{font-size:16.5px;color:var(--lin);margin-top:2px}
+.fiche .dispo strong{font-size:17px}
+.pastille-stock{width:10px;height:10px;margin-top:8px}
 .rte p{margin:0 0 12px}.rte ul{margin:0 0 12px;padding-left:20px}
 </style>

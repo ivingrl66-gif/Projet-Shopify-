@@ -5,35 +5,7 @@
       "type": "dorlote-produit",
       "settings": {
         "produit": "lampe-dorlote"
-      },
-      "blocks": {
-        "b0": {
-          "type": "volet",
-          "settings": {
-            "titre": "Caractéristiques",
-            "contenu": "<dl class=\"specs\">\n<dt>Dimensions</dt><dd><em class=\"tbd\">à confirmer sur l'échantillon</em></dd>\n<dt>Teintes</dt><dd>Chaude, neutre, froide</dd>\n<dt>Intensité</dt><dd>Réglable en continu (appui long)</dd>\n<dt>Commande</dt><dd>Tactile sur le dessus, et télécommande</dd>\n<dt>Horloge</dt><dd>Écran numérique en façade, fonction réveil</dd>\n<dt>Batterie</dt><dd>Intégrée, rechargeable · autonomie <em class=\"tbd\">à confirmer</em></dd>\n<dt>Recharge</dt><dd><em class=\"tbd\">port et durée à confirmer</em></dd>\n<dt>Poignée</dt><dd>Poignée de transport sur le dessus</dd>\n<dt>Matériaux</dt><dd>Plastique, abat-jour diffusant</dd>\n<dt>Durée de vie des LED</dt><dd>30 000 heures</dd>\n<dt>Conformité</dt><dd>CE <em class=\"tbd\">à confirmer</em> · classe énergie <em class=\"tbd\">à compléter</em></dd>\n</dl>\n<div class=\"boite\">\n<strong>Dans la boîte</strong>\n<span>1 lampe Dorlote · 1 télécommande · 1 câble de recharge <em class=\"tbd\">à confirmer</em></span>\n<span>Adaptateur secteur non inclus&#8239;: vous pourrez l'ajouter dans votre panier.</span>\n</div>"
-          }
-        },
-        "b1": {
-          "type": "volet",
-          "settings": {
-            "titre": "Livraison et retours",
-            "contenu": "<p><strong>Livraison offerte</strong> en 6 à 9 jours ouvrés, avec un numéro de suivi par email. Aucun frais de douane à payer à la réception.</p>\n<p><strong>Satisfait ou remboursé 30 jours</strong> après réception. Écrivez-nous, nous vous envoyons la marche à suivre. <span class=\"tbd\">Frais de retour : à décider</span></p>\n<p><strong>Garantie légale de 2 ans</strong>&#8239;: remplacement ou remboursement en cas de défaut.</p>"
-          }
-        },
-        "b2": {
-          "type": "volet",
-          "settings": {
-            "titre": "Questions fréquentes",
-            "contenu": "<p><strong>Est-ce que la lumière éblouit&#8239;?</strong> Non, l'abat-jour la diffuse sur toute sa surface&#8239;: aucune LED visible.</p>\n<p><strong>L'adaptateur est-il fourni&#8239;?</strong> Non, la lampe est livrée avec son câble. Vous pouvez ajouter un adaptateur dans le panier.</p>\n<p><strong>Peut-on l'offrir&#8239;?</strong> Oui, cochez «&#8239;C'est pour offrir&#8239;» dans le panier pour ajouter un message.</p>\n<p><a href=\"#faq\">Voir toutes les questions</a></p>"
-          }
-        }
-      },
-      "block_order": [
-        "b0",
-        "b1",
-        "b2"
-      ]
+      }
     },
     "recit": {
       "type": "dorlote-recit",
@@ -92,7 +64,7 @@
           "type": "point",
           "settings": {
             "titre": "Juste assez",
-            "texte": "Un appui long baisse l'intensité jusqu'à une simple lueur : de quoi voir le biberon, pas plus."
+            "texte": "Depuis la télécommande, baissez l'intensité jusqu'à une simple lueur : de quoi voir le biberon, pas plus."
           }
         }
       },
@@ -104,7 +76,9 @@
     },
     "teintes": {
       "type": "dorlote-teintes",
-      "settings": {},
+      "settings": {
+        "texte": "Avec la télécommande, passez d'une teinte à l'autre sans vous lever. Ici, choisissez-en une pour voir la différence."
+      },
       "blocks": {
         "b0": {
           "type": "teinte",
@@ -143,41 +117,6 @@
         "b2"
       ]
     },
-    "gestes": {
-      "type": "dorlote-gestes",
-      "settings": {},
-      "blocks": {
-        "b0": {
-          "type": "geste",
-          "settings": {
-            "schema": "un",
-            "titre": "Un appui",
-            "texte": "Allumer ou éteindre, sans chercher d'interrupteur dans le noir."
-          }
-        },
-        "b1": {
-          "type": "geste",
-          "settings": {
-            "schema": "deux",
-            "titre": "Deux appuis",
-            "texte": "Passer de la lumière chaude à la neutre, puis à la froide."
-          }
-        },
-        "b2": {
-          "type": "geste",
-          "settings": {
-            "schema": "long",
-            "titre": "Appui long",
-            "texte": "Monter ou baisser l'intensité, jusqu'à une lueur de veilleuse."
-          }
-        }
-      },
-      "block_order": [
-        "b0",
-        "b1",
-        "b2"
-      ]
-    },
     "usages": {
       "type": "dorlote-usages",
       "settings": {},
@@ -207,6 +146,40 @@
             "heure": "23:45",
             "titre": "La lecture au lit",
             "texte": "Finir son chapitre sans réveiller la personne qui dort à côté."
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2"
+      ]
+    },
+    "details": {
+      "type": "dorlote-details",
+      "settings": {
+        "produit": "lampe-dorlote"
+      },
+      "blocks": {
+        "b0": {
+          "type": "volet",
+          "settings": {
+            "titre": "Caractéristiques",
+            "contenu": "<dl class=\"specs\">\n<dt>Dimensions</dt><dd><em class=\"tbd\">à confirmer sur l'échantillon</em></dd>\n<dt>Teintes</dt><dd>Chaude, neutre, froide</dd>\n<dt>Intensité</dt><dd>Réglable à la télécommande</dd>\n<dt>Commande</dt><dd>Télécommande incluse</dd>\n<dt>Horloge</dt><dd>Écran numérique en façade, fonction réveil</dd>\n<dt>Batterie</dt><dd>Intégrée, rechargeable · autonomie <em class=\"tbd\">à confirmer</em></dd>\n<dt>Recharge</dt><dd><em class=\"tbd\">port et durée à confirmer</em></dd>\n<dt>Poignée</dt><dd>Poignée de transport sur le dessus</dd>\n<dt>Matériaux</dt><dd>Plastique, abat-jour diffusant</dd>\n<dt>Durée de vie des LED</dt><dd>30 000 heures</dd>\n<dt>Conformité</dt><dd>CE <em class=\"tbd\">à confirmer</em> · classe énergie <em class=\"tbd\">à compléter</em></dd>\n</dl>\n<div class=\"boite\">\n<strong>Dans la boîte</strong>\n<span>1 lampe Dorlote · 1 télécommande · 1 câble de recharge <em class=\"tbd\">à confirmer</em></span>\n<span>Adaptateur secteur non inclus&#8239;: vous pourrez l'ajouter dans votre panier.</span>\n</div>"
+          }
+        },
+        "b1": {
+          "type": "volet",
+          "settings": {
+            "titre": "Livraison et retours",
+            "contenu": "<p><strong>Livraison offerte</strong> en 6 à 9 jours ouvrés, avec un numéro de suivi par email. Aucun frais de douane à payer à la réception.</p>\n<p><strong>Satisfait ou remboursé 30 jours</strong> après réception. Écrivez-nous, nous vous envoyons la marche à suivre. <span class=\"tbd\">Frais de retour : à décider</span></p>\n<p><strong>Garantie légale de 2 ans</strong>&#8239;: remplacement ou remboursement en cas de défaut.</p>"
+          }
+        },
+        "b2": {
+          "type": "volet",
+          "settings": {
+            "titre": "Questions fréquentes",
+            "contenu": "<p><strong>Est-ce que la lumière éblouit&#8239;?</strong> Non, l'abat-jour la diffuse sur toute sa surface&#8239;: aucune LED visible.</p>\n<p><strong>L'adaptateur est-il fourni&#8239;?</strong> Non, la lampe est livrée avec son câble. Vous pouvez ajouter un adaptateur dans le panier.</p>\n<p><strong>Peut-on l'offrir&#8239;?</strong> Oui, cochez «&#8239;C'est pour offrir&#8239;» dans le panier pour ajouter un message.</p>\n<p><a href=\"#faq\">Voir toutes les questions</a></p>"
           }
         }
       },
@@ -349,7 +322,7 @@
           "settings": {
             "categorie": "lampe",
             "question": "Peut-on la régler très bas, comme une veilleuse ?",
-            "reponse": "<p>Oui. Maintenez le doigt sur le dessus de la lampe pour baisser l'intensité jusqu'à une simple lueur. Relâchez quand le niveau vous convient.</p>"
+            "reponse": "<p>Oui. Avec la télécommande, baissez l'intensité jusqu'à une simple lueur, sans vous lever.</p>"
           }
         },
         "b2": {
@@ -522,8 +495,8 @@
     "recit",
     "avant_apres",
     "teintes",
-    "gestes",
     "usages",
+    "details",
     "securite",
     "comparatif",
     "avis",

@@ -14,6 +14,7 @@ for m in re.finditer(r'<details(?: open)?><summary>(.*?)</summary><div class="vo
     if titre == 'Description':
         continue
     contenu = contenu.replace('href="#faq"', 'href="#faq"')
+    contenu = contenu.replace('<dt>Intensité</dt><dd>Réglable en continu (appui long)</dd>', '<dt>Intensité</dt><dd>Réglable à la télécommande</dd>').replace('<dt>Commande</dt><dd>Tactile sur le dessus, et télécommande</dd>', '<dt>Commande</dt><dd>Télécommande incluse</dd>')
     volets[titre] = re.sub(r'\n\s+', '\n', contenu)
 
 faq = []
@@ -22,6 +23,7 @@ for m in re.finditer(r'<details data-cat="(\w+)"><summary>(.*?)</summary><div cl
     q = html.unescape(q).replace(' ?', ' ?').replace(' ', ' ')
     r = re.sub(r'<span class="tbd">(.*?)</span>', r'(\1)', r)
     r = r.replace('&#8239;', ' ')
+    r = r.replace("Oui. Maintenez le doigt sur le dessus de la lampe pour baisser l'intensité jusqu'à une simple lueur. Relâchez quand le niveau vous convient.", "Oui. Avec la télécommande, baissez l'intensité jusqu'à une simple lueur, sans vous lever.")
     faq.append((cat, q, r))
 
 def sec(type_, settings=None, blocks=None):
@@ -40,25 +42,23 @@ def page(with_product):
     ps = {}
     if with_product:
         ps["produit"] = "lampe-dorlote"
-    add("produit", sec("dorlote-produit", ps, vb))
+    add("produit", sec("dorlote-produit", ps))
     add("recit", sec("dorlote-recit", {"image": img("dorlote-recit.webp"), "image_mobile": img("dorlote-recit-mobile.webp")},
         [{"type": "point", "settings": {"texte": t}} for t in ["Sans fil, rechargeable", "3 teintes de lumière", "Horloge intégrée"]]))
     add("avant_apres", sec("dorlote-avant-apres", {"avant": img("dorlote-avant.webp"), "apres": img("dorlote-apres.webp")}, [
         {"type": "point", "settings": {"titre": "Pas de point lumineux", "texte": "L'abat-jour diffuse la lumière sur toute sa surface. Le regard ne tombe jamais sur une LED nue."}},
         {"type": "point", "settings": {"titre": "Une teinte chaude", "texte": "La lumière ambrée reste douce pour des yeux à peine ouverts, et garde la chambre dans l'ambiance de la nuit."}},
-        {"type": "point", "settings": {"titre": "Juste assez", "texte": "Un appui long baisse l'intensité jusqu'à une simple lueur : de quoi voir le biberon, pas plus."}}]))
-    add("teintes", sec("dorlote-teintes", {}, [
+        {"type": "point", "settings": {"titre": "Juste assez", "texte": "Depuis la télécommande, baissez l'intensité jusqu'à une simple lueur : de quoi voir le biberon, pas plus."}}]))
+    add("teintes", sec("dorlote-teintes", {"texte": "Avec la télécommande, passez d'une teinte à l'autre sans vous lever. Ici, choisissez-en une pour voir la différence."}, [
         {"type": "teinte", "settings": {"nom": "Chaude", "usage": "Pour la nuit, les biberons, l'endormissement", "image": img("dorlote-teinte-chaude.webp"), "couleur": "#e8a55b", "couleur_centre": "#ffd9a0"}},
         {"type": "teinte", "settings": {"nom": "Neutre", "usage": "Pour se lever, s'habiller, ranger", "image": img("dorlote-teinte-neutre.webp"), "couleur": "#f0dcbc", "couleur_centre": "#fff6e6"}},
         {"type": "teinte", "settings": {"nom": "Froide", "usage": "Pour lire ou travailler", "image": img("dorlote-teinte-froide.webp"), "couleur": "#d9e2ec", "couleur_centre": "#ffffff"}}]))
-    add("gestes", sec("dorlote-gestes", {}, [
-        {"type": "geste", "settings": {"schema": "un", "titre": "Un appui", "texte": "Allumer ou éteindre, sans chercher d'interrupteur dans le noir."}},
-        {"type": "geste", "settings": {"schema": "deux", "titre": "Deux appuis", "texte": "Passer de la lumière chaude à la neutre, puis à la froide."}},
-        {"type": "geste", "settings": {"schema": "long", "titre": "Appui long", "texte": "Monter ou baisser l'intensité, jusqu'à une lueur de veilleuse."}}]))
     add("usages", sec("dorlote-usages", {}, [
         {"type": "usage", "settings": {"image": img("dorlote-usage-biberon.webp"), "heure": "03:12", "titre": "Le biberon de nuit", "texte": "Assez de lumière pour préparer et donner le biberon, assez peu pour que bébé se rendorme vite."}},
         {"type": "usage", "settings": {"image": img("dorlote-usage-enfant.webp"), "heure": "21:30", "titre": "La chambre d'enfant", "texte": "Une veilleuse rassurante pour les petits qui ont peur du noir, qui ne fait pas d'ombre inquiétante."}},
         {"type": "usage", "settings": {"image": img("dorlote-usage-lecture.webp"), "heure": "23:45", "titre": "La lecture au lit", "texte": "Finir son chapitre sans réveiller la personne qui dort à côté."}}]))
+    ds = {"produit": "lampe-dorlote"} if with_product else {}
+    add("details", sec("dorlote-details", ds, vb))
     add("securite", sec("dorlote-securite", {}, [
         {"type": "point", "settings": {"icone": "batterie", "titre": "Aucun fil la nuit", "texte": "Elle fonctionne sur batterie : pas de câble qui traîne près du lit ou du berceau."}},
         {"type": "point", "settings": {"icone": "chaleur", "titre": "Des LED qui restent tièdes", "texte": "Des LED basse consommation, qui ne chauffent pas comme une ampoule classique (à vérifier sur l'échantillon)."}},

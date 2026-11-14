@@ -118,3 +118,9 @@ Dossier envoyé à une société de domiciliation (adresse du siège). Prochaine
 - Images des sections dans Fichiers (`dorlote-*.webp`), logo lueur et favicon dans Fichiers.
 - Réglages : couleurs Nuit ambrée, boutons ambre arrondis, logo, favicon, note de panier activée.
 - Reste : publier le thème (accord du propriétaire), polices Google à héberger sur Shopify (RGPD), adaptateur à créer avant de le proposer dans le panier, pages légales, pages Horizon (panier, politiques) encore au style d'origine.
+
+### Retours du propriétaire sur le thème (14/11)
+- **La lampe n'a pas de commande tactile : uniquement la télécommande.** Section « gestes » supprimée, textes corrigés (teintes, avant/après, FAQ, caractéristiques, description produit, légende Instagram), photo « doigt sur la lampe » retirée du produit.
+- Volets (description, caractéristiques, livraison, FAQ courte) sortis du bloc d'achat : nouvelle section « Tout savoir sur la lampe » placée après le récit, l'avant/après, les teintes et les usages (« vendre du rêve d'abord »).
+- « En stock » agrandi.
+- Bouton violet « Acheter avec Shop » : bouton de paiement express automatique de Shopify (Apple Pay sur iPhone, Google Pay sur Android/Chrome, Shop Pay sinon). Décision du propriétaire en attente.

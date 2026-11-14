@@ -27,7 +27,7 @@ Légende : ✅ confirmé · ⚠️ à vérifier / à demander au fournisseur · 
 | Dimensions | 94 × 105 mm (≈ 9,4 cm de côté, 10,5 cm de haut) | ✅ fiche |
 | Emballage | 1 pièce par carton, colis 20 × 20 × 20 cm | ✅ |
 | Teintes | 3 : blanc, neutre, chaud | ✅ (visuel 02) · ⚠️ valeurs en Kelvin non indiquées (fiche : « Autre ») |
-| Commandes tactiles (dessus) | 1 appui : allumer/éteindre · double appui : changer de teinte · appui long : intensité | ✅ (visuel 02) |
+| Commandes | **Télécommande uniquement** (pas de commande tactile sur le modèle CJ retenu, précisé par le propriétaire le 14/11) | ✅ · ❌ ne jamais parler de « toucher » ni d'« appui » |
 | Variateur | Intensité réglable par appui long | ✅ visuels · ⚠️ la fiche dit « Variateur : NON », contradiction à lever |
 | Poignée | Poignée escamotable (« hidden handle ») | ✅ (visuel 03) · ⚠️ le visuel montre une poignée effet bois : couleur et matière réelles ? |
 | Horloge | Écran numérique en façade, 2 boutons latéraux, fonction réveil | ✅ (visuels, « réveil » dans la fiche) |

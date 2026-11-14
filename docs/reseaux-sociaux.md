@@ -61,7 +61,7 @@ Légende :
 
 C'est pour ce moment-là qu'on a créé Maison Dorlote. Notre lampe donne juste assez de lumière pour le biberon, le change ou un câlin, sans réveiller bébé ni la personne qui dort à côté.
 
-Un appui sur le dessus pour l'allumer, un appui long pour baisser la lumière, un double appui pour changer de teinte. Elle est sans fil et rechargeable, avec une horloge pour savoir où en est la nuit et une télécommande pour ne pas quitter le fauteuil.
+Tout se règle à la télécommande, sans quitter le fauteuil : allumer, changer de teinte, baisser la lumière. Elle est sans fil et rechargeable, avec une horloge pour savoir où en est la nuit.
 
 La boutique ouvre très bientôt. Abonnez-vous pour être prévenus le jour du lancement 🤍
 
