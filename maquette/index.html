@@ -493,8 +493,11 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
 .details-intro p{color:#ddd2c4;max-width:42ch}
 .details .volets{margin-top:0}
 .details .volets summary{font-size:18px;padding-block:20px}
-.lien-details{display:inline-flex;align-items:center;gap:6px;justify-self:start;align-self:flex-start;font-size:14.5px;color:var(--gris-clair);text-decoration:underline;text-decoration-color:rgba(184,173,163,.4);text-underline-offset:4px;padding-block:6px;min-height:44px}
-.lien-details:hover{color:var(--miel);text-decoration-color:var(--miel)}
+.lien-details{display:inline-flex;align-items:center;gap:8px;justify-self:start;align-self:flex-start;font-size:15px;font-weight:500;color:var(--miel);text-decoration:none;border:1px solid rgba(244,214,168,.32);background:rgba(244,214,168,.05);border-radius:999px;padding:10px 18px;min-height:44px;transition:border-color .2s,background .2s}
+.lien-details svg{transition:transform .2s}
+.lien-details:hover{border-color:var(--miel);background:rgba(244,214,168,.1)}
+.lien-details:hover svg{transform:translateY(2px)}
+@media (prefers-reduced-motion:reduce){.lien-details:hover svg{transform:none}}
 /* Disponibilité plus lisible (14/11) */
 .fiche .dispo{font-size:16.5px;color:var(--lin)}
 .fiche .dispo strong{font-size:17px}
