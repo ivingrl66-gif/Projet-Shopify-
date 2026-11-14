@@ -924,7 +924,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
   var ICO='<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1A17" stroke-width="1.6" stroke-linecap="round"><rect x="6" y="8" width="12" height="10" rx="2"/><path d="M10 8V4M14 8V4M12 18v3"/></svg>';
   var MOINS='<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>', PLUS='<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6 2v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
   var P1=39.90, P2=59.90, ADAPT=7.90;
-  var state={lampes:0, lots:0, adapt:0, gift:false, msg:''};
+  var state={lampes:0, adapt:0, gift:false, msg:''};
   var $=function(s){return document.querySelector(s)};
   var eur=function(n){return n.toFixed(2).replace('.',',')+' €'};
 
@@ -975,19 +975,26 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
 
   /* Panier */
   var panier=$('#panier'), voile=$('#voile');
-  function total(){return state.lampes*P1+state.lots*P2+state.adapt*ADAPT}
+  function prixLampes(n){return Math.floor(n/2)*P2+(n%2)*P1}
+  function total(){return prixLampes(state.lampes)+state.adapt*ADAPT}
   function ouvrir(){panier.classList.add('show');voile.classList.add('show');panier.setAttribute('aria-hidden','false');setTimeout(function(){$('#close-cart').focus()},50)}
   function fermer(){panier.classList.remove('show');voile.classList.remove('show');panier.setAttribute('aria-hidden','true');$('#open-cart').focus()}
-  function ligne(key,img,titre,sous,prix){
+  function ligne(key,img,titre,sous,prix,prixTotal){
     var vis = img==='adapt' ? '<div class="ico">'+ICO+'</div>' : '<img src="'+img+'" alt="">';
-    return '<div class="ligne-p">'+vis+'<div><div class="t">'+titre+'</div><div class="s">'+sous+'</div><div class="qte"><button type="button" data-k="'+key+'" data-d="-1" aria-label="Retirer un">'+MOINS+'</button><span>'+state[key]+'</span><button type="button" data-k="'+key+'" data-d="1" aria-label="Ajouter un">'+PLUS+'</button></div></div><div class="v">'+eur(prix*state[key])+'</div></div>';
+    return '<div class="ligne-p">'+vis+'<div><div class="t">'+titre+'</div><div class="s">'+sous+'</div><div class="qte"><button type="button" data-k="'+key+'" data-d="-1" aria-label="Retirer un">'+MOINS+'</button><span>'+state[key]+'</span><button type="button" data-k="'+key+'" data-d="1" aria-label="Ajouter un">'+PLUS+'</button></div></div><div class="v">'+eur(prixTotal!=null?prixTotal:prix*state[key])+'</div></div>';
+  }
+  /* Lot de 2 automatique : chaque paire de lampes est comptée au prix du lot (59,90 €) */
+  function changer(k,d){
+    var avant=Math.floor(state.lampes/2);
+    state[k]=Math.max(0,state[k]+d);
+    rendu();
+    if(k==='lampes'&&Math.floor(state.lampes/2)>avant) toast('Lot de 2 appliqué : vous économisez '+eur(2*P1-P2));
   }
   function rendu(){
-    var n=state.lampes+state.lots*2;
+    var n=state.lampes, lots=Math.floor(n/2), eco=lots*(2*P1-P2);
     $('#cart-count').textContent=n+state.adapt;
     var h='';
-    if(state.lampes) h+=ligne('lampes','img/pack-on.webp','La lampe Dorlote','1 lampe',P1);
-    if(state.lots) h+=ligne('lots','img/pack-on.webp','La lampe Dorlote · lot de 2','2 lampes',P2);
+    if(n) h+=ligne('lampes','img/pack-on.webp','La lampe Dorlote', n===1 ? 'Ajoutez-en une 2e : le lot de 2 est à 59,90\u00a0€' : (lots>1?lots+' lots de 2 appliqués':'Lot de 2 appliqué')+' · vous économisez '+eur(eco), P1, prixLampes(n));
     if(state.adapt) h+=ligne('adapt','adapt','Adaptateur secteur USB','Prise européenne',ADAPT);
     if(!n&&!state.adapt) h='<div class="vide">Votre panier est vide.</div>';
     if(n&&!state.adapt){
@@ -1001,11 +1008,13 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
     $('#total').textContent=eur(t);
     $('#livraison-txt').textContent='Livraison offerte, sans frais de douane à la réception.';
     var ad=$('#add-adapt'); if(ad) ad.addEventListener('click',function(){state.adapt=1;rendu();toast('Adaptateur ajouté')});
-    document.querySelectorAll('.qte button').forEach(function(b){b.addEventListener('click',function(){state[b.dataset.k]=Math.max(0,state[b.dataset.k]+Number(b.dataset.d));rendu()})});
+    document.querySelectorAll('.qte button').forEach(function(b){b.addEventListener('click',function(){changer(b.dataset.k,Number(b.dataset.d))})});
   }
   function ajouter(){
-    if($('#offre-2').checked) state.lots++; else state.lampes++;
+    var avant=Math.floor(state.lampes/2);
+    state.lampes+=$('#offre-2').checked?2:1;
     rendu(); ouvrir();
+    if(Math.floor(state.lampes/2)>avant && !$('#offre-2').checked) toast('Lot de 2 appliqué : vous économisez '+eur(2*P1-P2));
   }
   var tt; function toast(m){var e=$('#toast');e.textContent=m;e.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){e.classList.remove('show')},2200)}
   add.addEventListener('click',ajouter);
