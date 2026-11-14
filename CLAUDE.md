@@ -66,6 +66,8 @@ Attention aux skills juridiques : la plupart visent le droit américain. Pour le
 
 ## Maquette
 
+- **Méthode de travail (demande du propriétaire, 14/11)** : les retouches demandées se font d'abord **uniquement sur la maquette** (Artifact), pas dans la boutique Shopify. On reporte dans le thème Shopify (`theme/` puis envoi) seulement quand le propriétaire le demande, en un seul lot.
+
 - Fichier : `maquette/index.html`, images dans `maquette/img/`, logos dans `maquette/logo/`.
 - Publiée comme Artifact privé : https://claude.ai/artifact/RNf3NJzUxZRy8kNaE4SvTY (pour la mettre à jour depuis une nouvelle session : la lire avec `action: "read"` puis publier avec `url`).
 - Vérification visuelle : Playwright (Chromium préinstallé), à 1440 px et 390 px de large. Envelopper le fichier dans un squelette HTML (`<!doctype html>…`) pour le prévisualiser en local.

@@ -62,8 +62,15 @@ section{padding-block:clamp(64px,9vw,120px)}
 html{scrollbar-color:var(--nuit-3) var(--nuit);caret-color:var(--ambre);accent-color:var(--ambre)}
 
 /* Barre d'annonce + en-tête */
-.annonce{background:var(--nuit-2);color:var(--miel);font-size:14px;text-align:center;padding-block:9px}
-.annonce .wrap{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.annonce{background:var(--nuit-2);color:var(--miel);font-size:14px;padding-block:9px;overflow:hidden;white-space:nowrap}
+/* Bandeau qui défile (14/11) : mouvement constant, linéaire, lent ; pause au survol ; immobile si mouvement réduit */
+.annonce .piste{display:flex;width:max-content;animation:defile 32s linear infinite}
+.annonce:hover .piste{animation-play-state:paused}
+.annonce ul{display:flex;margin:0;padding:0;list-style:none}
+.annonce li{display:flex;align-items:center}
+.annonce li::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--ambre);opacity:.7;margin-inline:28px}
+@keyframes defile{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.annonce .piste{animation:none;width:auto;justify-content:center}.annonce ul[aria-hidden]{display:none}.annonce li:last-child::after{display:none}}
 .maquette{background:#4a3a2c;color:var(--miel);font-size:12.5px;text-align:center;padding-block:6px}
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--nuit);border-bottom:1px solid rgba(246,239,230,.07)}
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
@@ -348,7 +355,6 @@ table.cmp{width:100%;border-collapse:collapse;font-size:15.5px}
   .compteur-galerie{position:absolute;left:12px;bottom:12px;margin:0;background:rgba(30,26,23,.72);color:var(--lin);border-radius:999px;padding:3px 10px;pointer-events:none}
   .promesse{margin-top:-6px;font-size:18px}
   .prix .p{font-size:30px}
-  .annonce .wrap span:nth-child(3){display:none}
   .annonce{padding-block:7px;font-size:13px}
   .offres{grid-template-columns:1fr 1fr;gap:8px}
   .offres legend{grid-column:1/-1}
@@ -479,7 +485,7 @@ footer .bas{margin-top:40px;padding-top:20px;border-top:1px solid rgba(246,239,2
 </style>
 
 <div class="maquette">Maquette · les informations <span class="tbd">en pointillés</span> sont provisoires</div>
-<div class="annonce"><div class="wrap"><span>Livraison offerte</span><span>Satisfait ou remboursé 30 jours</span><span>Garantie 2 ans</span></div></div>
+<div class="annonce" role="region" aria-label="Nos engagements"><div class="piste"><ul><li>Livraison offerte</li><li>Satisfait ou remboursé 30&#8239;jours</li><li>Garantie 2&#8239;ans</li><li>Paiement sécurisé</li></ul><ul aria-hidden="true"><li>Livraison offerte</li><li>Satisfait ou remboursé 30&#8239;jours</li><li>Garantie 2&#8239;ans</li><li>Paiement sécurisé</li></ul><ul aria-hidden="true"><li>Livraison offerte</li><li>Satisfait ou remboursé 30&#8239;jours</li><li>Garantie 2&#8239;ans</li><li>Paiement sécurisé</li></ul><ul aria-hidden="true"><li>Livraison offerte</li><li>Satisfait ou remboursé 30&#8239;jours</li><li>Garantie 2&#8239;ans</li><li>Paiement sécurisé</li></ul><ul aria-hidden="true"><li>Livraison offerte</li><li>Satisfait ou remboursé 30&#8239;jours</li><li>Garantie 2&#8239;ans</li><li>Paiement sécurisé</li></ul><ul aria-hidden="true"><li>Livraison offerte</li><li>Satisfait ou remboursé 30&#8239;jours</li><li>Garantie 2&#8239;ans</li><li>Paiement sécurisé</li></ul></div></div>
 
 <header class="top">
   <div class="wrap">

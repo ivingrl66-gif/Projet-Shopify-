@@ -124,3 +124,8 @@ Dossier envoyé à une société de domiciliation (adresse du siège). Prochaine
 - Volets (description, caractéristiques, livraison, FAQ courte) sortis du bloc d'achat : nouvelle section « Tout savoir sur la lampe » placée après le récit, l'avant/après, les teintes et les usages (« vendre du rêve d'abord »).
 - « En stock » agrandi.
 - Bouton violet « Acheter avec Shop » : bouton de paiement express automatique de Shopify (Apple Pay sur iPhone, Google Pay sur Android/Chrome, Shop Pay sinon). Décision du propriétaire en attente.
+
+### Bandeau défilant (14/11)
+- Méthode : retouches d'abord sur la maquette seulement ; report dans Shopify en un lot, sur demande.
+- Barre d'annonce transformée en bandeau qui défile lentement (32 s, linéaire), pause au survol, immobile si « mouvement réduit ». Ajouté : « Paiement sécurisé ». À reporter dans le thème Shopify.
+- Page de paiement : c'est la page sécurisée de Shopify (non modifiable en code sur le plan Basic). Personnalisable seulement en couleurs, logo et polices (Paramètres › Paiement › Personnaliser). Le numéro de carte s'y met déjà en forme par groupes de 4 chiffres (espaces), automatiquement.
