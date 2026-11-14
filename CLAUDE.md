@@ -95,4 +95,5 @@ Attention aux skills juridiques : la plupart visent le droit américain. Pour le
 ## Boutique Shopify
 
 - Boutique connectée via le connecteur Shopify : « Ma boutique 2 » (hvxyad-am.myshopify.com), plan Basic, EUR, France.
-- Prochaine grande étape technique : transformer la maquette en **thème Shopify Online Store 2.0** (Liquid, sections éditables), relié à ce dépôt via l'intégration GitHub de Shopify.
+- Thème « Maison Dorlote » (non publié, id 210584338764) : source dans `theme/`. Pour le mettre à jour : modifier `theme/`, commit et push, puis `themeFilesUpsert` avec `body.type: URL` pointant vers `raw.githubusercontent.com/ivingrl66-gif/Projet-Shopify-/<commit>/theme/...`. Ne pas valider (theme_commit) la copie de travail de `theme_bash` : elle est figée et écraserait ces fichiers.
+- Produit : « La lampe Dorlote » (handle `lampe-dorlote`, modèle `product.dorlote`).

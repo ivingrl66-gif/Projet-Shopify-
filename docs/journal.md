@@ -110,3 +110,11 @@ Piste « Maison » (13/11, .fr libres sur AFNIC) : maisonberceuse.fr, maisondorl
 ### Domiciliation (13/11)
 Dossier envoyé à une société de domiciliation (adresse du siège). Prochaine étape : signer le contrat, puis déclarer la micro-entreprise sur formalites.entreprises.gouv.fr (ACRE) et attendre le SIRET. L'adresse de domiciliation servira dans les mentions légales (aucune adresse personnelle sur le site).
 - La société de domiciliation prépare aussi le dossier d'immatriculation (micro-entreprise, RCS) : extrait K et SIRET attendus sous 5 à 9 jours (annoncé le 13/11). À vérifier sur le récapitulatif : activité commerciale de vente en ligne, nom commercial « Maison Dorlote », adresse de domiciliation, ACRE.
+
+### Thème Shopify « Maison Dorlote » (13-14/11)
+- Thème non publié « Maison Dorlote » (copie de Horizon) dans la boutique. Code source dans `theme/` (mise en page `layout/dorlote.liquid`, 16 sections `dorlote-*`, panier Ajax `snippets/dorlote-panier.liquid`, `assets/dorlote.js`). Contenu des modèles généré par `tools/build_templates.py`.
+- Envoi vers Shopify : `themeFilesUpsert` avec les fichiers bruts de GitHub (dépôt public). L'outil d'aperçu Shopify ne voit pas ces fichiers (copie de travail figée) : vérifier dans l'aperçu de l'admin.
+- Produit « La lampe Dorlote » créé (actif, publié sur la boutique en ligne et Shop) : 1 lampe 39,90 €, lot de 2 59,90 €, 6 photos, modèle `product.dorlote`.
+- Images des sections dans Fichiers (`dorlote-*.webp`), logo lueur et favicon dans Fichiers.
+- Réglages : couleurs Nuit ambrée, boutons ambre arrondis, logo, favicon, note de panier activée.
+- Reste : publier le thème (accord du propriétaire), polices Google à héberger sur Shopify (RGPD), adaptateur à créer avant de le proposer dans le panier, pages légales, pages Horizon (panier, politiques) encore au style d'origine.
